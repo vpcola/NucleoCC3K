@@ -66,7 +66,7 @@ HTTP_RESULT HttpTcpConnection::send( const char * buffer, size_t bufsiz)
 
     while(totalsent < bufsiz)
     {
-        n = ::send(_sockfd, buffer + totalsent, bytesleft, NULL);
+        n = ::send(_sockfd, buffer + totalsent, bytesleft, 0);
         if (n < 0) break;
         totalsent += n;
         bytesleft -= n;
@@ -188,7 +188,7 @@ HTTP_RESULT HttpTcpConnection::rawRecv(char * buffer, size_t bufsiz)
 
     while(totalrecv < bufsiz)
     {
-        n = ::recv(_sockfd, buffer + totalrecv, bytesleft, NULL);
+        n = ::recv(_sockfd, buffer + totalrecv, bytesleft, 0);
         if (n < 0) break;
         totalrecv += n;
         bytesleft -= n;
@@ -206,7 +206,7 @@ int HttpTcpConnection::recvUntil(char * buffer, size_t bufsiz, const char term)
     int n, numread = 0;
     char c;
 
-    while (( n = ::recv(_sockfd, &c, 1, NULL)) > 0)
+    while (( n = ::recv(_sockfd, &c, 1, 0)) > 0)
     {
         if ( c == term )
             break;
@@ -233,7 +233,7 @@ void HttpTcpConnection::consumeLine()
     int n = 0;
 
     do {
-        if((n = ::recv(_sockfd, &c, 1, NULL)) <= 0) break;
+        if((n = ::recv(_sockfd, &c, 1, 0)) <= 0) break;
     }while(c != '\n');
 }
 
