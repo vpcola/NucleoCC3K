@@ -1,0 +1,1211 @@
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 3
+   4              		.eabi_attribute 28, 1
+   5              		.fpu fpv4-sp-d16
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 2
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.thumb
+  16              		.file	"vectors.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.section	.text._unhandled_exception,"ax",%progbits
+  21              		.align	2
+  22              		.p2align 4,,15
+  23              		.global	_unhandled_exception
+  24              		.thumb
+  25              		.thumb_func
+  26              		.type	_unhandled_exception, %function
+  27              	_unhandled_exception:
+  28              	.LFB7:
+  29              		.file 1 "../../os/ports/GCC/ARMCMx/STM32F4xx/vectors.c"
+  30              		.loc 1 226 0
+  31              		.cfi_startproc
+  32              		@ Naked Function: prologue and epilogue provided by programmer.
+  33              		@ Volatile: function does not return.
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              	.L2:
+  37 0000 FEE7     		b	.L2
+  38              		.cfi_endproc
+  39              	.LFE7:
+  40              		.size	_unhandled_exception, .-_unhandled_exception
+  41              		.weak	HardFaultVector
+  42              		.thumb_set HardFaultVector,_unhandled_exception
+  43              		.weak	MemManageVector
+  44              		.thumb_set MemManageVector,_unhandled_exception
+  45              		.weak	BusFaultVector
+  46              		.thumb_set BusFaultVector,_unhandled_exception
+  47              		.weak	UsageFaultVector
+  48              		.thumb_set UsageFaultVector,_unhandled_exception
+  49              		.weak	Vector1C
+  50              		.thumb_set Vector1C,_unhandled_exception
+  51              		.weak	Vector20
+  52              		.thumb_set Vector20,_unhandled_exception
+  53              		.weak	Vector24
+  54              		.thumb_set Vector24,_unhandled_exception
+  55              		.weak	Vector28
+  56              		.thumb_set Vector28,_unhandled_exception
+  57              		.weak	SVCallVector
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 2
+
+
+  58              		.thumb_set SVCallVector,_unhandled_exception
+  59              		.weak	DebugMonitorVector
+  60              		.thumb_set DebugMonitorVector,_unhandled_exception
+  61              		.weak	Vector34
+  62              		.thumb_set Vector34,_unhandled_exception
+  63              		.weak	PendSVVector
+  64              		.thumb_set PendSVVector,_unhandled_exception
+  65              		.weak	SysTickVector
+  66              		.thumb_set SysTickVector,_unhandled_exception
+  67              		.weak	Vector40
+  68              		.thumb_set Vector40,_unhandled_exception
+  69              		.weak	Vector44
+  70              		.thumb_set Vector44,_unhandled_exception
+  71              		.weak	Vector48
+  72              		.thumb_set Vector48,_unhandled_exception
+  73              		.weak	Vector4C
+  74              		.thumb_set Vector4C,_unhandled_exception
+  75              		.weak	Vector50
+  76              		.thumb_set Vector50,_unhandled_exception
+  77              		.weak	Vector54
+  78              		.thumb_set Vector54,_unhandled_exception
+  79              		.weak	Vector58
+  80              		.thumb_set Vector58,_unhandled_exception
+  81              		.weak	Vector5C
+  82              		.thumb_set Vector5C,_unhandled_exception
+  83              		.weak	Vector60
+  84              		.thumb_set Vector60,_unhandled_exception
+  85              		.weak	Vector64
+  86              		.thumb_set Vector64,_unhandled_exception
+  87              		.weak	Vector68
+  88              		.thumb_set Vector68,_unhandled_exception
+  89              		.weak	Vector6C
+  90              		.thumb_set Vector6C,_unhandled_exception
+  91              		.weak	Vector70
+  92              		.thumb_set Vector70,_unhandled_exception
+  93              		.weak	Vector74
+  94              		.thumb_set Vector74,_unhandled_exception
+  95              		.weak	Vector78
+  96              		.thumb_set Vector78,_unhandled_exception
+  97              		.weak	Vector7C
+  98              		.thumb_set Vector7C,_unhandled_exception
+  99              		.weak	Vector80
+ 100              		.thumb_set Vector80,_unhandled_exception
+ 101              		.weak	Vector84
+ 102              		.thumb_set Vector84,_unhandled_exception
+ 103              		.weak	Vector88
+ 104              		.thumb_set Vector88,_unhandled_exception
+ 105              		.weak	Vector8C
+ 106              		.thumb_set Vector8C,_unhandled_exception
+ 107              		.weak	Vector90
+ 108              		.thumb_set Vector90,_unhandled_exception
+ 109              		.weak	Vector94
+ 110              		.thumb_set Vector94,_unhandled_exception
+ 111              		.weak	Vector98
+ 112              		.thumb_set Vector98,_unhandled_exception
+ 113              		.weak	Vector9C
+ 114              		.thumb_set Vector9C,_unhandled_exception
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 3
+
+
+ 115              		.weak	VectorA0
+ 116              		.thumb_set VectorA0,_unhandled_exception
+ 117              		.weak	VectorA4
+ 118              		.thumb_set VectorA4,_unhandled_exception
+ 119              		.weak	VectorA8
+ 120              		.thumb_set VectorA8,_unhandled_exception
+ 121              		.weak	VectorAC
+ 122              		.thumb_set VectorAC,_unhandled_exception
+ 123              		.weak	VectorB0
+ 124              		.thumb_set VectorB0,_unhandled_exception
+ 125              		.weak	VectorB4
+ 126              		.thumb_set VectorB4,_unhandled_exception
+ 127              		.weak	VectorB8
+ 128              		.thumb_set VectorB8,_unhandled_exception
+ 129              		.weak	VectorBC
+ 130              		.thumb_set VectorBC,_unhandled_exception
+ 131              		.weak	VectorC0
+ 132              		.thumb_set VectorC0,_unhandled_exception
+ 133              		.weak	VectorC4
+ 134              		.thumb_set VectorC4,_unhandled_exception
+ 135              		.weak	VectorC8
+ 136              		.thumb_set VectorC8,_unhandled_exception
+ 137              		.weak	VectorCC
+ 138              		.thumb_set VectorCC,_unhandled_exception
+ 139              		.weak	VectorD0
+ 140              		.thumb_set VectorD0,_unhandled_exception
+ 141              		.weak	VectorD4
+ 142              		.thumb_set VectorD4,_unhandled_exception
+ 143              		.weak	VectorD8
+ 144              		.thumb_set VectorD8,_unhandled_exception
+ 145              		.weak	VectorDC
+ 146              		.thumb_set VectorDC,_unhandled_exception
+ 147              		.weak	VectorE0
+ 148              		.thumb_set VectorE0,_unhandled_exception
+ 149              		.weak	VectorE4
+ 150              		.thumb_set VectorE4,_unhandled_exception
+ 151              		.weak	VectorE8
+ 152              		.thumb_set VectorE8,_unhandled_exception
+ 153              		.weak	VectorEC
+ 154              		.thumb_set VectorEC,_unhandled_exception
+ 155              		.weak	VectorF0
+ 156              		.thumb_set VectorF0,_unhandled_exception
+ 157              		.weak	VectorF4
+ 158              		.thumb_set VectorF4,_unhandled_exception
+ 159              		.weak	VectorF8
+ 160              		.thumb_set VectorF8,_unhandled_exception
+ 161              		.weak	VectorFC
+ 162              		.thumb_set VectorFC,_unhandled_exception
+ 163              		.weak	Vector100
+ 164              		.thumb_set Vector100,_unhandled_exception
+ 165              		.weak	Vector104
+ 166              		.thumb_set Vector104,_unhandled_exception
+ 167              		.weak	Vector108
+ 168              		.thumb_set Vector108,_unhandled_exception
+ 169              		.weak	Vector10C
+ 170              		.thumb_set Vector10C,_unhandled_exception
+ 171              		.weak	Vector110
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 4
+
+
+ 172              		.thumb_set Vector110,_unhandled_exception
+ 173              		.weak	Vector114
+ 174              		.thumb_set Vector114,_unhandled_exception
+ 175              		.weak	Vector118
+ 176              		.thumb_set Vector118,_unhandled_exception
+ 177              		.weak	Vector11C
+ 178              		.thumb_set Vector11C,_unhandled_exception
+ 179              		.weak	Vector120
+ 180              		.thumb_set Vector120,_unhandled_exception
+ 181              		.weak	Vector124
+ 182              		.thumb_set Vector124,_unhandled_exception
+ 183              		.weak	Vector128
+ 184              		.thumb_set Vector128,_unhandled_exception
+ 185              		.weak	Vector12C
+ 186              		.thumb_set Vector12C,_unhandled_exception
+ 187              		.weak	Vector130
+ 188              		.thumb_set Vector130,_unhandled_exception
+ 189              		.weak	Vector134
+ 190              		.thumb_set Vector134,_unhandled_exception
+ 191              		.weak	Vector138
+ 192              		.thumb_set Vector138,_unhandled_exception
+ 193              		.weak	Vector13C
+ 194              		.thumb_set Vector13C,_unhandled_exception
+ 195              		.weak	Vector140
+ 196              		.thumb_set Vector140,_unhandled_exception
+ 197              		.weak	Vector144
+ 198              		.thumb_set Vector144,_unhandled_exception
+ 199              		.weak	Vector148
+ 200              		.thumb_set Vector148,_unhandled_exception
+ 201              		.weak	Vector14C
+ 202              		.thumb_set Vector14C,_unhandled_exception
+ 203              		.weak	Vector150
+ 204              		.thumb_set Vector150,_unhandled_exception
+ 205              		.weak	Vector154
+ 206              		.thumb_set Vector154,_unhandled_exception
+ 207              		.weak	Vector158
+ 208              		.thumb_set Vector158,_unhandled_exception
+ 209              		.weak	Vector15C
+ 210              		.thumb_set Vector15C,_unhandled_exception
+ 211              		.weak	Vector160
+ 212              		.thumb_set Vector160,_unhandled_exception
+ 213              		.weak	Vector164
+ 214              		.thumb_set Vector164,_unhandled_exception
+ 215              		.weak	Vector168
+ 216              		.thumb_set Vector168,_unhandled_exception
+ 217              		.weak	Vector16C
+ 218              		.thumb_set Vector16C,_unhandled_exception
+ 219              		.weak	Vector170
+ 220              		.thumb_set Vector170,_unhandled_exception
+ 221              		.weak	Vector174
+ 222              		.thumb_set Vector174,_unhandled_exception
+ 223              		.weak	Vector178
+ 224              		.thumb_set Vector178,_unhandled_exception
+ 225              		.weak	Vector17C
+ 226              		.thumb_set Vector17C,_unhandled_exception
+ 227              		.weak	Vector180
+ 228              		.thumb_set Vector180,_unhandled_exception
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 5
+
+
+ 229              		.weak	Vector184
+ 230              		.thumb_set Vector184,_unhandled_exception
+ 231              		.weak	Vector188
+ 232              		.thumb_set Vector188,_unhandled_exception
+ 233              		.weak	Vector18C
+ 234              		.thumb_set Vector18C,_unhandled_exception
+ 235              		.weak	Vector190
+ 236              		.thumb_set Vector190,_unhandled_exception
+ 237              		.weak	Vector194
+ 238              		.thumb_set Vector194,_unhandled_exception
+ 239              		.weak	Vector198
+ 240              		.thumb_set Vector198,_unhandled_exception
+ 241              		.weak	Vector19C
+ 242              		.thumb_set Vector19C,_unhandled_exception
+ 243              		.weak	Vector1A0
+ 244              		.thumb_set Vector1A0,_unhandled_exception
+ 245              		.weak	Vector1A4
+ 246              		.thumb_set Vector1A4,_unhandled_exception
+ 247              		.weak	Vector1A8
+ 248              		.thumb_set Vector1A8,_unhandled_exception
+ 249              		.weak	NMIVector
+ 250              		.thumb_set NMIVector,_unhandled_exception
+ 251              		.global	_vectors
+ 252              		.section	vectors,"aw",%progbits
+ 253              		.align	2
+ 254              		.type	_vectors, %object
+ 255              		.size	_vectors, 428
+ 256              	_vectors:
+ 257 0000 00000000 		.word	__main_stack_end__
+ 258 0004 00000000 		.word	ResetHandler
+ 259 0008 00000000 		.word	NMIVector
+ 260 000c 00000000 		.word	HardFaultVector
+ 261 0010 00000000 		.word	MemManageVector
+ 262 0014 00000000 		.word	BusFaultVector
+ 263 0018 00000000 		.word	UsageFaultVector
+ 264 001c 00000000 		.word	Vector1C
+ 265 0020 00000000 		.word	Vector20
+ 266 0024 00000000 		.word	Vector24
+ 267 0028 00000000 		.word	Vector28
+ 268 002c 00000000 		.word	SVCallVector
+ 269 0030 00000000 		.word	DebugMonitorVector
+ 270 0034 00000000 		.word	Vector34
+ 271 0038 00000000 		.word	PendSVVector
+ 272 003c 00000000 		.word	SysTickVector
+ 273 0040 00000000 		.word	Vector40
+ 274 0044 00000000 		.word	Vector44
+ 275 0048 00000000 		.word	Vector48
+ 276 004c 00000000 		.word	Vector4C
+ 277 0050 00000000 		.word	Vector50
+ 278 0054 00000000 		.word	Vector54
+ 279 0058 00000000 		.word	Vector58
+ 280 005c 00000000 		.word	Vector5C
+ 281 0060 00000000 		.word	Vector60
+ 282 0064 00000000 		.word	Vector64
+ 283 0068 00000000 		.word	Vector68
+ 284 006c 00000000 		.word	Vector6C
+ 285 0070 00000000 		.word	Vector70
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 6
+
+
+ 286 0074 00000000 		.word	Vector74
+ 287 0078 00000000 		.word	Vector78
+ 288 007c 00000000 		.word	Vector7C
+ 289 0080 00000000 		.word	Vector80
+ 290 0084 00000000 		.word	Vector84
+ 291 0088 00000000 		.word	Vector88
+ 292 008c 00000000 		.word	Vector8C
+ 293 0090 00000000 		.word	Vector90
+ 294 0094 00000000 		.word	Vector94
+ 295 0098 00000000 		.word	Vector98
+ 296 009c 00000000 		.word	Vector9C
+ 297 00a0 00000000 		.word	VectorA0
+ 298 00a4 00000000 		.word	VectorA4
+ 299 00a8 00000000 		.word	VectorA8
+ 300 00ac 00000000 		.word	VectorAC
+ 301 00b0 00000000 		.word	VectorB0
+ 302 00b4 00000000 		.word	VectorB4
+ 303 00b8 00000000 		.word	VectorB8
+ 304 00bc 00000000 		.word	VectorBC
+ 305 00c0 00000000 		.word	VectorC0
+ 306 00c4 00000000 		.word	VectorC4
+ 307 00c8 00000000 		.word	VectorC8
+ 308 00cc 00000000 		.word	VectorCC
+ 309 00d0 00000000 		.word	VectorD0
+ 310 00d4 00000000 		.word	VectorD4
+ 311 00d8 00000000 		.word	VectorD8
+ 312 00dc 00000000 		.word	VectorDC
+ 313 00e0 00000000 		.word	VectorE0
+ 314 00e4 00000000 		.word	VectorE4
+ 315 00e8 00000000 		.word	VectorE8
+ 316 00ec 00000000 		.word	VectorEC
+ 317 00f0 00000000 		.word	VectorF0
+ 318 00f4 00000000 		.word	VectorF4
+ 319 00f8 00000000 		.word	VectorF8
+ 320 00fc 00000000 		.word	VectorFC
+ 321 0100 00000000 		.word	Vector100
+ 322 0104 00000000 		.word	Vector104
+ 323 0108 00000000 		.word	Vector108
+ 324 010c 00000000 		.word	Vector10C
+ 325 0110 00000000 		.word	Vector110
+ 326 0114 00000000 		.word	Vector114
+ 327 0118 00000000 		.word	Vector118
+ 328 011c 00000000 		.word	Vector11C
+ 329 0120 00000000 		.word	Vector120
+ 330 0124 00000000 		.word	Vector124
+ 331 0128 00000000 		.word	Vector128
+ 332 012c 00000000 		.word	Vector12C
+ 333 0130 00000000 		.word	Vector130
+ 334 0134 00000000 		.word	Vector134
+ 335 0138 00000000 		.word	Vector138
+ 336 013c 00000000 		.word	Vector13C
+ 337 0140 00000000 		.word	Vector140
+ 338 0144 00000000 		.word	Vector144
+ 339 0148 00000000 		.word	Vector148
+ 340 014c 00000000 		.word	Vector14C
+ 341 0150 00000000 		.word	Vector150
+ 342 0154 00000000 		.word	Vector154
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 7
+
+
+ 343 0158 00000000 		.word	Vector158
+ 344 015c 00000000 		.word	Vector15C
+ 345 0160 00000000 		.word	Vector160
+ 346 0164 00000000 		.word	Vector164
+ 347 0168 00000000 		.word	Vector168
+ 348 016c 00000000 		.word	Vector16C
+ 349 0170 00000000 		.word	Vector170
+ 350 0174 00000000 		.word	Vector174
+ 351 0178 00000000 		.word	Vector178
+ 352 017c 00000000 		.word	Vector17C
+ 353 0180 00000000 		.word	Vector180
+ 354 0184 00000000 		.word	Vector184
+ 355 0188 00000000 		.word	Vector188
+ 356 018c 00000000 		.word	Vector18C
+ 357 0190 00000000 		.word	Vector190
+ 358 0194 00000000 		.word	Vector194
+ 359 0198 00000000 		.word	Vector198
+ 360 019c 00000000 		.word	Vector19C
+ 361 01a0 00000000 		.word	Vector1A0
+ 362 01a4 00000000 		.word	Vector1A4
+ 363 01a8 00000000 		.word	Vector1A8
+ 364              		.text
+ 365              	.Letext0:
+ 366              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 367              		.section	.debug_info,"",%progbits
+ 368              	.Ldebug_info0:
+ 369 0000 EC010000 		.4byte	0x1ec
+ 370 0004 0200     		.2byte	0x2
+ 371 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 372 000a 04       		.byte	0x4
+ 373 000b 01       		.uleb128 0x1
+ 374 000c 74000000 		.4byte	.LASF34
+ 375 0010 01       		.byte	0x1
+ 376 0011 11010000 		.4byte	.LASF35
+ 377 0015 D5000000 		.4byte	.LASF36
+ 378 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 379 001d 00000000 		.4byte	0
+ 380 0021 00000000 		.4byte	0
+ 381 0025 00000000 		.4byte	.Ldebug_line0
+ 382 0029 02       		.uleb128 0x2
+ 383 002a 04       		.byte	0x4
+ 384 002b 05       		.byte	0x5
+ 385 002c 696E7400 		.ascii	"int\000"
+ 386 0030 03       		.uleb128 0x3
+ 387 0031 04       		.byte	0x4
+ 388 0032 07       		.byte	0x7
+ 389 0033 3F010000 		.4byte	.LASF0
+ 390 0037 03       		.uleb128 0x3
+ 391 0038 01       		.byte	0x1
+ 392 0039 06       		.byte	0x6
+ 393 003a 35020000 		.4byte	.LASF1
+ 394 003e 03       		.uleb128 0x3
+ 395 003f 01       		.byte	0x1
+ 396 0040 08       		.byte	0x8
+ 397 0041 41000000 		.4byte	.LASF2
+ 398 0045 03       		.uleb128 0x3
+ 399 0046 02       		.byte	0x2
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 8
+
+
+ 400 0047 05       		.byte	0x5
+ 401 0048 0C020000 		.4byte	.LASF3
+ 402 004c 03       		.uleb128 0x3
+ 403 004d 02       		.byte	0x2
+ 404 004e 07       		.byte	0x7
+ 405 004f 61000000 		.4byte	.LASF4
+ 406 0053 03       		.uleb128 0x3
+ 407 0054 04       		.byte	0x4
+ 408 0055 05       		.byte	0x5
+ 409 0056 2C020000 		.4byte	.LASF5
+ 410 005a 04       		.uleb128 0x4
+ 411 005b 23020000 		.4byte	.LASF12
+ 412 005f 02       		.byte	0x2
+ 413 0060 50       		.byte	0x50
+ 414 0061 65000000 		.4byte	0x65
+ 415 0065 03       		.uleb128 0x3
+ 416 0066 04       		.byte	0x4
+ 417 0067 07       		.byte	0x7
+ 418 0068 4F000000 		.4byte	.LASF6
+ 419 006c 03       		.uleb128 0x3
+ 420 006d 08       		.byte	0x8
+ 421 006e 05       		.byte	0x5
+ 422 006f CB010000 		.4byte	.LASF7
+ 423 0073 03       		.uleb128 0x3
+ 424 0074 08       		.byte	0x8
+ 425 0075 07       		.byte	0x7
+ 426 0076 57010000 		.4byte	.LASF8
+ 427 007a 03       		.uleb128 0x3
+ 428 007b 01       		.byte	0x1
+ 429 007c 02       		.byte	0x2
+ 430 007d 5E020000 		.4byte	.LASF9
+ 431 0081 03       		.uleb128 0x3
+ 432 0082 04       		.byte	0x4
+ 433 0083 07       		.byte	0x7
+ 434 0084 A3010000 		.4byte	.LASF10
+ 435 0088 03       		.uleb128 0x3
+ 436 0089 01       		.byte	0x1
+ 437 008a 08       		.byte	0x8
+ 438 008b D9010000 		.4byte	.LASF11
+ 439 008f 04       		.uleb128 0x4
+ 440 0090 09000000 		.4byte	.LASF13
+ 441 0094 01       		.byte	0x1
+ 442 0095 2B       		.byte	0x2b
+ 443 0096 9A000000 		.4byte	0x9a
+ 444 009a 05       		.uleb128 0x5
+ 445 009b 04       		.byte	0x4
+ 446 009c A0000000 		.4byte	0xa0
+ 447 00a0 06       		.uleb128 0x6
+ 448 00a1 01       		.byte	0x1
+ 449 00a2 07       		.uleb128 0x7
+ 450 00a3 AC01     		.2byte	0x1ac
+ 451 00a5 01       		.byte	0x1
+ 452 00a6 30       		.byte	0x30
+ 453 00a7 9A010000 		.4byte	0x19a
+ 454 00ab 08       		.uleb128 0x8
+ 455 00ac 28000000 		.4byte	.LASF14
+ 456 00b0 01       		.byte	0x1
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 9
+
+
+ 457 00b1 31       		.byte	0x31
+ 458 00b2 9A010000 		.4byte	0x19a
+ 459 00b6 02       		.byte	0x2
+ 460 00b7 23       		.byte	0x23
+ 461 00b8 00       		.uleb128 0
+ 462 00b9 08       		.uleb128 0x8
+ 463 00ba 16020000 		.4byte	.LASF15
+ 464 00be 01       		.byte	0x1
+ 465 00bf 32       		.byte	0x32
+ 466 00c0 8F000000 		.4byte	0x8f
+ 467 00c4 02       		.byte	0x2
+ 468 00c5 23       		.byte	0x23
+ 469 00c6 04       		.uleb128 0x4
+ 470 00c7 08       		.uleb128 0x8
+ 471 00c8 4C010000 		.4byte	.LASF16
+ 472 00cc 01       		.byte	0x1
+ 473 00cd 33       		.byte	0x33
+ 474 00ce 8F000000 		.4byte	0x8f
+ 475 00d2 02       		.byte	0x2
+ 476 00d3 23       		.byte	0x23
+ 477 00d4 08       		.uleb128 0x8
+ 478 00d5 08       		.uleb128 0x8
+ 479 00d6 BA010000 		.4byte	.LASF17
+ 480 00da 01       		.byte	0x1
+ 481 00db 34       		.byte	0x34
+ 482 00dc 8F000000 		.4byte	0x8f
+ 483 00e0 02       		.byte	0x2
+ 484 00e1 23       		.byte	0x23
+ 485 00e2 0C       		.uleb128 0xc
+ 486 00e3 08       		.uleb128 0x8
+ 487 00e4 DE010000 		.4byte	.LASF18
+ 488 00e8 01       		.byte	0x1
+ 489 00e9 35       		.byte	0x35
+ 490 00ea 8F000000 		.4byte	0x8f
+ 491 00ee 02       		.byte	0x2
+ 492 00ef 23       		.byte	0x23
+ 493 00f0 10       		.uleb128 0x10
+ 494 00f1 08       		.uleb128 0x8
+ 495 00f2 6E010000 		.4byte	.LASF19
+ 496 00f6 01       		.byte	0x1
+ 497 00f7 36       		.byte	0x36
+ 498 00f8 8F000000 		.4byte	0x8f
+ 499 00fc 02       		.byte	0x2
+ 500 00fd 23       		.byte	0x23
+ 501 00fe 14       		.uleb128 0x14
+ 502 00ff 08       		.uleb128 0x8
+ 503 0100 87010000 		.4byte	.LASF20
+ 504 0104 01       		.byte	0x1
+ 505 0105 37       		.byte	0x37
+ 506 0106 8F000000 		.4byte	0x8f
+ 507 010a 02       		.byte	0x2
+ 508 010b 23       		.byte	0x23
+ 509 010c 18       		.uleb128 0x18
+ 510 010d 08       		.uleb128 0x8
+ 511 010e BD000000 		.4byte	.LASF21
+ 512 0112 01       		.byte	0x1
+ 513 0113 38       		.byte	0x38
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 10
+
+
+ 514 0114 8F000000 		.4byte	0x8f
+ 515 0118 02       		.byte	0x2
+ 516 0119 23       		.byte	0x23
+ 517 011a 1C       		.uleb128 0x1c
+ 518 011b 08       		.uleb128 0x8
+ 519 011c 55020000 		.4byte	.LASF22
+ 520 0120 01       		.byte	0x1
+ 521 0121 39       		.byte	0x39
+ 522 0122 8F000000 		.4byte	0x8f
+ 523 0126 02       		.byte	0x2
+ 524 0127 23       		.byte	0x23
+ 525 0128 20       		.uleb128 0x20
+ 526 0129 08       		.uleb128 0x8
+ 527 012a 00000000 		.4byte	.LASF23
+ 528 012e 01       		.byte	0x1
+ 529 012f 3A       		.byte	0x3a
+ 530 0130 8F000000 		.4byte	0x8f
+ 531 0134 02       		.byte	0x2
+ 532 0135 23       		.byte	0x23
+ 533 0136 24       		.uleb128 0x24
+ 534 0137 08       		.uleb128 0x8
+ 535 0138 7E010000 		.4byte	.LASF24
+ 536 013c 01       		.byte	0x1
+ 537 013d 3B       		.byte	0x3b
+ 538 013e 8F000000 		.4byte	0x8f
+ 539 0142 02       		.byte	0x2
+ 540 0143 23       		.byte	0x23
+ 541 0144 28       		.uleb128 0x28
+ 542 0145 08       		.uleb128 0x8
+ 543 0146 33000000 		.4byte	.LASF25
+ 544 014a 01       		.byte	0x1
+ 545 014b 3C       		.byte	0x3c
+ 546 014c 8F000000 		.4byte	0x8f
+ 547 0150 02       		.byte	0x2
+ 548 0151 23       		.byte	0x23
+ 549 0152 2C       		.uleb128 0x2c
+ 550 0153 08       		.uleb128 0x8
+ 551 0154 41020000 		.4byte	.LASF26
+ 552 0158 01       		.byte	0x1
+ 553 0159 3D       		.byte	0x3d
+ 554 015a 8F000000 		.4byte	0x8f
+ 555 015e 02       		.byte	0x2
+ 556 015f 23       		.byte	0x23
+ 557 0160 30       		.uleb128 0x30
+ 558 0161 08       		.uleb128 0x8
+ 559 0162 16000000 		.4byte	.LASF27
+ 560 0166 01       		.byte	0x1
+ 561 0167 3E       		.byte	0x3e
+ 562 0168 8F000000 		.4byte	0x8f
+ 563 016c 02       		.byte	0x2
+ 564 016d 23       		.byte	0x23
+ 565 016e 34       		.uleb128 0x34
+ 566 016f 08       		.uleb128 0x8
+ 567 0170 AC010000 		.4byte	.LASF28
+ 568 0174 01       		.byte	0x1
+ 569 0175 3F       		.byte	0x3f
+ 570 0176 8F000000 		.4byte	0x8f
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 11
+
+
+ 571 017a 02       		.byte	0x2
+ 572 017b 23       		.byte	0x23
+ 573 017c 38       		.uleb128 0x38
+ 574 017d 08       		.uleb128 0x8
+ 575 017e C6000000 		.4byte	.LASF29
+ 576 0182 01       		.byte	0x1
+ 577 0183 40       		.byte	0x40
+ 578 0184 8F000000 		.4byte	0x8f
+ 579 0188 02       		.byte	0x2
+ 580 0189 23       		.byte	0x23
+ 581 018a 3C       		.uleb128 0x3c
+ 582 018b 08       		.uleb128 0x8
+ 583 018c 04020000 		.4byte	.LASF30
+ 584 0190 01       		.byte	0x1
+ 585 0191 41       		.byte	0x41
+ 586 0192 A0010000 		.4byte	0x1a0
+ 587 0196 02       		.byte	0x2
+ 588 0197 23       		.byte	0x23
+ 589 0198 40       		.uleb128 0x40
+ 590 0199 00       		.byte	0
+ 591 019a 05       		.uleb128 0x5
+ 592 019b 04       		.byte	0x4
+ 593 019c 5A000000 		.4byte	0x5a
+ 594 01a0 09       		.uleb128 0x9
+ 595 01a1 8F000000 		.4byte	0x8f
+ 596 01a5 B0010000 		.4byte	0x1b0
+ 597 01a9 0A       		.uleb128 0xa
+ 598 01aa 81000000 		.4byte	0x81
+ 599 01ae 5A       		.byte	0x5a
+ 600 01af 00       		.byte	0
+ 601 01b0 04       		.uleb128 0x4
+ 602 01b1 99010000 		.4byte	.LASF31
+ 603 01b5 01       		.byte	0x1
+ 604 01b6 42       		.byte	0x42
+ 605 01b7 A2000000 		.4byte	0xa2
+ 606 01bb 0B       		.uleb128 0xb
+ 607 01bc 01       		.byte	0x1
+ 608 01bd EF010000 		.4byte	.LASF37
+ 609 01c1 01       		.byte	0x1
+ 610 01c2 E2       		.byte	0xe2
+ 611 01c3 01       		.byte	0x1
+ 612 01c4 00000000 		.4byte	.LFB7
+ 613 01c8 02000000 		.4byte	.LFE7
+ 614 01cc 02       		.byte	0x2
+ 615 01cd 7D       		.byte	0x7d
+ 616 01ce 00       		.sleb128 0
+ 617 01cf 01       		.byte	0x1
+ 618 01d0 0C       		.uleb128 0xc
+ 619 01d1 64020000 		.4byte	.LASF32
+ 620 01d5 01       		.byte	0x1
+ 621 01d6 45       		.byte	0x45
+ 622 01d7 5A000000 		.4byte	0x5a
+ 623 01db 01       		.byte	0x1
+ 624 01dc 01       		.byte	0x1
+ 625 01dd 0D       		.uleb128 0xd
+ 626 01de 1F000000 		.4byte	.LASF33
+ 627 01e2 01       		.byte	0x1
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 12
+
+
+ 628 01e3 B8       		.byte	0xb8
+ 629 01e4 B0010000 		.4byte	0x1b0
+ 630 01e8 01       		.byte	0x1
+ 631 01e9 05       		.byte	0x5
+ 632 01ea 03       		.byte	0x3
+ 633 01eb 00000000 		.4byte	_vectors
+ 634 01ef 00       		.byte	0
+ 635              		.section	.debug_abbrev,"",%progbits
+ 636              	.Ldebug_abbrev0:
+ 637 0000 01       		.uleb128 0x1
+ 638 0001 11       		.uleb128 0x11
+ 639 0002 01       		.byte	0x1
+ 640 0003 25       		.uleb128 0x25
+ 641 0004 0E       		.uleb128 0xe
+ 642 0005 13       		.uleb128 0x13
+ 643 0006 0B       		.uleb128 0xb
+ 644 0007 03       		.uleb128 0x3
+ 645 0008 0E       		.uleb128 0xe
+ 646 0009 1B       		.uleb128 0x1b
+ 647 000a 0E       		.uleb128 0xe
+ 648 000b 55       		.uleb128 0x55
+ 649 000c 06       		.uleb128 0x6
+ 650 000d 11       		.uleb128 0x11
+ 651 000e 01       		.uleb128 0x1
+ 652 000f 52       		.uleb128 0x52
+ 653 0010 01       		.uleb128 0x1
+ 654 0011 10       		.uleb128 0x10
+ 655 0012 06       		.uleb128 0x6
+ 656 0013 00       		.byte	0
+ 657 0014 00       		.byte	0
+ 658 0015 02       		.uleb128 0x2
+ 659 0016 24       		.uleb128 0x24
+ 660 0017 00       		.byte	0
+ 661 0018 0B       		.uleb128 0xb
+ 662 0019 0B       		.uleb128 0xb
+ 663 001a 3E       		.uleb128 0x3e
+ 664 001b 0B       		.uleb128 0xb
+ 665 001c 03       		.uleb128 0x3
+ 666 001d 08       		.uleb128 0x8
+ 667 001e 00       		.byte	0
+ 668 001f 00       		.byte	0
+ 669 0020 03       		.uleb128 0x3
+ 670 0021 24       		.uleb128 0x24
+ 671 0022 00       		.byte	0
+ 672 0023 0B       		.uleb128 0xb
+ 673 0024 0B       		.uleb128 0xb
+ 674 0025 3E       		.uleb128 0x3e
+ 675 0026 0B       		.uleb128 0xb
+ 676 0027 03       		.uleb128 0x3
+ 677 0028 0E       		.uleb128 0xe
+ 678 0029 00       		.byte	0
+ 679 002a 00       		.byte	0
+ 680 002b 04       		.uleb128 0x4
+ 681 002c 16       		.uleb128 0x16
+ 682 002d 00       		.byte	0
+ 683 002e 03       		.uleb128 0x3
+ 684 002f 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 13
+
+
+ 685 0030 3A       		.uleb128 0x3a
+ 686 0031 0B       		.uleb128 0xb
+ 687 0032 3B       		.uleb128 0x3b
+ 688 0033 0B       		.uleb128 0xb
+ 689 0034 49       		.uleb128 0x49
+ 690 0035 13       		.uleb128 0x13
+ 691 0036 00       		.byte	0
+ 692 0037 00       		.byte	0
+ 693 0038 05       		.uleb128 0x5
+ 694 0039 0F       		.uleb128 0xf
+ 695 003a 00       		.byte	0
+ 696 003b 0B       		.uleb128 0xb
+ 697 003c 0B       		.uleb128 0xb
+ 698 003d 49       		.uleb128 0x49
+ 699 003e 13       		.uleb128 0x13
+ 700 003f 00       		.byte	0
+ 701 0040 00       		.byte	0
+ 702 0041 06       		.uleb128 0x6
+ 703 0042 15       		.uleb128 0x15
+ 704 0043 00       		.byte	0
+ 705 0044 27       		.uleb128 0x27
+ 706 0045 0C       		.uleb128 0xc
+ 707 0046 00       		.byte	0
+ 708 0047 00       		.byte	0
+ 709 0048 07       		.uleb128 0x7
+ 710 0049 13       		.uleb128 0x13
+ 711 004a 01       		.byte	0x1
+ 712 004b 0B       		.uleb128 0xb
+ 713 004c 05       		.uleb128 0x5
+ 714 004d 3A       		.uleb128 0x3a
+ 715 004e 0B       		.uleb128 0xb
+ 716 004f 3B       		.uleb128 0x3b
+ 717 0050 0B       		.uleb128 0xb
+ 718 0051 01       		.uleb128 0x1
+ 719 0052 13       		.uleb128 0x13
+ 720 0053 00       		.byte	0
+ 721 0054 00       		.byte	0
+ 722 0055 08       		.uleb128 0x8
+ 723 0056 0D       		.uleb128 0xd
+ 724 0057 00       		.byte	0
+ 725 0058 03       		.uleb128 0x3
+ 726 0059 0E       		.uleb128 0xe
+ 727 005a 3A       		.uleb128 0x3a
+ 728 005b 0B       		.uleb128 0xb
+ 729 005c 3B       		.uleb128 0x3b
+ 730 005d 0B       		.uleb128 0xb
+ 731 005e 49       		.uleb128 0x49
+ 732 005f 13       		.uleb128 0x13
+ 733 0060 38       		.uleb128 0x38
+ 734 0061 0A       		.uleb128 0xa
+ 735 0062 00       		.byte	0
+ 736 0063 00       		.byte	0
+ 737 0064 09       		.uleb128 0x9
+ 738 0065 01       		.uleb128 0x1
+ 739 0066 01       		.byte	0x1
+ 740 0067 49       		.uleb128 0x49
+ 741 0068 13       		.uleb128 0x13
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 14
+
+
+ 742 0069 01       		.uleb128 0x1
+ 743 006a 13       		.uleb128 0x13
+ 744 006b 00       		.byte	0
+ 745 006c 00       		.byte	0
+ 746 006d 0A       		.uleb128 0xa
+ 747 006e 21       		.uleb128 0x21
+ 748 006f 00       		.byte	0
+ 749 0070 49       		.uleb128 0x49
+ 750 0071 13       		.uleb128 0x13
+ 751 0072 2F       		.uleb128 0x2f
+ 752 0073 0B       		.uleb128 0xb
+ 753 0074 00       		.byte	0
+ 754 0075 00       		.byte	0
+ 755 0076 0B       		.uleb128 0xb
+ 756 0077 2E       		.uleb128 0x2e
+ 757 0078 00       		.byte	0
+ 758 0079 3F       		.uleb128 0x3f
+ 759 007a 0C       		.uleb128 0xc
+ 760 007b 03       		.uleb128 0x3
+ 761 007c 0E       		.uleb128 0xe
+ 762 007d 3A       		.uleb128 0x3a
+ 763 007e 0B       		.uleb128 0xb
+ 764 007f 3B       		.uleb128 0x3b
+ 765 0080 0B       		.uleb128 0xb
+ 766 0081 27       		.uleb128 0x27
+ 767 0082 0C       		.uleb128 0xc
+ 768 0083 11       		.uleb128 0x11
+ 769 0084 01       		.uleb128 0x1
+ 770 0085 12       		.uleb128 0x12
+ 771 0086 01       		.uleb128 0x1
+ 772 0087 40       		.uleb128 0x40
+ 773 0088 0A       		.uleb128 0xa
+ 774 0089 9742     		.uleb128 0x2117
+ 775 008b 0C       		.uleb128 0xc
+ 776 008c 00       		.byte	0
+ 777 008d 00       		.byte	0
+ 778 008e 0C       		.uleb128 0xc
+ 779 008f 34       		.uleb128 0x34
+ 780 0090 00       		.byte	0
+ 781 0091 03       		.uleb128 0x3
+ 782 0092 0E       		.uleb128 0xe
+ 783 0093 3A       		.uleb128 0x3a
+ 784 0094 0B       		.uleb128 0xb
+ 785 0095 3B       		.uleb128 0x3b
+ 786 0096 0B       		.uleb128 0xb
+ 787 0097 49       		.uleb128 0x49
+ 788 0098 13       		.uleb128 0x13
+ 789 0099 3F       		.uleb128 0x3f
+ 790 009a 0C       		.uleb128 0xc
+ 791 009b 3C       		.uleb128 0x3c
+ 792 009c 0C       		.uleb128 0xc
+ 793 009d 00       		.byte	0
+ 794 009e 00       		.byte	0
+ 795 009f 0D       		.uleb128 0xd
+ 796 00a0 34       		.uleb128 0x34
+ 797 00a1 00       		.byte	0
+ 798 00a2 03       		.uleb128 0x3
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 15
+
+
+ 799 00a3 0E       		.uleb128 0xe
+ 800 00a4 3A       		.uleb128 0x3a
+ 801 00a5 0B       		.uleb128 0xb
+ 802 00a6 3B       		.uleb128 0x3b
+ 803 00a7 0B       		.uleb128 0xb
+ 804 00a8 49       		.uleb128 0x49
+ 805 00a9 13       		.uleb128 0x13
+ 806 00aa 3F       		.uleb128 0x3f
+ 807 00ab 0C       		.uleb128 0xc
+ 808 00ac 02       		.uleb128 0x2
+ 809 00ad 0A       		.uleb128 0xa
+ 810 00ae 00       		.byte	0
+ 811 00af 00       		.byte	0
+ 812 00b0 00       		.byte	0
+ 813              		.section	.debug_aranges,"",%progbits
+ 814 0000 1C000000 		.4byte	0x1c
+ 815 0004 0200     		.2byte	0x2
+ 816 0006 00000000 		.4byte	.Ldebug_info0
+ 817 000a 04       		.byte	0x4
+ 818 000b 00       		.byte	0
+ 819 000c 0000     		.2byte	0
+ 820 000e 0000     		.2byte	0
+ 821 0010 00000000 		.4byte	.LFB7
+ 822 0014 02000000 		.4byte	.LFE7-.LFB7
+ 823 0018 00000000 		.4byte	0
+ 824 001c 00000000 		.4byte	0
+ 825              		.section	.debug_ranges,"",%progbits
+ 826              	.Ldebug_ranges0:
+ 827 0000 00000000 		.4byte	.LFB7
+ 828 0004 02000000 		.4byte	.LFE7
+ 829 0008 00000000 		.4byte	0
+ 830 000c 00000000 		.4byte	0
+ 831              		.section	.debug_line,"",%progbits
+ 832              	.Ldebug_line0:
+ 833 0000 E2000000 		.section	.debug_str,"MS",%progbits,1
+ 833      0200CC00 
+ 833      00000201 
+ 833      FB0E0D00 
+ 833      01010101 
+ 834              	.LASF23:
+ 835 0000 76656374 		.ascii	"vector24\000"
+ 835      6F723234 
+ 835      00
+ 836              	.LASF13:
+ 837 0009 6972715F 		.ascii	"irq_vector_t\000"
+ 837      76656374 
+ 837      6F725F74 
+ 837      00
+ 838              	.LASF27:
+ 839 0016 76656374 		.ascii	"vector34\000"
+ 839      6F723334 
+ 839      00
+ 840              	.LASF33:
+ 841 001f 5F766563 		.ascii	"_vectors\000"
+ 841      746F7273 
+ 841      00
+ 842              	.LASF14:
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 16
+
+
+ 843 0028 696E6974 		.ascii	"init_stack\000"
+ 843      5F737461 
+ 843      636B00
+ 844              	.LASF25:
+ 845 0033 73766361 		.ascii	"svcall_vector\000"
+ 845      6C6C5F76 
+ 845      6563746F 
+ 845      7200
+ 846              	.LASF2:
+ 847 0041 756E7369 		.ascii	"unsigned char\000"
+ 847      676E6564 
+ 847      20636861 
+ 847      7200
+ 848              	.LASF6:
+ 849 004f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 849      20756E73 
+ 849      69676E65 
+ 849      6420696E 
+ 849      7400
+ 850              	.LASF4:
+ 851 0061 73686F72 		.ascii	"short unsigned int\000"
+ 851      7420756E 
+ 851      7369676E 
+ 851      65642069 
+ 851      6E7400
+ 852              	.LASF34:
+ 853 0074 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 853      4320342E 
+ 853      372E3420 
+ 853      32303134 
+ 853      30343031 
+ 854 00a7 616E6368 		.ascii	"anch revision 209195]\000"
+ 854      20726576 
+ 854      6973696F 
+ 854      6E203230 
+ 854      39313935 
+ 855              	.LASF21:
+ 856 00bd 76656374 		.ascii	"vector1c\000"
+ 856      6F723163 
+ 856      00
+ 857              	.LASF29:
+ 858 00c6 73797374 		.ascii	"systick_vector\000"
+ 858      69636B5F 
+ 858      76656374 
+ 858      6F7200
+ 859              	.LASF36:
+ 860 00d5 433A5C43 		.ascii	"C:\\ChibiStudio\\chibios\\demos\\ARMCM4-STM32F401RE"
+ 860      68696269 
+ 860      53747564 
+ 860      696F5C63 
+ 860      68696269 
+ 861 0104 2D4E5543 		.ascii	"-NUCLEO-CC3K\000"
+ 861      4C454F2D 
+ 861      4343334B 
+ 861      00
+ 862              	.LASF35:
+ 863 0111 2E2E2F2E 		.ascii	"../../os/ports/GCC/ARMCMx/STM32F4xx/vectors.c\000"
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 17
+
+
+ 863      2E2F6F73 
+ 863      2F706F72 
+ 863      74732F47 
+ 863      43432F41 
+ 864              	.LASF0:
+ 865 013f 756E7369 		.ascii	"unsigned int\000"
+ 865      676E6564 
+ 865      20696E74 
+ 865      00
+ 866              	.LASF16:
+ 867 014c 6E6D695F 		.ascii	"nmi_vector\000"
+ 867      76656374 
+ 867      6F7200
+ 868              	.LASF8:
+ 869 0157 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 869      206C6F6E 
+ 869      6720756E 
+ 869      7369676E 
+ 869      65642069 
+ 870              	.LASF19:
+ 871 016e 62757366 		.ascii	"busfault_vector\000"
+ 871      61756C74 
+ 871      5F766563 
+ 871      746F7200 
+ 872              	.LASF24:
+ 873 017e 76656374 		.ascii	"vector28\000"
+ 873      6F723238 
+ 873      00
+ 874              	.LASF20:
+ 875 0187 75736167 		.ascii	"usagefault_vector\000"
+ 875      65666175 
+ 875      6C745F76 
+ 875      6563746F 
+ 875      7200
+ 876              	.LASF31:
+ 877 0199 76656374 		.ascii	"vectors_t\000"
+ 877      6F72735F 
+ 877      7400
+ 878              	.LASF10:
+ 879 01a3 73697A65 		.ascii	"sizetype\000"
+ 879      74797065 
+ 879      00
+ 880              	.LASF28:
+ 881 01ac 70656E64 		.ascii	"pendsv_vector\000"
+ 881      73765F76 
+ 881      6563746F 
+ 881      7200
+ 882              	.LASF17:
+ 883 01ba 68617264 		.ascii	"hardfault_vector\000"
+ 883      6661756C 
+ 883      745F7665 
+ 883      63746F72 
+ 883      00
+ 884              	.LASF7:
+ 885 01cb 6C6F6E67 		.ascii	"long long int\000"
+ 885      206C6F6E 
+ 885      6720696E 
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 18
+
+
+ 885      7400
+ 886              	.LASF11:
+ 887 01d9 63686172 		.ascii	"char\000"
+ 887      00
+ 888              	.LASF18:
+ 889 01de 6D656D6D 		.ascii	"memmanage_vector\000"
+ 889      616E6167 
+ 889      655F7665 
+ 889      63746F72 
+ 889      00
+ 890              	.LASF37:
+ 891 01ef 5F756E68 		.ascii	"_unhandled_exception\000"
+ 891      616E646C 
+ 891      65645F65 
+ 891      78636570 
+ 891      74696F6E 
+ 892              	.LASF30:
+ 893 0204 76656374 		.ascii	"vectors\000"
+ 893      6F727300 
+ 894              	.LASF3:
+ 895 020c 73686F72 		.ascii	"short int\000"
+ 895      7420696E 
+ 895      7400
+ 896              	.LASF15:
+ 897 0216 72657365 		.ascii	"reset_vector\000"
+ 897      745F7665 
+ 897      63746F72 
+ 897      00
+ 898              	.LASF12:
+ 899 0223 75696E74 		.ascii	"uint32_t\000"
+ 899      33325F74 
+ 899      00
+ 900              	.LASF5:
+ 901 022c 6C6F6E67 		.ascii	"long int\000"
+ 901      20696E74 
+ 901      00
+ 902              	.LASF1:
+ 903 0235 7369676E 		.ascii	"signed char\000"
+ 903      65642063 
+ 903      68617200 
+ 904              	.LASF26:
+ 905 0241 64656275 		.ascii	"debugmonitor_vector\000"
+ 905      676D6F6E 
+ 905      69746F72 
+ 905      5F766563 
+ 905      746F7200 
+ 906              	.LASF22:
+ 907 0255 76656374 		.ascii	"vector20\000"
+ 907      6F723230 
+ 907      00
+ 908              	.LASF9:
+ 909 025e 5F426F6F 		.ascii	"_Bool\000"
+ 909      6C00
+ 910              	.LASF32:
+ 911 0264 5F5F6D61 		.ascii	"__main_stack_end__\000"
+ 911      696E5F73 
+ 911      7461636B 
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 19
+
+
+ 911      5F656E64 
+ 911      5F5F00
+ 912              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 vectors.c
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:21     .text._unhandled_exception:00000000 $t
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 _unhandled_exception
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 HardFaultVector
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 MemManageVector
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 BusFaultVector
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 UsageFaultVector
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector1C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector20
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector24
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector28
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 SVCallVector
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 DebugMonitorVector
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector34
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 PendSVVector
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 SysTickVector
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector40
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector44
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector48
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector4C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector50
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector54
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector58
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector5C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector60
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector64
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector68
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector6C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector70
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector74
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector78
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector7C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector80
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector84
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector88
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector8C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector90
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector94
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector98
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector9C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorA0
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorA4
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorA8
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorAC
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorB0
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorB4
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorB8
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorBC
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorC0
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorC4
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorC8
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorCC
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorD0
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorD4
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorD8
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorDC
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 21
+
+
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorE0
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorE4
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorE8
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorEC
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorF0
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorF4
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorF8
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 VectorFC
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector100
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector104
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector108
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector10C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector110
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector114
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector118
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector11C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector120
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector124
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector128
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector12C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector130
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector134
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector138
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector13C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector140
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector144
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector148
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector14C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector150
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector154
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector158
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector15C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector160
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector164
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector168
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector16C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector170
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector174
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector178
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector17C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector180
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector184
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector188
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector18C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector190
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector194
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector198
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector19C
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector1A0
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector1A4
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 Vector1A8
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:27     .text._unhandled_exception:00000000 NMIVector
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:256    vectors:00000000 _vectors
+C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s:253    vectors:00000000 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccS9hTYk.s 			page 22
+
+
+__main_stack_end__
+ResetHandler

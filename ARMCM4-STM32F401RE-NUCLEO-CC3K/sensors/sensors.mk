@@ -1,0 +1,7 @@
+SENSORSSRC = $(SENSOR_LIB)/dht11.cpp \
+			$(SENSOR_LIB)/HTU21D.cpp \
+			$(SENSOR_LIB)/BMP180.cpp \
+			$(SENSOR_LIB)/DS1307.cpp
+
+
+SENSORSINC = $(SENSOR_LIB)/

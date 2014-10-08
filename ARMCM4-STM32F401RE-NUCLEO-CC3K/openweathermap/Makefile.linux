@@ -1,0 +1,24 @@
+# You can put your build options here
+-include config.mk
+BINARIES=httpclienttest
+LIBRARIES=libhttpclient.a
+
+all: $(LIBRARIES) $(BINARIES)
+
+libhttpclient.a: httpclient.o httptcpconnection.o httpjsondata.o httptypes.o
+	$(AR) rc $@ $^
+
+
+httpclienttest: main.o
+	$(CXX) $< -o $@ -L. -lhttpclient
+
+%.o : %.cpp
+	$(CXX) -c $< -o $@
+    
+
+clean:
+	rm -rf *.o 
+	rm -rf $(LIBRARIES) $(BINARIES)
+
+.PHONY: all clean test
+

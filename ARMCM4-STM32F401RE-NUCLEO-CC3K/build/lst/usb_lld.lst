@@ -1,0 +1,311 @@
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cc1BgsBa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 3
+   4              		.eabi_attribute 28, 1
+   5              		.fpu fpv4-sp-d16
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 2
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.thumb
+  16              		.file	"usb_lld.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              	.Letext0:
+  21              		.file 1 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+  22              		.file 2 "../../os/ports/common/ARMCMx/CMSIS/include/core_cm4.h"
+  23              		.section	.debug_info,"",%progbits
+  24              	.Ldebug_info0:
+  25 0000 93000000 		.4byte	0x93
+  26 0004 0200     		.2byte	0x2
+  27 0006 00000000 		.4byte	.Ldebug_abbrev0
+  28 000a 04       		.byte	0x4
+  29 000b 01       		.uleb128 0x1
+  30 000c 5B000000 		.4byte	.LASF12
+  31 0010 01       		.byte	0x1
+  32 0011 2E000000 		.4byte	.LASF13
+  33 0015 E9000000 		.4byte	.LASF14
+  34 0019 00000000 		.4byte	.Ldebug_line0
+  35 001d 02       		.uleb128 0x2
+  36 001e 01       		.byte	0x1
+  37 001f 06       		.byte	0x6
+  38 0020 38010000 		.4byte	.LASF0
+  39 0024 02       		.uleb128 0x2
+  40 0025 01       		.byte	0x1
+  41 0026 08       		.byte	0x8
+  42 0027 CD000000 		.4byte	.LASF1
+  43 002b 02       		.uleb128 0x2
+  44 002c 02       		.byte	0x2
+  45 002d 05       		.byte	0x5
+  46 002e 44010000 		.4byte	.LASF2
+  47 0032 02       		.uleb128 0x2
+  48 0033 02       		.byte	0x2
+  49 0034 07       		.byte	0x7
+  50 0035 0E000000 		.4byte	.LASF3
+  51 0039 03       		.uleb128 0x3
+  52 003a 04       		.byte	0x4
+  53 003b 05       		.byte	0x5
+  54 003c 696E7400 		.ascii	"int\000"
+  55 0040 02       		.uleb128 0x2
+  56 0041 04       		.byte	0x4
+  57 0042 07       		.byte	0x7
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cc1BgsBa.s 			page 2
+
+
+  58 0043 21000000 		.4byte	.LASF4
+  59 0047 02       		.uleb128 0x2
+  60 0048 08       		.byte	0x8
+  61 0049 05       		.byte	0x5
+  62 004a 00000000 		.4byte	.LASF5
+  63 004e 02       		.uleb128 0x2
+  64 004f 08       		.byte	0x8
+  65 0050 07       		.byte	0x7
+  66 0051 B6000000 		.4byte	.LASF6
+  67 0055 02       		.uleb128 0x2
+  68 0056 04       		.byte	0x4
+  69 0057 05       		.byte	0x5
+  70 0058 E0000000 		.4byte	.LASF7
+  71 005c 02       		.uleb128 0x2
+  72 005d 04       		.byte	0x4
+  73 005e 07       		.byte	0x7
+  74 005f 56010000 		.4byte	.LASF8
+  75 0063 02       		.uleb128 0x2
+  76 0064 04       		.byte	0x4
+  77 0065 07       		.byte	0x7
+  78 0066 A4000000 		.4byte	.LASF9
+  79 006a 02       		.uleb128 0x2
+  80 006b 01       		.byte	0x1
+  81 006c 08       		.byte	0x8
+  82 006d DB000000 		.4byte	.LASF10
+  83 0071 04       		.uleb128 0x4
+  84 0072 4E010000 		.4byte	.LASF15
+  85 0076 01       		.byte	0x1
+  86 0077 4F       		.byte	0x4f
+  87 0078 55000000 		.4byte	0x55
+  88 007c 02       		.uleb128 0x2
+  89 007d 01       		.byte	0x1
+  90 007e 02       		.byte	0x2
+  91 007f 25010000 		.4byte	.LASF11
+  92 0083 05       		.uleb128 0x5
+  93 0084 71000000 		.4byte	0x71
+  94 0088 06       		.uleb128 0x6
+  95 0089 2B010000 		.4byte	.LASF16
+  96 008d 02       		.byte	0x2
+  97 008e 9806     		.2byte	0x698
+  98 0090 83000000 		.4byte	0x83
+  99 0094 01       		.byte	0x1
+ 100 0095 01       		.byte	0x1
+ 101 0096 00       		.byte	0
+ 102              		.section	.debug_abbrev,"",%progbits
+ 103              	.Ldebug_abbrev0:
+ 104 0000 01       		.uleb128 0x1
+ 105 0001 11       		.uleb128 0x11
+ 106 0002 01       		.byte	0x1
+ 107 0003 25       		.uleb128 0x25
+ 108 0004 0E       		.uleb128 0xe
+ 109 0005 13       		.uleb128 0x13
+ 110 0006 0B       		.uleb128 0xb
+ 111 0007 03       		.uleb128 0x3
+ 112 0008 0E       		.uleb128 0xe
+ 113 0009 1B       		.uleb128 0x1b
+ 114 000a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cc1BgsBa.s 			page 3
+
+
+ 115 000b 10       		.uleb128 0x10
+ 116 000c 06       		.uleb128 0x6
+ 117 000d 00       		.byte	0
+ 118 000e 00       		.byte	0
+ 119 000f 02       		.uleb128 0x2
+ 120 0010 24       		.uleb128 0x24
+ 121 0011 00       		.byte	0
+ 122 0012 0B       		.uleb128 0xb
+ 123 0013 0B       		.uleb128 0xb
+ 124 0014 3E       		.uleb128 0x3e
+ 125 0015 0B       		.uleb128 0xb
+ 126 0016 03       		.uleb128 0x3
+ 127 0017 0E       		.uleb128 0xe
+ 128 0018 00       		.byte	0
+ 129 0019 00       		.byte	0
+ 130 001a 03       		.uleb128 0x3
+ 131 001b 24       		.uleb128 0x24
+ 132 001c 00       		.byte	0
+ 133 001d 0B       		.uleb128 0xb
+ 134 001e 0B       		.uleb128 0xb
+ 135 001f 3E       		.uleb128 0x3e
+ 136 0020 0B       		.uleb128 0xb
+ 137 0021 03       		.uleb128 0x3
+ 138 0022 08       		.uleb128 0x8
+ 139 0023 00       		.byte	0
+ 140 0024 00       		.byte	0
+ 141 0025 04       		.uleb128 0x4
+ 142 0026 16       		.uleb128 0x16
+ 143 0027 00       		.byte	0
+ 144 0028 03       		.uleb128 0x3
+ 145 0029 0E       		.uleb128 0xe
+ 146 002a 3A       		.uleb128 0x3a
+ 147 002b 0B       		.uleb128 0xb
+ 148 002c 3B       		.uleb128 0x3b
+ 149 002d 0B       		.uleb128 0xb
+ 150 002e 49       		.uleb128 0x49
+ 151 002f 13       		.uleb128 0x13
+ 152 0030 00       		.byte	0
+ 153 0031 00       		.byte	0
+ 154 0032 05       		.uleb128 0x5
+ 155 0033 35       		.uleb128 0x35
+ 156 0034 00       		.byte	0
+ 157 0035 49       		.uleb128 0x49
+ 158 0036 13       		.uleb128 0x13
+ 159 0037 00       		.byte	0
+ 160 0038 00       		.byte	0
+ 161 0039 06       		.uleb128 0x6
+ 162 003a 34       		.uleb128 0x34
+ 163 003b 00       		.byte	0
+ 164 003c 03       		.uleb128 0x3
+ 165 003d 0E       		.uleb128 0xe
+ 166 003e 3A       		.uleb128 0x3a
+ 167 003f 0B       		.uleb128 0xb
+ 168 0040 3B       		.uleb128 0x3b
+ 169 0041 05       		.uleb128 0x5
+ 170 0042 49       		.uleb128 0x49
+ 171 0043 13       		.uleb128 0x13
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cc1BgsBa.s 			page 4
+
+
+ 172 0044 3F       		.uleb128 0x3f
+ 173 0045 0C       		.uleb128 0xc
+ 174 0046 3C       		.uleb128 0x3c
+ 175 0047 0C       		.uleb128 0xc
+ 176 0048 00       		.byte	0
+ 177 0049 00       		.byte	0
+ 178 004a 00       		.byte	0
+ 179              		.section	.debug_aranges,"",%progbits
+ 180 0000 14000000 		.4byte	0x14
+ 181 0004 0200     		.2byte	0x2
+ 182 0006 00000000 		.4byte	.Ldebug_info0
+ 183 000a 04       		.byte	0x4
+ 184 000b 00       		.byte	0
+ 185 000c 0000     		.2byte	0
+ 186 000e 0000     		.2byte	0
+ 187 0010 00000000 		.4byte	0
+ 188 0014 00000000 		.4byte	0
+ 189              		.section	.debug_line,"",%progbits
+ 190              	.Ldebug_line0:
+ 191 0000 DA000000 		.section	.debug_str,"MS",%progbits,1
+ 191      0200D400 
+ 191      00000201 
+ 191      FB0E0D00 
+ 191      01010101 
+ 192              	.LASF5:
+ 193 0000 6C6F6E67 		.ascii	"long long int\000"
+ 193      206C6F6E 
+ 193      6720696E 
+ 193      7400
+ 194              	.LASF3:
+ 195 000e 73686F72 		.ascii	"short unsigned int\000"
+ 195      7420756E 
+ 195      7369676E 
+ 195      65642069 
+ 195      6E7400
+ 196              	.LASF4:
+ 197 0021 756E7369 		.ascii	"unsigned int\000"
+ 197      676E6564 
+ 197      20696E74 
+ 197      00
+ 198              	.LASF13:
+ 199 002e 2E2E2F2E 		.ascii	"../../os/hal/platforms/STM32/OTGv1/usb_lld.c\000"
+ 199      2E2F6F73 
+ 199      2F68616C 
+ 199      2F706C61 
+ 199      74666F72 
+ 200              	.LASF12:
+ 201 005b 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 201      4320342E 
+ 201      372E3420 
+ 201      32303134 
+ 201      30343031 
+ 202 008e 616E6368 		.ascii	"anch revision 209195]\000"
+ 202      20726576 
+ 202      6973696F 
+ 202      6E203230 
+ 202      39313935 
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cc1BgsBa.s 			page 5
+
+
+ 203              	.LASF9:
+ 204 00a4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 204      20756E73 
+ 204      69676E65 
+ 204      6420696E 
+ 204      7400
+ 205              	.LASF6:
+ 206 00b6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 206      206C6F6E 
+ 206      6720756E 
+ 206      7369676E 
+ 206      65642069 
+ 207              	.LASF1:
+ 208 00cd 756E7369 		.ascii	"unsigned char\000"
+ 208      676E6564 
+ 208      20636861 
+ 208      7200
+ 209              	.LASF10:
+ 210 00db 63686172 		.ascii	"char\000"
+ 210      00
+ 211              	.LASF7:
+ 212 00e0 6C6F6E67 		.ascii	"long int\000"
+ 212      20696E74 
+ 212      00
+ 213              	.LASF14:
+ 214 00e9 433A5C43 		.ascii	"C:\\ChibiStudio\\chibios\\demos\\ARMCM4-STM32F401RE"
+ 214      68696269 
+ 214      53747564 
+ 214      696F5C63 
+ 214      68696269 
+ 215 0118 2D4E5543 		.ascii	"-NUCLEO-CC3K\000"
+ 215      4C454F2D 
+ 215      4343334B 
+ 215      00
+ 216              	.LASF11:
+ 217 0125 5F426F6F 		.ascii	"_Bool\000"
+ 217      6C00
+ 218              	.LASF16:
+ 219 012b 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 219      52784275 
+ 219      66666572 
+ 219      00
+ 220              	.LASF0:
+ 221 0138 7369676E 		.ascii	"signed char\000"
+ 221      65642063 
+ 221      68617200 
+ 222              	.LASF2:
+ 223 0144 73686F72 		.ascii	"short int\000"
+ 223      7420696E 
+ 223      7400
+ 224              	.LASF15:
+ 225 014e 696E7433 		.ascii	"int32_t\000"
+ 225      325F7400 
+ 226              	.LASF8:
+ 227 0156 73697A65 		.ascii	"sizetype\000"
+ 227      74797065 
+ 227      00
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cc1BgsBa.s 			page 6
+
+
+ 228              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cc1BgsBa.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usb_lld.c
+
+NO UNDEFINED SYMBOLS

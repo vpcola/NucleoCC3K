@@ -1,0 +1,1533 @@
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 3
+   4              		.eabi_attribute 28, 1
+   5              		.fpu fpv4-sp-d16
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 2
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.thumb
+  16              		.file	"ccsbcs.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.section	.text.ff_convert,"ax",%progbits
+  21              		.align	2
+  22              		.p2align 4,,15
+  23              		.global	ff_convert
+  24              		.thumb
+  25              		.thumb_func
+  26              		.type	ff_convert, %function
+  27              	ff_convert:
+  28              	.LFB7:
+  29              		.file 1 "../../ext/fatfs/src/option/ccsbcs.c"
+  30              		.loc 1 505 0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              	.LVL0:
+  36              		.loc 1 509 0
+  37 0000 7F28     		cmp	r0, #127
+  38              		.loc 1 505 0
+  39 0002 30B4     		push	{r4, r5}
+  40              	.LCFI0:
+  41              		.cfi_def_cfa_offset 8
+  42              		.cfi_offset 4, -8
+  43              		.cfi_offset 5, -4
+  44              		.loc 1 509 0
+  45 0004 14D9     		bls	.L2
+  46              		.loc 1 513 0
+  47 0006 A9B9     		cbnz	r1, .L15
+  48 0008 0F4B     		ldr	r3, .L16
+  49 000a 07E0     		b	.L6
+  50              	.LVL1:
+  51              	.L4:
+  52              		.loc 1 518 0
+  53 000c 5288     		ldrh	r2, [r2, #2]
+  54              		.loc 1 517 0
+  55 000e A9B2     		uxth	r1, r5
+  56              	.LVL2:
+  57 0010 4C1C     		adds	r4, r1, #1
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 2
+
+
+  58              		.loc 1 518 0
+  59 0012 8242     		cmp	r2, r0
+  60 0014 09D0     		beq	.L12
+  61              		.loc 1 517 0
+  62 0016 A1B2     		uxth	r1, r4
+  63              	.LVL3:
+  64 0018 8029     		cmp	r1, #128
+  65 001a 12D0     		beq	.L8
+  66              	.LVL4:
+  67              	.L6:
+  68              		.loc 1 518 0
+  69 001c 5C88     		ldrh	r4, [r3, #2]
+  70 001e 9A1C     		adds	r2, r3, #2
+  71              		.loc 1 517 0
+  72 0020 4D1C     		adds	r5, r1, #1
+  73              		.loc 1 518 0
+  74 0022 8442     		cmp	r4, r0
+  75 0024 02F10203 		add	r3, r2, #2
+  76 0028 F0D1     		bne	.L4
+  77              	.L12:
+  78 002a 01F18000 		add	r0, r1, #128
+  79              	.LVL5:
+  80 002e 80B2     		uxth	r0, r0
+  81              	.L2:
+  82              	.LVL6:
+  83              		.loc 1 525 0
+  84 0030 30BC     		pop	{r4, r5}
+  85 0032 7047     		bx	lr
+  86              	.LVL7:
+  87              	.L15:
+  88              		.loc 1 514 0
+  89 0034 FF28     		cmp	r0, #255
+  90 0036 04D8     		bhi	.L8
+  91              		.loc 1 514 0 is_stmt 0 discriminator 1
+  92 0038 8038     		subs	r0, r0, #128
+  93              	.LVL8:
+  94 003a 0449     		ldr	r1, .L16+4
+  95              	.LVL9:
+  96 003c 31F81000 		ldrh	r0, [r1, r0, lsl #1]
+  97 0040 F6E7     		b	.L2
+  98              	.LVL10:
+  99              	.L8:
+ 100              		.loc 1 514 0
+ 101 0042 0020     		movs	r0, #0
+ 102              	.LVL11:
+ 103 0044 F4E7     		b	.L2
+ 104              	.L17:
+ 105 0046 00BF     		.align	2
+ 106              	.L16:
+ 107 0048 FEFFFFFF 		.word	.LANCHOR0-2
+ 108 004c 00000000 		.word	.LANCHOR0
+ 109              		.cfi_endproc
+ 110              	.LFE7:
+ 111              		.size	ff_convert, .-ff_convert
+ 112              		.section	.text.ff_wtoupper,"ax",%progbits
+ 113              		.align	2
+ 114              		.p2align 4,,15
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 3
+
+
+ 115              		.global	ff_wtoupper
+ 116              		.thumb
+ 117              		.thumb_func
+ 118              		.type	ff_wtoupper, %function
+ 119              	ff_wtoupper:
+ 120              	.LFB8:
+ 121              		.loc 1 531 0 is_stmt 1
+ 122              		.cfi_startproc
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125              		@ link register save eliminated.
+ 126              	.LVL12:
+ 127              		.loc 1 537 0
+ 128 0000 6128     		cmp	r0, #97
+ 129 0002 0AD0     		beq	.L22
+ 130 0004 0749     		ldr	r1, .L29
+ 131 0006 0022     		movs	r2, #0
+ 132 0008 01E0     		b	.L21
+ 133              	.LVL13:
+ 134              	.L28:
+ 135              		.loc 1 537 0 is_stmt 0 discriminator 2
+ 136 000a 8342     		cmp	r3, r0
+ 137 000c 06D0     		beq	.L19
+ 138              	.LVL14:
+ 139              	.L21:
+ 140              		.loc 1 537 0 discriminator 1
+ 141 000e 31F8023F 		ldrh	r3, [r1, #2]!
+ 142 0012 0132     		adds	r2, r2, #1
+ 143              	.LVL15:
+ 144 0014 002B     		cmp	r3, #0
+ 145 0016 F8D1     		bne	.L28
+ 146              		.loc 1 540 0 is_stmt 1
+ 147 0018 7047     		bx	lr
+ 148              	.LVL16:
+ 149              	.L22:
+ 150              		.loc 1 537 0
+ 151 001a 0022     		movs	r2, #0
+ 152              	.LVL17:
+ 153              	.L19:
+ 154              		.loc 1 539 0
+ 155 001c 0248     		ldr	r0, .L29+4
+ 156              	.LVL18:
+ 157 001e 30F81200 		ldrh	r0, [r0, r2, lsl #1]
+ 158              		.loc 1 540 0
+ 159 0022 7047     		bx	lr
+ 160              	.L30:
+ 161              		.align	2
+ 162              	.L29:
+ 163 0024 00000000 		.word	.LANCHOR1
+ 164 0028 00000000 		.word	.LANCHOR2
+ 165              		.cfi_endproc
+ 166              	.LFE8:
+ 167              		.size	ff_wtoupper, .-ff_wtoupper
+ 168 002c AFF30080 		.section	.rodata.tbl_upper.5011,"a",%progbits
+ 169              		.align	2
+ 170              		.set	.LANCHOR2,. + 0
+ 171              		.type	tbl_upper.5011, %object
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 4
+
+
+ 172              		.size	tbl_upper.5011, 480
+ 173              	tbl_upper.5011:
+ 174 0000 4100     		.short	65
+ 175 0002 4200     		.short	66
+ 176 0004 4300     		.short	67
+ 177 0006 4400     		.short	68
+ 178 0008 4500     		.short	69
+ 179 000a 4600     		.short	70
+ 180 000c 4700     		.short	71
+ 181 000e 4800     		.short	72
+ 182 0010 4900     		.short	73
+ 183 0012 4A00     		.short	74
+ 184 0014 4B00     		.short	75
+ 185 0016 4C00     		.short	76
+ 186 0018 4D00     		.short	77
+ 187 001a 4E00     		.short	78
+ 188 001c 4F00     		.short	79
+ 189 001e 5000     		.short	80
+ 190 0020 5100     		.short	81
+ 191 0022 5200     		.short	82
+ 192 0024 5300     		.short	83
+ 193 0026 5400     		.short	84
+ 194 0028 5500     		.short	85
+ 195 002a 5600     		.short	86
+ 196 002c 5700     		.short	87
+ 197 002e 5800     		.short	88
+ 198 0030 5900     		.short	89
+ 199 0032 5A00     		.short	90
+ 200 0034 2100     		.short	33
+ 201 0036 E0FF     		.short	-32
+ 202 0038 E1FF     		.short	-31
+ 203 003a E5FF     		.short	-27
+ 204 003c E2FF     		.short	-30
+ 205 003e E3FF     		.short	-29
+ 206 0040 C000     		.short	192
+ 207 0042 C100     		.short	193
+ 208 0044 C200     		.short	194
+ 209 0046 C300     		.short	195
+ 210 0048 C400     		.short	196
+ 211 004a C500     		.short	197
+ 212 004c C600     		.short	198
+ 213 004e C700     		.short	199
+ 214 0050 C800     		.short	200
+ 215 0052 C900     		.short	201
+ 216 0054 CA00     		.short	202
+ 217 0056 CB00     		.short	203
+ 218 0058 CC00     		.short	204
+ 219 005a CD00     		.short	205
+ 220 005c CE00     		.short	206
+ 221 005e CF00     		.short	207
+ 222 0060 D000     		.short	208
+ 223 0062 D100     		.short	209
+ 224 0064 D200     		.short	210
+ 225 0066 D300     		.short	211
+ 226 0068 D400     		.short	212
+ 227 006a D500     		.short	213
+ 228 006c D600     		.short	214
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 5
+
+
+ 229 006e D800     		.short	216
+ 230 0070 D900     		.short	217
+ 231 0072 DA00     		.short	218
+ 232 0074 DB00     		.short	219
+ 233 0076 DC00     		.short	220
+ 234 0078 DD00     		.short	221
+ 235 007a DE00     		.short	222
+ 236 007c 7801     		.short	376
+ 237 007e 0001     		.short	256
+ 238 0080 0201     		.short	258
+ 239 0082 0401     		.short	260
+ 240 0084 0601     		.short	262
+ 241 0086 0801     		.short	264
+ 242 0088 0A01     		.short	266
+ 243 008a 0C01     		.short	268
+ 244 008c 0E01     		.short	270
+ 245 008e 1001     		.short	272
+ 246 0090 1201     		.short	274
+ 247 0092 1401     		.short	276
+ 248 0094 1601     		.short	278
+ 249 0096 1801     		.short	280
+ 250 0098 1A01     		.short	282
+ 251 009a 1C01     		.short	284
+ 252 009c 1E01     		.short	286
+ 253 009e 2001     		.short	288
+ 254 00a0 2201     		.short	290
+ 255 00a2 2401     		.short	292
+ 256 00a4 2601     		.short	294
+ 257 00a6 2801     		.short	296
+ 258 00a8 2A01     		.short	298
+ 259 00aa 2C01     		.short	300
+ 260 00ac 2E01     		.short	302
+ 261 00ae 3001     		.short	304
+ 262 00b0 3201     		.short	306
+ 263 00b2 3401     		.short	308
+ 264 00b4 3601     		.short	310
+ 265 00b6 3901     		.short	313
+ 266 00b8 3B01     		.short	315
+ 267 00ba 3D01     		.short	317
+ 268 00bc 3F01     		.short	319
+ 269 00be 4101     		.short	321
+ 270 00c0 4301     		.short	323
+ 271 00c2 4501     		.short	325
+ 272 00c4 4701     		.short	327
+ 273 00c6 4A01     		.short	330
+ 274 00c8 4C01     		.short	332
+ 275 00ca 4E01     		.short	334
+ 276 00cc 5001     		.short	336
+ 277 00ce 5201     		.short	338
+ 278 00d0 5401     		.short	340
+ 279 00d2 5601     		.short	342
+ 280 00d4 5801     		.short	344
+ 281 00d6 5A01     		.short	346
+ 282 00d8 5C01     		.short	348
+ 283 00da 5E01     		.short	350
+ 284 00dc 6001     		.short	352
+ 285 00de 6201     		.short	354
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 6
+
+
+ 286 00e0 6401     		.short	356
+ 287 00e2 6601     		.short	358
+ 288 00e4 6801     		.short	360
+ 289 00e6 6A01     		.short	362
+ 290 00e8 6C01     		.short	364
+ 291 00ea 6E01     		.short	366
+ 292 00ec 7001     		.short	368
+ 293 00ee 7201     		.short	370
+ 294 00f0 7401     		.short	372
+ 295 00f2 7601     		.short	374
+ 296 00f4 7901     		.short	377
+ 297 00f6 7B01     		.short	379
+ 298 00f8 7D01     		.short	381
+ 299 00fa 9101     		.short	401
+ 300 00fc 9103     		.short	913
+ 301 00fe 9203     		.short	914
+ 302 0100 9303     		.short	915
+ 303 0102 9403     		.short	916
+ 304 0104 9503     		.short	917
+ 305 0106 9603     		.short	918
+ 306 0108 9703     		.short	919
+ 307 010a 9803     		.short	920
+ 308 010c 9903     		.short	921
+ 309 010e 9A03     		.short	922
+ 310 0110 9B03     		.short	923
+ 311 0112 9C03     		.short	924
+ 312 0114 9D03     		.short	925
+ 313 0116 9E03     		.short	926
+ 314 0118 9F03     		.short	927
+ 315 011a A003     		.short	928
+ 316 011c A103     		.short	929
+ 317 011e A303     		.short	931
+ 318 0120 A403     		.short	932
+ 319 0122 A503     		.short	933
+ 320 0124 A603     		.short	934
+ 321 0126 A703     		.short	935
+ 322 0128 A803     		.short	936
+ 323 012a A903     		.short	937
+ 324 012c AA03     		.short	938
+ 325 012e 1004     		.short	1040
+ 326 0130 1104     		.short	1041
+ 327 0132 1204     		.short	1042
+ 328 0134 1304     		.short	1043
+ 329 0136 1404     		.short	1044
+ 330 0138 1504     		.short	1045
+ 331 013a 1604     		.short	1046
+ 332 013c 1704     		.short	1047
+ 333 013e 1804     		.short	1048
+ 334 0140 1904     		.short	1049
+ 335 0142 1A04     		.short	1050
+ 336 0144 1B04     		.short	1051
+ 337 0146 1C04     		.short	1052
+ 338 0148 1D04     		.short	1053
+ 339 014a 1E04     		.short	1054
+ 340 014c 1F04     		.short	1055
+ 341 014e 2004     		.short	1056
+ 342 0150 2104     		.short	1057
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 7
+
+
+ 343 0152 2204     		.short	1058
+ 344 0154 2304     		.short	1059
+ 345 0156 2404     		.short	1060
+ 346 0158 2504     		.short	1061
+ 347 015a 2604     		.short	1062
+ 348 015c 2704     		.short	1063
+ 349 015e 2804     		.short	1064
+ 350 0160 2904     		.short	1065
+ 351 0162 2A04     		.short	1066
+ 352 0164 2B04     		.short	1067
+ 353 0166 2C04     		.short	1068
+ 354 0168 2D04     		.short	1069
+ 355 016a 2E04     		.short	1070
+ 356 016c 2F04     		.short	1071
+ 357 016e 0104     		.short	1025
+ 358 0170 0204     		.short	1026
+ 359 0172 0304     		.short	1027
+ 360 0174 0404     		.short	1028
+ 361 0176 0504     		.short	1029
+ 362 0178 0604     		.short	1030
+ 363 017a 0704     		.short	1031
+ 364 017c 0804     		.short	1032
+ 365 017e 0904     		.short	1033
+ 366 0180 0A04     		.short	1034
+ 367 0182 0B04     		.short	1035
+ 368 0184 0C04     		.short	1036
+ 369 0186 0E04     		.short	1038
+ 370 0188 0F04     		.short	1039
+ 371 018a 6021     		.short	8544
+ 372 018c 6121     		.short	8545
+ 373 018e 6221     		.short	8546
+ 374 0190 6321     		.short	8547
+ 375 0192 6421     		.short	8548
+ 376 0194 6521     		.short	8549
+ 377 0196 6621     		.short	8550
+ 378 0198 6721     		.short	8551
+ 379 019a 6821     		.short	8552
+ 380 019c 6921     		.short	8553
+ 381 019e 6A21     		.short	8554
+ 382 01a0 6B21     		.short	8555
+ 383 01a2 6C21     		.short	8556
+ 384 01a4 6D21     		.short	8557
+ 385 01a6 6E21     		.short	8558
+ 386 01a8 6F21     		.short	8559
+ 387 01aa 21FF     		.short	-223
+ 388 01ac 22FF     		.short	-222
+ 389 01ae 23FF     		.short	-221
+ 390 01b0 24FF     		.short	-220
+ 391 01b2 25FF     		.short	-219
+ 392 01b4 26FF     		.short	-218
+ 393 01b6 27FF     		.short	-217
+ 394 01b8 28FF     		.short	-216
+ 395 01ba 29FF     		.short	-215
+ 396 01bc 2AFF     		.short	-214
+ 397 01be 2BFF     		.short	-213
+ 398 01c0 2CFF     		.short	-212
+ 399 01c2 2DFF     		.short	-211
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 8
+
+
+ 400 01c4 2EFF     		.short	-210
+ 401 01c6 2FFF     		.short	-209
+ 402 01c8 30FF     		.short	-208
+ 403 01ca 31FF     		.short	-207
+ 404 01cc 32FF     		.short	-206
+ 405 01ce 33FF     		.short	-205
+ 406 01d0 34FF     		.short	-204
+ 407 01d2 35FF     		.short	-203
+ 408 01d4 36FF     		.short	-202
+ 409 01d6 37FF     		.short	-201
+ 410 01d8 38FF     		.short	-200
+ 411 01da 39FF     		.short	-199
+ 412 01dc 3AFF     		.short	-198
+ 413 01de 0000     		.short	0
+ 414              		.section	.rodata.Tbl,"a",%progbits
+ 415              		.align	2
+ 416              		.set	.LANCHOR0,. + 0
+ 417              		.type	Tbl, %object
+ 418              		.size	Tbl, 256
+ 419              	Tbl:
+ 420 0000 AC20     		.short	8364
+ 421 0002 0000     		.short	0
+ 422 0004 1A20     		.short	8218
+ 423 0006 9201     		.short	402
+ 424 0008 1E20     		.short	8222
+ 425 000a 2620     		.short	8230
+ 426 000c 2020     		.short	8224
+ 427 000e 2120     		.short	8225
+ 428 0010 C602     		.short	710
+ 429 0012 3020     		.short	8240
+ 430 0014 6001     		.short	352
+ 431 0016 3920     		.short	8249
+ 432 0018 5201     		.short	338
+ 433 001a 0000     		.short	0
+ 434 001c 7D01     		.short	381
+ 435 001e 0000     		.short	0
+ 436 0020 0000     		.short	0
+ 437 0022 1820     		.short	8216
+ 438 0024 1920     		.short	8217
+ 439 0026 1C20     		.short	8220
+ 440 0028 1D20     		.short	8221
+ 441 002a 2220     		.short	8226
+ 442 002c 1320     		.short	8211
+ 443 002e 1420     		.short	8212
+ 444 0030 DC02     		.short	732
+ 445 0032 2221     		.short	8482
+ 446 0034 6101     		.short	353
+ 447 0036 3A20     		.short	8250
+ 448 0038 5301     		.short	339
+ 449 003a 0000     		.short	0
+ 450 003c 7E01     		.short	382
+ 451 003e 7801     		.short	376
+ 452 0040 A000     		.short	160
+ 453 0042 A100     		.short	161
+ 454 0044 A200     		.short	162
+ 455 0046 A300     		.short	163
+ 456 0048 A400     		.short	164
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 9
+
+
+ 457 004a A500     		.short	165
+ 458 004c A600     		.short	166
+ 459 004e A700     		.short	167
+ 460 0050 A800     		.short	168
+ 461 0052 A900     		.short	169
+ 462 0054 AA00     		.short	170
+ 463 0056 AB00     		.short	171
+ 464 0058 AC00     		.short	172
+ 465 005a AD00     		.short	173
+ 466 005c AE00     		.short	174
+ 467 005e AF00     		.short	175
+ 468 0060 B000     		.short	176
+ 469 0062 B100     		.short	177
+ 470 0064 B200     		.short	178
+ 471 0066 B300     		.short	179
+ 472 0068 B400     		.short	180
+ 473 006a B500     		.short	181
+ 474 006c B600     		.short	182
+ 475 006e B700     		.short	183
+ 476 0070 B800     		.short	184
+ 477 0072 B900     		.short	185
+ 478 0074 BA00     		.short	186
+ 479 0076 BB00     		.short	187
+ 480 0078 BC00     		.short	188
+ 481 007a BD00     		.short	189
+ 482 007c BE00     		.short	190
+ 483 007e BF00     		.short	191
+ 484 0080 C000     		.short	192
+ 485 0082 C100     		.short	193
+ 486 0084 C200     		.short	194
+ 487 0086 C300     		.short	195
+ 488 0088 C400     		.short	196
+ 489 008a C500     		.short	197
+ 490 008c C600     		.short	198
+ 491 008e C700     		.short	199
+ 492 0090 C800     		.short	200
+ 493 0092 C900     		.short	201
+ 494 0094 CA00     		.short	202
+ 495 0096 CB00     		.short	203
+ 496 0098 CC00     		.short	204
+ 497 009a CD00     		.short	205
+ 498 009c CE00     		.short	206
+ 499 009e CF00     		.short	207
+ 500 00a0 D000     		.short	208
+ 501 00a2 D100     		.short	209
+ 502 00a4 D200     		.short	210
+ 503 00a6 D300     		.short	211
+ 504 00a8 D400     		.short	212
+ 505 00aa D500     		.short	213
+ 506 00ac D600     		.short	214
+ 507 00ae D700     		.short	215
+ 508 00b0 D800     		.short	216
+ 509 00b2 D900     		.short	217
+ 510 00b4 DA00     		.short	218
+ 511 00b6 DB00     		.short	219
+ 512 00b8 DC00     		.short	220
+ 513 00ba DD00     		.short	221
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 10
+
+
+ 514 00bc DE00     		.short	222
+ 515 00be DF00     		.short	223
+ 516 00c0 E000     		.short	224
+ 517 00c2 E100     		.short	225
+ 518 00c4 E200     		.short	226
+ 519 00c6 E300     		.short	227
+ 520 00c8 E400     		.short	228
+ 521 00ca E500     		.short	229
+ 522 00cc E600     		.short	230
+ 523 00ce E700     		.short	231
+ 524 00d0 E800     		.short	232
+ 525 00d2 E900     		.short	233
+ 526 00d4 EA00     		.short	234
+ 527 00d6 EB00     		.short	235
+ 528 00d8 EC00     		.short	236
+ 529 00da ED00     		.short	237
+ 530 00dc EE00     		.short	238
+ 531 00de EF00     		.short	239
+ 532 00e0 F000     		.short	240
+ 533 00e2 F100     		.short	241
+ 534 00e4 F200     		.short	242
+ 535 00e6 F300     		.short	243
+ 536 00e8 F400     		.short	244
+ 537 00ea F500     		.short	245
+ 538 00ec F600     		.short	246
+ 539 00ee F700     		.short	247
+ 540 00f0 F800     		.short	248
+ 541 00f2 F900     		.short	249
+ 542 00f4 FA00     		.short	250
+ 543 00f6 FB00     		.short	251
+ 544 00f8 FC00     		.short	252
+ 545 00fa FD00     		.short	253
+ 546 00fc FE00     		.short	254
+ 547 00fe FF00     		.short	255
+ 548              		.section	.rodata.tbl_lower.5010,"a",%progbits
+ 549              		.align	2
+ 550              		.set	.LANCHOR1,. + 0
+ 551              		.type	tbl_lower.5010, %object
+ 552              		.size	tbl_lower.5010, 480
+ 553              	tbl_lower.5010:
+ 554 0000 6100     		.short	97
+ 555 0002 6200     		.short	98
+ 556 0004 6300     		.short	99
+ 557 0006 6400     		.short	100
+ 558 0008 6500     		.short	101
+ 559 000a 6600     		.short	102
+ 560 000c 6700     		.short	103
+ 561 000e 6800     		.short	104
+ 562 0010 6900     		.short	105
+ 563 0012 6A00     		.short	106
+ 564 0014 6B00     		.short	107
+ 565 0016 6C00     		.short	108
+ 566 0018 6D00     		.short	109
+ 567 001a 6E00     		.short	110
+ 568 001c 6F00     		.short	111
+ 569 001e 7000     		.short	112
+ 570 0020 7100     		.short	113
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 11
+
+
+ 571 0022 7200     		.short	114
+ 572 0024 7300     		.short	115
+ 573 0026 7400     		.short	116
+ 574 0028 7500     		.short	117
+ 575 002a 7600     		.short	118
+ 576 002c 7700     		.short	119
+ 577 002e 7800     		.short	120
+ 578 0030 7900     		.short	121
+ 579 0032 7A00     		.short	122
+ 580 0034 A100     		.short	161
+ 581 0036 A200     		.short	162
+ 582 0038 A300     		.short	163
+ 583 003a A500     		.short	165
+ 584 003c AC00     		.short	172
+ 585 003e AF00     		.short	175
+ 586 0040 E000     		.short	224
+ 587 0042 E100     		.short	225
+ 588 0044 E200     		.short	226
+ 589 0046 E300     		.short	227
+ 590 0048 E400     		.short	228
+ 591 004a E500     		.short	229
+ 592 004c E600     		.short	230
+ 593 004e E700     		.short	231
+ 594 0050 E800     		.short	232
+ 595 0052 E900     		.short	233
+ 596 0054 EA00     		.short	234
+ 597 0056 EB00     		.short	235
+ 598 0058 EC00     		.short	236
+ 599 005a ED00     		.short	237
+ 600 005c EE00     		.short	238
+ 601 005e EF00     		.short	239
+ 602 0060 F000     		.short	240
+ 603 0062 F100     		.short	241
+ 604 0064 F200     		.short	242
+ 605 0066 F300     		.short	243
+ 606 0068 F400     		.short	244
+ 607 006a F500     		.short	245
+ 608 006c F600     		.short	246
+ 609 006e F800     		.short	248
+ 610 0070 F900     		.short	249
+ 611 0072 FA00     		.short	250
+ 612 0074 FB00     		.short	251
+ 613 0076 FC00     		.short	252
+ 614 0078 FD00     		.short	253
+ 615 007a FE00     		.short	254
+ 616 007c FF00     		.short	255
+ 617 007e 0101     		.short	257
+ 618 0080 0301     		.short	259
+ 619 0082 0501     		.short	261
+ 620 0084 0701     		.short	263
+ 621 0086 0901     		.short	265
+ 622 0088 0B01     		.short	267
+ 623 008a 0D01     		.short	269
+ 624 008c 0F01     		.short	271
+ 625 008e 1101     		.short	273
+ 626 0090 1301     		.short	275
+ 627 0092 1501     		.short	277
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 12
+
+
+ 628 0094 1701     		.short	279
+ 629 0096 1901     		.short	281
+ 630 0098 1B01     		.short	283
+ 631 009a 1D01     		.short	285
+ 632 009c 1F01     		.short	287
+ 633 009e 2101     		.short	289
+ 634 00a0 2301     		.short	291
+ 635 00a2 2501     		.short	293
+ 636 00a4 2701     		.short	295
+ 637 00a6 2901     		.short	297
+ 638 00a8 2B01     		.short	299
+ 639 00aa 2D01     		.short	301
+ 640 00ac 2F01     		.short	303
+ 641 00ae 3101     		.short	305
+ 642 00b0 3301     		.short	307
+ 643 00b2 3501     		.short	309
+ 644 00b4 3701     		.short	311
+ 645 00b6 3A01     		.short	314
+ 646 00b8 3C01     		.short	316
+ 647 00ba 3E01     		.short	318
+ 648 00bc 4001     		.short	320
+ 649 00be 4201     		.short	322
+ 650 00c0 4401     		.short	324
+ 651 00c2 4601     		.short	326
+ 652 00c4 4801     		.short	328
+ 653 00c6 4B01     		.short	331
+ 654 00c8 4D01     		.short	333
+ 655 00ca 4F01     		.short	335
+ 656 00cc 5101     		.short	337
+ 657 00ce 5301     		.short	339
+ 658 00d0 5501     		.short	341
+ 659 00d2 5701     		.short	343
+ 660 00d4 5901     		.short	345
+ 661 00d6 5B01     		.short	347
+ 662 00d8 5D01     		.short	349
+ 663 00da 5F01     		.short	351
+ 664 00dc 6101     		.short	353
+ 665 00de 6301     		.short	355
+ 666 00e0 6501     		.short	357
+ 667 00e2 6701     		.short	359
+ 668 00e4 6901     		.short	361
+ 669 00e6 6B01     		.short	363
+ 670 00e8 6D01     		.short	365
+ 671 00ea 6F01     		.short	367
+ 672 00ec 7101     		.short	369
+ 673 00ee 7301     		.short	371
+ 674 00f0 7501     		.short	373
+ 675 00f2 7701     		.short	375
+ 676 00f4 7A01     		.short	378
+ 677 00f6 7C01     		.short	380
+ 678 00f8 7E01     		.short	382
+ 679 00fa 9201     		.short	402
+ 680 00fc B103     		.short	945
+ 681 00fe B203     		.short	946
+ 682 0100 B303     		.short	947
+ 683 0102 B403     		.short	948
+ 684 0104 B503     		.short	949
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 13
+
+
+ 685 0106 B603     		.short	950
+ 686 0108 B703     		.short	951
+ 687 010a B803     		.short	952
+ 688 010c B903     		.short	953
+ 689 010e BA03     		.short	954
+ 690 0110 BB03     		.short	955
+ 691 0112 BC03     		.short	956
+ 692 0114 BD03     		.short	957
+ 693 0116 BE03     		.short	958
+ 694 0118 BF03     		.short	959
+ 695 011a C003     		.short	960
+ 696 011c C103     		.short	961
+ 697 011e C303     		.short	963
+ 698 0120 C403     		.short	964
+ 699 0122 C503     		.short	965
+ 700 0124 C603     		.short	966
+ 701 0126 C703     		.short	967
+ 702 0128 C803     		.short	968
+ 703 012a C903     		.short	969
+ 704 012c CA03     		.short	970
+ 705 012e 3004     		.short	1072
+ 706 0130 3104     		.short	1073
+ 707 0132 3204     		.short	1074
+ 708 0134 3304     		.short	1075
+ 709 0136 3404     		.short	1076
+ 710 0138 3504     		.short	1077
+ 711 013a 3604     		.short	1078
+ 712 013c 3704     		.short	1079
+ 713 013e 3804     		.short	1080
+ 714 0140 3904     		.short	1081
+ 715 0142 3A04     		.short	1082
+ 716 0144 3B04     		.short	1083
+ 717 0146 3C04     		.short	1084
+ 718 0148 3D04     		.short	1085
+ 719 014a 3E04     		.short	1086
+ 720 014c 3F04     		.short	1087
+ 721 014e 4004     		.short	1088
+ 722 0150 4104     		.short	1089
+ 723 0152 4204     		.short	1090
+ 724 0154 4304     		.short	1091
+ 725 0156 4404     		.short	1092
+ 726 0158 4504     		.short	1093
+ 727 015a 4604     		.short	1094
+ 728 015c 4704     		.short	1095
+ 729 015e 4804     		.short	1096
+ 730 0160 4904     		.short	1097
+ 731 0162 4A04     		.short	1098
+ 732 0164 4B04     		.short	1099
+ 733 0166 4C04     		.short	1100
+ 734 0168 4D04     		.short	1101
+ 735 016a 4E04     		.short	1102
+ 736 016c 4F04     		.short	1103
+ 737 016e 5104     		.short	1105
+ 738 0170 5204     		.short	1106
+ 739 0172 5304     		.short	1107
+ 740 0174 5404     		.short	1108
+ 741 0176 5504     		.short	1109
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 14
+
+
+ 742 0178 5604     		.short	1110
+ 743 017a 5704     		.short	1111
+ 744 017c 5804     		.short	1112
+ 745 017e 5904     		.short	1113
+ 746 0180 5A04     		.short	1114
+ 747 0182 5B04     		.short	1115
+ 748 0184 5C04     		.short	1116
+ 749 0186 5E04     		.short	1118
+ 750 0188 5F04     		.short	1119
+ 751 018a 7021     		.short	8560
+ 752 018c 7121     		.short	8561
+ 753 018e 7221     		.short	8562
+ 754 0190 7321     		.short	8563
+ 755 0192 7421     		.short	8564
+ 756 0194 7521     		.short	8565
+ 757 0196 7621     		.short	8566
+ 758 0198 7721     		.short	8567
+ 759 019a 7821     		.short	8568
+ 760 019c 7921     		.short	8569
+ 761 019e 7A21     		.short	8570
+ 762 01a0 7B21     		.short	8571
+ 763 01a2 7C21     		.short	8572
+ 764 01a4 7D21     		.short	8573
+ 765 01a6 7E21     		.short	8574
+ 766 01a8 7F21     		.short	8575
+ 767 01aa 41FF     		.short	-191
+ 768 01ac 42FF     		.short	-190
+ 769 01ae 43FF     		.short	-189
+ 770 01b0 44FF     		.short	-188
+ 771 01b2 45FF     		.short	-187
+ 772 01b4 46FF     		.short	-186
+ 773 01b6 47FF     		.short	-185
+ 774 01b8 48FF     		.short	-184
+ 775 01ba 49FF     		.short	-183
+ 776 01bc 4AFF     		.short	-182
+ 777 01be 4BFF     		.short	-181
+ 778 01c0 4CFF     		.short	-180
+ 779 01c2 4DFF     		.short	-179
+ 780 01c4 4EFF     		.short	-178
+ 781 01c6 4FFF     		.short	-177
+ 782 01c8 50FF     		.short	-176
+ 783 01ca 51FF     		.short	-175
+ 784 01cc 52FF     		.short	-174
+ 785 01ce 53FF     		.short	-173
+ 786 01d0 54FF     		.short	-172
+ 787 01d2 55FF     		.short	-171
+ 788 01d4 56FF     		.short	-170
+ 789 01d6 57FF     		.short	-169
+ 790 01d8 58FF     		.short	-168
+ 791 01da 59FF     		.short	-167
+ 792 01dc 5AFF     		.short	-166
+ 793 01de 0000     		.short	0
+ 794              		.text
+ 795              	.Letext0:
+ 796              		.file 2 "../../ext/fatfs/src/option/../integer.h"
+ 797              		.section	.debug_info,"",%progbits
+ 798              	.Ldebug_info0:
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 15
+
+
+ 799 0000 87010000 		.4byte	0x187
+ 800 0004 0200     		.2byte	0x2
+ 801 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 802 000a 04       		.byte	0x4
+ 803 000b 01       		.uleb128 0x1
+ 804 000c 2E000000 		.4byte	.LASF18
+ 805 0010 01       		.byte	0x1
+ 806 0011 49010000 		.4byte	.LASF19
+ 807 0015 D6000000 		.4byte	.LASF20
+ 808 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 809 001d 00000000 		.4byte	0
+ 810 0021 00000000 		.4byte	0
+ 811 0025 00000000 		.4byte	.Ldebug_line0
+ 812 0029 02       		.uleb128 0x2
+ 813 002a 04       		.byte	0x4
+ 814 002b 05       		.byte	0x5
+ 815 002c 696E7400 		.ascii	"int\000"
+ 816 0030 03       		.uleb128 0x3
+ 817 0031 C8000000 		.4byte	.LASF5
+ 818 0035 02       		.byte	0x2
+ 819 0036 11       		.byte	0x11
+ 820 0037 3B000000 		.4byte	0x3b
+ 821 003b 04       		.uleb128 0x4
+ 822 003c 04       		.byte	0x4
+ 823 003d 07       		.byte	0x7
+ 824 003e 21000000 		.4byte	.LASF0
+ 825 0042 04       		.uleb128 0x4
+ 826 0043 01       		.byte	0x1
+ 827 0044 08       		.byte	0x8
+ 828 0045 C3000000 		.4byte	.LASF1
+ 829 0049 04       		.uleb128 0x4
+ 830 004a 01       		.byte	0x1
+ 831 004b 08       		.byte	0x8
+ 832 004c B5000000 		.4byte	.LASF2
+ 833 0050 04       		.uleb128 0x4
+ 834 0051 02       		.byte	0x2
+ 835 0052 05       		.byte	0x5
+ 836 0053 3F010000 		.4byte	.LASF3
+ 837 0057 04       		.uleb128 0x4
+ 838 0058 02       		.byte	0x2
+ 839 0059 07       		.byte	0x7
+ 840 005a 0E000000 		.4byte	.LASF4
+ 841 005e 03       		.uleb128 0x3
+ 842 005f 77000000 		.4byte	.LASF6
+ 843 0063 02       		.byte	0x2
+ 844 0064 1C       		.byte	0x1c
+ 845 0065 57000000 		.4byte	0x57
+ 846 0069 04       		.uleb128 0x4
+ 847 006a 04       		.byte	0x4
+ 848 006b 05       		.byte	0x5
+ 849 006c CD000000 		.4byte	.LASF7
+ 850 0070 04       		.uleb128 0x4
+ 851 0071 04       		.byte	0x4
+ 852 0072 07       		.byte	0x7
+ 853 0073 12010000 		.4byte	.LASF8
+ 854 0077 04       		.uleb128 0x4
+ 855 0078 01       		.byte	0x1
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 16
+
+
+ 856 0079 06       		.byte	0x6
+ 857 007a 2A010000 		.4byte	.LASF9
+ 858 007e 04       		.uleb128 0x4
+ 859 007f 08       		.byte	0x8
+ 860 0080 05       		.byte	0x5
+ 861 0081 00000000 		.4byte	.LASF10
+ 862 0085 04       		.uleb128 0x4
+ 863 0086 08       		.byte	0x8
+ 864 0087 07       		.byte	0x7
+ 865 0088 89000000 		.4byte	.LASF11
+ 866 008c 04       		.uleb128 0x4
+ 867 008d 01       		.byte	0x1
+ 868 008e 02       		.byte	0x2
+ 869 008f 24010000 		.4byte	.LASF12
+ 870 0093 04       		.uleb128 0x4
+ 871 0094 04       		.byte	0x4
+ 872 0095 07       		.byte	0x7
+ 873 0096 36010000 		.4byte	.LASF13
+ 874 009a 05       		.uleb128 0x5
+ 875 009b 01       		.byte	0x1
+ 876 009c AA000000 		.4byte	.LASF14
+ 877 00a0 01       		.byte	0x1
+ 878 00a1 F501     		.2byte	0x1f5
+ 879 00a3 01       		.byte	0x1
+ 880 00a4 5E000000 		.4byte	0x5e
+ 881 00a8 00000000 		.4byte	.LFB7
+ 882 00ac 50000000 		.4byte	.LFE7
+ 883 00b0 00000000 		.4byte	.LLST0
+ 884 00b4 01       		.byte	0x1
+ 885 00b5 E8000000 		.4byte	0xe8
+ 886 00b9 06       		.uleb128 0x6
+ 887 00ba 73726300 		.ascii	"src\000"
+ 888 00be 01       		.byte	0x1
+ 889 00bf F601     		.2byte	0x1f6
+ 890 00c1 5E000000 		.4byte	0x5e
+ 891 00c5 20000000 		.4byte	.LLST1
+ 892 00c9 06       		.uleb128 0x6
+ 893 00ca 64697200 		.ascii	"dir\000"
+ 894 00ce 01       		.byte	0x1
+ 895 00cf F701     		.2byte	0x1f7
+ 896 00d1 30000000 		.4byte	0x30
+ 897 00d5 73000000 		.4byte	.LLST2
+ 898 00d9 07       		.uleb128 0x7
+ 899 00da 6300     		.ascii	"c\000"
+ 900 00dc 01       		.byte	0x1
+ 901 00dd FA01     		.2byte	0x1fa
+ 902 00df 5E000000 		.4byte	0x5e
+ 903 00e3 AD000000 		.4byte	.LLST3
+ 904 00e7 00       		.byte	0
+ 905 00e8 08       		.uleb128 0x8
+ 906 00e9 01       		.byte	0x1
+ 907 00ea 7D000000 		.4byte	.LASF15
+ 908 00ee 01       		.byte	0x1
+ 909 00ef 1002     		.2byte	0x210
+ 910 00f1 01       		.byte	0x1
+ 911 00f2 5E000000 		.4byte	0x5e
+ 912 00f6 00000000 		.4byte	.LFB8
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 17
+
+
+ 913 00fa 2C000000 		.4byte	.LFE8
+ 914 00fe 02       		.byte	0x2
+ 915 00ff 7D       		.byte	0x7d
+ 916 0100 00       		.sleb128 0
+ 917 0101 01       		.byte	0x1
+ 918 0102 49010000 		.4byte	0x149
+ 919 0106 06       		.uleb128 0x6
+ 920 0107 63687200 		.ascii	"chr\000"
+ 921 010b 01       		.byte	0x1
+ 922 010c 1102     		.2byte	0x211
+ 923 010e 5E000000 		.4byte	0x5e
+ 924 0112 D6000000 		.4byte	.LLST4
+ 925 0116 09       		.uleb128 0x9
+ 926 0117 A0000000 		.4byte	.LASF16
+ 927 011b 01       		.byte	0x1
+ 928 011c 1402     		.2byte	0x214
+ 929 011e 59010000 		.4byte	0x159
+ 930 0122 05       		.byte	0x5
+ 931 0123 03       		.byte	0x3
+ 932 0124 00000000 		.4byte	tbl_lower.5010
+ 933 0128 09       		.uleb128 0x9
+ 934 0129 6D010000 		.4byte	.LASF17
+ 935 012d 01       		.byte	0x1
+ 936 012e 1502     		.2byte	0x215
+ 937 0130 5E010000 		.4byte	0x15e
+ 938 0134 05       		.byte	0x5
+ 939 0135 03       		.byte	0x3
+ 940 0136 00000000 		.4byte	tbl_upper.5011
+ 941 013a 07       		.uleb128 0x7
+ 942 013b 6900     		.ascii	"i\000"
+ 943 013d 01       		.byte	0x1
+ 944 013e 1602     		.2byte	0x216
+ 945 0140 29000000 		.4byte	0x29
+ 946 0144 F7000000 		.4byte	.LLST5
+ 947 0148 00       		.byte	0
+ 948 0149 0A       		.uleb128 0xa
+ 949 014a 5E000000 		.4byte	0x5e
+ 950 014e 59010000 		.4byte	0x159
+ 951 0152 0B       		.uleb128 0xb
+ 952 0153 93000000 		.4byte	0x93
+ 953 0157 EF       		.byte	0xef
+ 954 0158 00       		.byte	0
+ 955 0159 0C       		.uleb128 0xc
+ 956 015a 49010000 		.4byte	0x149
+ 957 015e 0C       		.uleb128 0xc
+ 958 015f 49010000 		.4byte	0x149
+ 959 0163 0A       		.uleb128 0xa
+ 960 0164 5E000000 		.4byte	0x5e
+ 961 0168 73010000 		.4byte	0x173
+ 962 016c 0B       		.uleb128 0xb
+ 963 016d 93000000 		.4byte	0x93
+ 964 0171 7F       		.byte	0x7f
+ 965 0172 00       		.byte	0
+ 966 0173 0D       		.uleb128 0xd
+ 967 0174 54626C00 		.ascii	"Tbl\000"
+ 968 0178 01       		.byte	0x1
+ 969 0179 5601     		.2byte	0x156
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 18
+
+
+ 970 017b 85010000 		.4byte	0x185
+ 971 017f 05       		.byte	0x5
+ 972 0180 03       		.byte	0x3
+ 973 0181 00000000 		.4byte	Tbl
+ 974 0185 0C       		.uleb128 0xc
+ 975 0186 63010000 		.4byte	0x163
+ 976 018a 00       		.byte	0
+ 977              		.section	.debug_abbrev,"",%progbits
+ 978              	.Ldebug_abbrev0:
+ 979 0000 01       		.uleb128 0x1
+ 980 0001 11       		.uleb128 0x11
+ 981 0002 01       		.byte	0x1
+ 982 0003 25       		.uleb128 0x25
+ 983 0004 0E       		.uleb128 0xe
+ 984 0005 13       		.uleb128 0x13
+ 985 0006 0B       		.uleb128 0xb
+ 986 0007 03       		.uleb128 0x3
+ 987 0008 0E       		.uleb128 0xe
+ 988 0009 1B       		.uleb128 0x1b
+ 989 000a 0E       		.uleb128 0xe
+ 990 000b 55       		.uleb128 0x55
+ 991 000c 06       		.uleb128 0x6
+ 992 000d 11       		.uleb128 0x11
+ 993 000e 01       		.uleb128 0x1
+ 994 000f 52       		.uleb128 0x52
+ 995 0010 01       		.uleb128 0x1
+ 996 0011 10       		.uleb128 0x10
+ 997 0012 06       		.uleb128 0x6
+ 998 0013 00       		.byte	0
+ 999 0014 00       		.byte	0
+ 1000 0015 02       		.uleb128 0x2
+ 1001 0016 24       		.uleb128 0x24
+ 1002 0017 00       		.byte	0
+ 1003 0018 0B       		.uleb128 0xb
+ 1004 0019 0B       		.uleb128 0xb
+ 1005 001a 3E       		.uleb128 0x3e
+ 1006 001b 0B       		.uleb128 0xb
+ 1007 001c 03       		.uleb128 0x3
+ 1008 001d 08       		.uleb128 0x8
+ 1009 001e 00       		.byte	0
+ 1010 001f 00       		.byte	0
+ 1011 0020 03       		.uleb128 0x3
+ 1012 0021 16       		.uleb128 0x16
+ 1013 0022 00       		.byte	0
+ 1014 0023 03       		.uleb128 0x3
+ 1015 0024 0E       		.uleb128 0xe
+ 1016 0025 3A       		.uleb128 0x3a
+ 1017 0026 0B       		.uleb128 0xb
+ 1018 0027 3B       		.uleb128 0x3b
+ 1019 0028 0B       		.uleb128 0xb
+ 1020 0029 49       		.uleb128 0x49
+ 1021 002a 13       		.uleb128 0x13
+ 1022 002b 00       		.byte	0
+ 1023 002c 00       		.byte	0
+ 1024 002d 04       		.uleb128 0x4
+ 1025 002e 24       		.uleb128 0x24
+ 1026 002f 00       		.byte	0
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 19
+
+
+ 1027 0030 0B       		.uleb128 0xb
+ 1028 0031 0B       		.uleb128 0xb
+ 1029 0032 3E       		.uleb128 0x3e
+ 1030 0033 0B       		.uleb128 0xb
+ 1031 0034 03       		.uleb128 0x3
+ 1032 0035 0E       		.uleb128 0xe
+ 1033 0036 00       		.byte	0
+ 1034 0037 00       		.byte	0
+ 1035 0038 05       		.uleb128 0x5
+ 1036 0039 2E       		.uleb128 0x2e
+ 1037 003a 01       		.byte	0x1
+ 1038 003b 3F       		.uleb128 0x3f
+ 1039 003c 0C       		.uleb128 0xc
+ 1040 003d 03       		.uleb128 0x3
+ 1041 003e 0E       		.uleb128 0xe
+ 1042 003f 3A       		.uleb128 0x3a
+ 1043 0040 0B       		.uleb128 0xb
+ 1044 0041 3B       		.uleb128 0x3b
+ 1045 0042 05       		.uleb128 0x5
+ 1046 0043 27       		.uleb128 0x27
+ 1047 0044 0C       		.uleb128 0xc
+ 1048 0045 49       		.uleb128 0x49
+ 1049 0046 13       		.uleb128 0x13
+ 1050 0047 11       		.uleb128 0x11
+ 1051 0048 01       		.uleb128 0x1
+ 1052 0049 12       		.uleb128 0x12
+ 1053 004a 01       		.uleb128 0x1
+ 1054 004b 40       		.uleb128 0x40
+ 1055 004c 06       		.uleb128 0x6
+ 1056 004d 9742     		.uleb128 0x2117
+ 1057 004f 0C       		.uleb128 0xc
+ 1058 0050 01       		.uleb128 0x1
+ 1059 0051 13       		.uleb128 0x13
+ 1060 0052 00       		.byte	0
+ 1061 0053 00       		.byte	0
+ 1062 0054 06       		.uleb128 0x6
+ 1063 0055 05       		.uleb128 0x5
+ 1064 0056 00       		.byte	0
+ 1065 0057 03       		.uleb128 0x3
+ 1066 0058 08       		.uleb128 0x8
+ 1067 0059 3A       		.uleb128 0x3a
+ 1068 005a 0B       		.uleb128 0xb
+ 1069 005b 3B       		.uleb128 0x3b
+ 1070 005c 05       		.uleb128 0x5
+ 1071 005d 49       		.uleb128 0x49
+ 1072 005e 13       		.uleb128 0x13
+ 1073 005f 02       		.uleb128 0x2
+ 1074 0060 06       		.uleb128 0x6
+ 1075 0061 00       		.byte	0
+ 1076 0062 00       		.byte	0
+ 1077 0063 07       		.uleb128 0x7
+ 1078 0064 34       		.uleb128 0x34
+ 1079 0065 00       		.byte	0
+ 1080 0066 03       		.uleb128 0x3
+ 1081 0067 08       		.uleb128 0x8
+ 1082 0068 3A       		.uleb128 0x3a
+ 1083 0069 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 20
+
+
+ 1084 006a 3B       		.uleb128 0x3b
+ 1085 006b 05       		.uleb128 0x5
+ 1086 006c 49       		.uleb128 0x49
+ 1087 006d 13       		.uleb128 0x13
+ 1088 006e 02       		.uleb128 0x2
+ 1089 006f 06       		.uleb128 0x6
+ 1090 0070 00       		.byte	0
+ 1091 0071 00       		.byte	0
+ 1092 0072 08       		.uleb128 0x8
+ 1093 0073 2E       		.uleb128 0x2e
+ 1094 0074 01       		.byte	0x1
+ 1095 0075 3F       		.uleb128 0x3f
+ 1096 0076 0C       		.uleb128 0xc
+ 1097 0077 03       		.uleb128 0x3
+ 1098 0078 0E       		.uleb128 0xe
+ 1099 0079 3A       		.uleb128 0x3a
+ 1100 007a 0B       		.uleb128 0xb
+ 1101 007b 3B       		.uleb128 0x3b
+ 1102 007c 05       		.uleb128 0x5
+ 1103 007d 27       		.uleb128 0x27
+ 1104 007e 0C       		.uleb128 0xc
+ 1105 007f 49       		.uleb128 0x49
+ 1106 0080 13       		.uleb128 0x13
+ 1107 0081 11       		.uleb128 0x11
+ 1108 0082 01       		.uleb128 0x1
+ 1109 0083 12       		.uleb128 0x12
+ 1110 0084 01       		.uleb128 0x1
+ 1111 0085 40       		.uleb128 0x40
+ 1112 0086 0A       		.uleb128 0xa
+ 1113 0087 9742     		.uleb128 0x2117
+ 1114 0089 0C       		.uleb128 0xc
+ 1115 008a 01       		.uleb128 0x1
+ 1116 008b 13       		.uleb128 0x13
+ 1117 008c 00       		.byte	0
+ 1118 008d 00       		.byte	0
+ 1119 008e 09       		.uleb128 0x9
+ 1120 008f 34       		.uleb128 0x34
+ 1121 0090 00       		.byte	0
+ 1122 0091 03       		.uleb128 0x3
+ 1123 0092 0E       		.uleb128 0xe
+ 1124 0093 3A       		.uleb128 0x3a
+ 1125 0094 0B       		.uleb128 0xb
+ 1126 0095 3B       		.uleb128 0x3b
+ 1127 0096 05       		.uleb128 0x5
+ 1128 0097 49       		.uleb128 0x49
+ 1129 0098 13       		.uleb128 0x13
+ 1130 0099 02       		.uleb128 0x2
+ 1131 009a 0A       		.uleb128 0xa
+ 1132 009b 00       		.byte	0
+ 1133 009c 00       		.byte	0
+ 1134 009d 0A       		.uleb128 0xa
+ 1135 009e 01       		.uleb128 0x1
+ 1136 009f 01       		.byte	0x1
+ 1137 00a0 49       		.uleb128 0x49
+ 1138 00a1 13       		.uleb128 0x13
+ 1139 00a2 01       		.uleb128 0x1
+ 1140 00a3 13       		.uleb128 0x13
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 21
+
+
+ 1141 00a4 00       		.byte	0
+ 1142 00a5 00       		.byte	0
+ 1143 00a6 0B       		.uleb128 0xb
+ 1144 00a7 21       		.uleb128 0x21
+ 1145 00a8 00       		.byte	0
+ 1146 00a9 49       		.uleb128 0x49
+ 1147 00aa 13       		.uleb128 0x13
+ 1148 00ab 2F       		.uleb128 0x2f
+ 1149 00ac 0B       		.uleb128 0xb
+ 1150 00ad 00       		.byte	0
+ 1151 00ae 00       		.byte	0
+ 1152 00af 0C       		.uleb128 0xc
+ 1153 00b0 26       		.uleb128 0x26
+ 1154 00b1 00       		.byte	0
+ 1155 00b2 49       		.uleb128 0x49
+ 1156 00b3 13       		.uleb128 0x13
+ 1157 00b4 00       		.byte	0
+ 1158 00b5 00       		.byte	0
+ 1159 00b6 0D       		.uleb128 0xd
+ 1160 00b7 34       		.uleb128 0x34
+ 1161 00b8 00       		.byte	0
+ 1162 00b9 03       		.uleb128 0x3
+ 1163 00ba 08       		.uleb128 0x8
+ 1164 00bb 3A       		.uleb128 0x3a
+ 1165 00bc 0B       		.uleb128 0xb
+ 1166 00bd 3B       		.uleb128 0x3b
+ 1167 00be 05       		.uleb128 0x5
+ 1168 00bf 49       		.uleb128 0x49
+ 1169 00c0 13       		.uleb128 0x13
+ 1170 00c1 02       		.uleb128 0x2
+ 1171 00c2 0A       		.uleb128 0xa
+ 1172 00c3 00       		.byte	0
+ 1173 00c4 00       		.byte	0
+ 1174 00c5 00       		.byte	0
+ 1175              		.section	.debug_loc,"",%progbits
+ 1176              	.Ldebug_loc0:
+ 1177              	.LLST0:
+ 1178 0000 00000000 		.4byte	.LFB7
+ 1179 0004 04000000 		.4byte	.LCFI0
+ 1180 0008 0200     		.2byte	0x2
+ 1181 000a 7D       		.byte	0x7d
+ 1182 000b 00       		.sleb128 0
+ 1183 000c 04000000 		.4byte	.LCFI0
+ 1184 0010 50000000 		.4byte	.LFE7
+ 1185 0014 0200     		.2byte	0x2
+ 1186 0016 7D       		.byte	0x7d
+ 1187 0017 08       		.sleb128 8
+ 1188 0018 00000000 		.4byte	0
+ 1189 001c 00000000 		.4byte	0
+ 1190              	.LLST1:
+ 1191 0020 00000000 		.4byte	.LVL0
+ 1192 0024 2E000000 		.4byte	.LVL5
+ 1193 0028 0100     		.2byte	0x1
+ 1194 002a 50       		.byte	0x50
+ 1195 002b 2E000000 		.4byte	.LVL5
+ 1196 002f 34000000 		.4byte	.LVL7
+ 1197 0033 0400     		.2byte	0x4
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 22
+
+
+ 1198 0035 F3       		.byte	0xf3
+ 1199 0036 01       		.uleb128 0x1
+ 1200 0037 50       		.byte	0x50
+ 1201 0038 9F       		.byte	0x9f
+ 1202 0039 34000000 		.4byte	.LVL7
+ 1203 003d 3A000000 		.4byte	.LVL8
+ 1204 0041 0100     		.2byte	0x1
+ 1205 0043 50       		.byte	0x50
+ 1206 0044 3A000000 		.4byte	.LVL8
+ 1207 0048 42000000 		.4byte	.LVL10
+ 1208 004c 0400     		.2byte	0x4
+ 1209 004e F3       		.byte	0xf3
+ 1210 004f 01       		.uleb128 0x1
+ 1211 0050 50       		.byte	0x50
+ 1212 0051 9F       		.byte	0x9f
+ 1213 0052 42000000 		.4byte	.LVL10
+ 1214 0056 44000000 		.4byte	.LVL11
+ 1215 005a 0100     		.2byte	0x1
+ 1216 005c 50       		.byte	0x50
+ 1217 005d 44000000 		.4byte	.LVL11
+ 1218 0061 50000000 		.4byte	.LFE7
+ 1219 0065 0400     		.2byte	0x4
+ 1220 0067 F3       		.byte	0xf3
+ 1221 0068 01       		.uleb128 0x1
+ 1222 0069 50       		.byte	0x50
+ 1223 006a 9F       		.byte	0x9f
+ 1224 006b 00000000 		.4byte	0
+ 1225 006f 00000000 		.4byte	0
+ 1226              	.LLST2:
+ 1227 0073 00000000 		.4byte	.LVL0
+ 1228 0077 0C000000 		.4byte	.LVL1
+ 1229 007b 0100     		.2byte	0x1
+ 1230 007d 51       		.byte	0x51
+ 1231 007e 0C000000 		.4byte	.LVL1
+ 1232 0082 34000000 		.4byte	.LVL7
+ 1233 0086 0400     		.2byte	0x4
+ 1234 0088 F3       		.byte	0xf3
+ 1235 0089 01       		.uleb128 0x1
+ 1236 008a 51       		.byte	0x51
+ 1237 008b 9F       		.byte	0x9f
+ 1238 008c 34000000 		.4byte	.LVL7
+ 1239 0090 3C000000 		.4byte	.LVL9
+ 1240 0094 0100     		.2byte	0x1
+ 1241 0096 51       		.byte	0x51
+ 1242 0097 3C000000 		.4byte	.LVL9
+ 1243 009b 50000000 		.4byte	.LFE7
+ 1244 009f 0400     		.2byte	0x4
+ 1245 00a1 F3       		.byte	0xf3
+ 1246 00a2 01       		.uleb128 0x1
+ 1247 00a3 51       		.byte	0x51
+ 1248 00a4 9F       		.byte	0x9f
+ 1249 00a5 00000000 		.4byte	0
+ 1250 00a9 00000000 		.4byte	0
+ 1251              	.LLST3:
+ 1252 00ad 10000000 		.4byte	.LVL2
+ 1253 00b1 18000000 		.4byte	.LVL3
+ 1254 00b5 0100     		.2byte	0x1
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 23
+
+
+ 1255 00b7 55       		.byte	0x55
+ 1256 00b8 18000000 		.4byte	.LVL3
+ 1257 00bc 1C000000 		.4byte	.LVL4
+ 1258 00c0 0100     		.2byte	0x1
+ 1259 00c2 54       		.byte	0x54
+ 1260 00c3 30000000 		.4byte	.LVL6
+ 1261 00c7 34000000 		.4byte	.LVL7
+ 1262 00cb 0100     		.2byte	0x1
+ 1263 00cd 50       		.byte	0x50
+ 1264 00ce 00000000 		.4byte	0
+ 1265 00d2 00000000 		.4byte	0
+ 1266              	.LLST4:
+ 1267 00d6 00000000 		.4byte	.LVL12
+ 1268 00da 1E000000 		.4byte	.LVL18
+ 1269 00de 0100     		.2byte	0x1
+ 1270 00e0 50       		.byte	0x50
+ 1271 00e1 1E000000 		.4byte	.LVL18
+ 1272 00e5 2C000000 		.4byte	.LFE8
+ 1273 00e9 0400     		.2byte	0x4
+ 1274 00eb F3       		.byte	0xf3
+ 1275 00ec 01       		.uleb128 0x1
+ 1276 00ed 50       		.byte	0x50
+ 1277 00ee 9F       		.byte	0x9f
+ 1278 00ef 00000000 		.4byte	0
+ 1279 00f3 00000000 		.4byte	0
+ 1280              	.LLST5:
+ 1281 00f7 00000000 		.4byte	.LVL12
+ 1282 00fb 0A000000 		.4byte	.LVL13
+ 1283 00ff 0200     		.2byte	0x2
+ 1284 0101 30       		.byte	0x30
+ 1285 0102 9F       		.byte	0x9f
+ 1286 0103 0A000000 		.4byte	.LVL13
+ 1287 0107 0E000000 		.4byte	.LVL14
+ 1288 010b 0100     		.2byte	0x1
+ 1289 010d 52       		.byte	0x52
+ 1290 010e 14000000 		.4byte	.LVL15
+ 1291 0112 1A000000 		.4byte	.LVL16
+ 1292 0116 0100     		.2byte	0x1
+ 1293 0118 52       		.byte	0x52
+ 1294 0119 1A000000 		.4byte	.LVL16
+ 1295 011d 1C000000 		.4byte	.LVL17
+ 1296 0121 0200     		.2byte	0x2
+ 1297 0123 30       		.byte	0x30
+ 1298 0124 9F       		.byte	0x9f
+ 1299 0125 00000000 		.4byte	0
+ 1300 0129 00000000 		.4byte	0
+ 1301              		.section	.debug_aranges,"",%progbits
+ 1302 0000 24000000 		.4byte	0x24
+ 1303 0004 0200     		.2byte	0x2
+ 1304 0006 00000000 		.4byte	.Ldebug_info0
+ 1305 000a 04       		.byte	0x4
+ 1306 000b 00       		.byte	0
+ 1307 000c 0000     		.2byte	0
+ 1308 000e 0000     		.2byte	0
+ 1309 0010 00000000 		.4byte	.LFB7
+ 1310 0014 50000000 		.4byte	.LFE7-.LFB7
+ 1311 0018 00000000 		.4byte	.LFB8
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 24
+
+
+ 1312 001c 2C000000 		.4byte	.LFE8-.LFB8
+ 1313 0020 00000000 		.4byte	0
+ 1314 0024 00000000 		.4byte	0
+ 1315              		.section	.debug_ranges,"",%progbits
+ 1316              	.Ldebug_ranges0:
+ 1317 0000 00000000 		.4byte	.LFB7
+ 1318 0004 50000000 		.4byte	.LFE7
+ 1319 0008 00000000 		.4byte	.LFB8
+ 1320 000c 2C000000 		.4byte	.LFE8
+ 1321 0010 00000000 		.4byte	0
+ 1322 0014 00000000 		.4byte	0
+ 1323              		.section	.debug_line,"",%progbits
+ 1324              	.Ldebug_line0:
+ 1325 0000 B2000000 		.section	.debug_str,"MS",%progbits,1
+ 1325      02006500 
+ 1325      00000201 
+ 1325      FB0E0D00 
+ 1325      01010101 
+ 1326              	.LASF10:
+ 1327 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1327      206C6F6E 
+ 1327      6720696E 
+ 1327      7400
+ 1328              	.LASF4:
+ 1329 000e 73686F72 		.ascii	"short unsigned int\000"
+ 1329      7420756E 
+ 1329      7369676E 
+ 1329      65642069 
+ 1329      6E7400
+ 1330              	.LASF0:
+ 1331 0021 756E7369 		.ascii	"unsigned int\000"
+ 1331      676E6564 
+ 1331      20696E74 
+ 1331      00
+ 1332              	.LASF18:
+ 1333 002e 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 1333      4320342E 
+ 1333      372E3420 
+ 1333      32303134 
+ 1333      30343031 
+ 1334 0061 616E6368 		.ascii	"anch revision 209195]\000"
+ 1334      20726576 
+ 1334      6973696F 
+ 1334      6E203230 
+ 1334      39313935 
+ 1335              	.LASF6:
+ 1336 0077 57434841 		.ascii	"WCHAR\000"
+ 1336      5200
+ 1337              	.LASF15:
+ 1338 007d 66665F77 		.ascii	"ff_wtoupper\000"
+ 1338      746F7570 
+ 1338      70657200 
+ 1339              	.LASF11:
+ 1340 0089 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1340      206C6F6E 
+ 1340      6720756E 
+ 1340      7369676E 
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 25
+
+
+ 1340      65642069 
+ 1341              	.LASF16:
+ 1342 00a0 74626C5F 		.ascii	"tbl_lower\000"
+ 1342      6C6F7765 
+ 1342      7200
+ 1343              	.LASF14:
+ 1344 00aa 66665F63 		.ascii	"ff_convert\000"
+ 1344      6F6E7665 
+ 1344      727400
+ 1345              	.LASF2:
+ 1346 00b5 756E7369 		.ascii	"unsigned char\000"
+ 1346      676E6564 
+ 1346      20636861 
+ 1346      7200
+ 1347              	.LASF1:
+ 1348 00c3 63686172 		.ascii	"char\000"
+ 1348      00
+ 1349              	.LASF5:
+ 1350 00c8 55494E54 		.ascii	"UINT\000"
+ 1350      00
+ 1351              	.LASF7:
+ 1352 00cd 6C6F6E67 		.ascii	"long int\000"
+ 1352      20696E74 
+ 1352      00
+ 1353              	.LASF20:
+ 1354 00d6 433A5C43 		.ascii	"C:\\ChibiStudio\\chibios\\demos\\ARMCM4-STM32F401RE"
+ 1354      68696269 
+ 1354      53747564 
+ 1354      696F5C63 
+ 1354      68696269 
+ 1355 0105 2D4E5543 		.ascii	"-NUCLEO-CC3K\000"
+ 1355      4C454F2D 
+ 1355      4343334B 
+ 1355      00
+ 1356              	.LASF8:
+ 1357 0112 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1357      20756E73 
+ 1357      69676E65 
+ 1357      6420696E 
+ 1357      7400
+ 1358              	.LASF12:
+ 1359 0124 5F426F6F 		.ascii	"_Bool\000"
+ 1359      6C00
+ 1360              	.LASF9:
+ 1361 012a 7369676E 		.ascii	"signed char\000"
+ 1361      65642063 
+ 1361      68617200 
+ 1362              	.LASF13:
+ 1363 0136 73697A65 		.ascii	"sizetype\000"
+ 1363      74797065 
+ 1363      00
+ 1364              	.LASF3:
+ 1365 013f 73686F72 		.ascii	"short int\000"
+ 1365      7420696E 
+ 1365      7400
+ 1366              	.LASF19:
+ 1367 0149 2E2E2F2E 		.ascii	"../../ext/fatfs/src/option/ccsbcs.c\000"
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 26
+
+
+ 1367      2E2F6578 
+ 1367      742F6661 
+ 1367      7466732F 
+ 1367      7372632F 
+ 1368              	.LASF17:
+ 1369 016d 74626C5F 		.ascii	"tbl_upper\000"
+ 1369      75707065 
+ 1369      7200
+ 1370              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s 			page 27
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ccsbcs.c
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:21     .text.ff_convert:00000000 $t
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:27     .text.ff_convert:00000000 ff_convert
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:107    .text.ff_convert:00000048 $d
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:113    .text.ff_wtoupper:00000000 $t
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:119    .text.ff_wtoupper:00000000 ff_wtoupper
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:163    .text.ff_wtoupper:00000024 $d
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:169    .rodata.tbl_upper.5011:00000000 $d
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:173    .rodata.tbl_upper.5011:00000000 tbl_upper.5011
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:415    .rodata.Tbl:00000000 $d
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:419    .rodata.Tbl:00000000 Tbl
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:549    .rodata.tbl_lower.5010:00000000 $d
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:553    .rodata.tbl_lower.5010:00000000 tbl_lower.5010
+                     .debug_frame:00000010 $d
+C:\Users\Vergil\AppData\Local\Temp\ccdP2ekY.s:168    .text.ff_wtoupper:0000002c $t
+
+NO UNDEFINED SYMBOLS

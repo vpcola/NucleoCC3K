@@ -1,0 +1,1299 @@
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 3
+   4              		.eabi_attribute 28, 1
+   5              		.fpu fpv4-sp-d16
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 2
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.thumb
+  16              		.file	"httptypes.cpp"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.section	.text._Z10getConTypePKc,"ax",%progbits
+  21              		.align	2
+  22              		.p2align 4,,15
+  23              		.global	_Z10getConTypePKc
+  24              		.thumb
+  25              		.thumb_func
+  26              		.type	_Z10getConTypePKc, %function
+  27              	_Z10getConTypePKc:
+  28              	.LFB0:
+  29              		.file 1 "C:/ChibiStudio/chibios/demos/ARMCM4-STM32F401RE-NUCLEO-CC3K/openweathermap/httptypes.cpp"
+  30              		.loc 1 25 0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              	.LVL0:
+  35 0000 10B5     		push	{r4, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 4, -8
+  39              		.cfi_offset 14, -4
+  40              	.LBB2:
+  41              		.loc 1 30 0
+  42 0002 0B49     		ldr	r1, .L9
+  43              	.LBE2:
+  44              		.loc 1 25 0
+  45 0004 0446     		mov	r4, r0
+  46              	.LBB3:
+  47              		.loc 1 30 0
+  48 0006 FFF7FEFF 		bl	strstr
+  49              	.LVL1:
+  50 000a 50B9     		cbnz	r0, .L4
+  51              	.LVL2:
+  52 000c 2046     		mov	r0, r4
+  53 000e 0949     		ldr	r1, .L9+4
+  54 0010 FFF7FEFF 		bl	strstr
+  55              	.LVL3:
+  56 0014 40B9     		cbnz	r0, .L5
+  57              	.LVL4:
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 2
+
+
+  58 0016 2046     		mov	r0, r4
+  59 0018 0749     		ldr	r1, .L9+8
+  60 001a FFF7FEFF 		bl	strstr
+  61              	.LVL5:
+  62 001e 28B9     		cbnz	r0, .L8
+  63              	.LBE3:
+  64              		.loc 1 34 0
+  65 0020 10BD     		pop	{r4, pc}
+  66              	.LVL6:
+  67              	.L4:
+  68              	.LBB4:
+  69              		.loc 1 29 0
+  70 0022 0020     		movs	r0, #0
+  71              	.LVL7:
+  72              	.L2:
+  73              		.loc 1 30 0 discriminator 1
+  74 0024 C0B2     		uxtb	r0, r0
+  75              	.LBE4:
+  76              		.loc 1 34 0 discriminator 1
+  77 0026 10BD     		pop	{r4, pc}
+  78              	.LVL8:
+  79              	.L5:
+  80              	.LBB5:
+  81              		.loc 1 29 0
+  82 0028 0120     		movs	r0, #1
+  83 002a FBE7     		b	.L2
+  84              	.LVL9:
+  85              	.L8:
+  86              		.loc 1 30 0
+  87 002c 0220     		movs	r0, #2
+  88 002e F9E7     		b	.L2
+  89              	.L10:
+  90              		.align	2
+  91              	.L9:
+  92 0030 00000000 		.word	.LC0
+  93 0034 08000000 		.word	.LC1
+  94 0038 0C000000 		.word	.LC2
+  95              	.LBE5:
+  96              		.cfi_endproc
+  97              	.LFE0:
+  98              		.size	_Z10getConTypePKc, .-_Z10getConTypePKc
+  99 003c AFF30080 		.section	.text._Z23getTransferEncodingTypePKc,"ax",%progbits
+ 100              		.align	2
+ 101              		.p2align 4,,15
+ 102              		.global	_Z23getTransferEncodingTypePKc
+ 103              		.thumb
+ 104              		.thumb_func
+ 105              		.type	_Z23getTransferEncodingTypePKc, %function
+ 106              	_Z23getTransferEncodingTypePKc:
+ 107              	.LFB1:
+ 108              		.loc 1 37 0
+ 109              		.cfi_startproc
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ 112              	.LVL10:
+ 113 0000 10B5     		push	{r4, lr}
+ 114              	.LCFI1:
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 3
+
+
+ 115              		.cfi_def_cfa_offset 8
+ 116              		.cfi_offset 4, -8
+ 117              		.cfi_offset 14, -4
+ 118              	.LBB6:
+ 119              		.loc 1 41 0
+ 120 0002 1349     		ldr	r1, .L20
+ 121              	.LBE6:
+ 122              		.loc 1 37 0
+ 123 0004 0446     		mov	r4, r0
+ 124              	.LBB7:
+ 125              		.loc 1 41 0
+ 126 0006 FFF7FEFF 		bl	strstr
+ 127              	.LVL11:
+ 128 000a A8B9     		cbnz	r0, .L14
+ 129              	.LVL12:
+ 130 000c 2046     		mov	r0, r4
+ 131 000e 1149     		ldr	r1, .L20+4
+ 132 0010 FFF7FEFF 		bl	strstr
+ 133              	.LVL13:
+ 134 0014 98B9     		cbnz	r0, .L15
+ 135              	.LVL14:
+ 136 0016 2046     		mov	r0, r4
+ 137 0018 0F49     		ldr	r1, .L20+8
+ 138 001a FFF7FEFF 		bl	strstr
+ 139              	.LVL15:
+ 140 001e 80B9     		cbnz	r0, .L16
+ 141              	.LVL16:
+ 142 0020 2046     		mov	r0, r4
+ 143 0022 0E49     		ldr	r1, .L20+12
+ 144 0024 FFF7FEFF 		bl	strstr
+ 145              	.LVL17:
+ 146 0028 68B9     		cbnz	r0, .L17
+ 147              	.LVL18:
+ 148 002a 2046     		mov	r0, r4
+ 149 002c 0C49     		ldr	r1, .L20+16
+ 150 002e FFF7FEFF 		bl	strstr
+ 151              	.LVL19:
+ 152 0032 50B9     		cbnz	r0, .L19
+ 153              		.loc 1 43 0
+ 154 0034 0520     		movs	r0, #5
+ 155              	.LBE7:
+ 156              		.loc 1 44 0
+ 157 0036 10BD     		pop	{r4, pc}
+ 158              	.LVL20:
+ 159              	.L14:
+ 160              	.LBB8:
+ 161              		.loc 1 40 0
+ 162 0038 0020     		movs	r0, #0
+ 163              	.LVL21:
+ 164              	.L12:
+ 165              		.loc 1 41 0 discriminator 1
+ 166 003a C0B2     		uxtb	r0, r0
+ 167 003c 10BD     		pop	{r4, pc}
+ 168              	.LVL22:
+ 169              	.L15:
+ 170              		.loc 1 40 0
+ 171 003e 0120     		movs	r0, #1
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 4
+
+
+ 172 0040 FBE7     		b	.L12
+ 173              	.LVL23:
+ 174              	.L16:
+ 175 0042 0220     		movs	r0, #2
+ 176 0044 F9E7     		b	.L12
+ 177              	.LVL24:
+ 178              	.L17:
+ 179 0046 0320     		movs	r0, #3
+ 180 0048 F7E7     		b	.L12
+ 181              	.LVL25:
+ 182              	.L19:
+ 183              		.loc 1 41 0
+ 184 004a 0420     		movs	r0, #4
+ 185 004c F5E7     		b	.L12
+ 186              	.L21:
+ 187 004e 00BF     		.align	2
+ 188              	.L20:
+ 189 0050 18000000 		.word	.LC3
+ 190 0054 20000000 		.word	.LC4
+ 191 0058 2C000000 		.word	.LC5
+ 192 005c 34000000 		.word	.LC6
+ 193 0060 3C000000 		.word	.LC7
+ 194              	.LBE8:
+ 195              		.cfi_endproc
+ 196              	.LFE1:
+ 197              		.size	_Z23getTransferEncodingTypePKc, .-_Z23getTransferEncodingTypePKc
+ 198 0064 AFF30080 		.section	.rodata.str1.4,"aMS",%progbits,1
+ 198      AFF30080 
+ 198      AFF30080 
+ 199              		.align	2
+ 200              	.LC0:
+ 201 0000 68747470 		.ascii	"http\000"
+ 201      00
+ 202 0005 000000   		.space	3
+ 203              	.LC1:
+ 204 0008 75647000 		.ascii	"udp\000"
+ 205              	.LC2:
+ 206 000c 66696C65 		.ascii	"filehttps\000"
+ 206      68747470 
+ 206      7300
+ 207 0016 0000     		.space	2
+ 208              	.LC3:
+ 209 0018 6368756E 		.ascii	"chunked\000"
+ 209      6B656400 
+ 210              	.LC4:
+ 211 0020 636F6D70 		.ascii	"compress\000"
+ 211      72657373 
+ 211      00
+ 212 0029 000000   		.space	3
+ 213              	.LC5:
+ 214 002c 6465666C 		.ascii	"deflate\000"
+ 214      61746500 
+ 215              	.LC6:
+ 216 0034 677A6970 		.ascii	"gzip\000"
+ 216      00
+ 217 0039 000000   		.space	3
+ 218              	.LC7:
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 5
+
+
+ 219 003c 6964656E 		.ascii	"identity\000"
+ 219      74697479 
+ 219      00
+ 220 0045 000000   		.text
+ 221              	.Letext0:
+ 222              		.file 2 "C:/ChibiStudio/chibios/demos/ARMCM4-STM32F401RE-NUCLEO-CC3K/openweathermap/httptypes.h"
+ 223              		.file 3 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 224              		.section	.debug_info,"",%progbits
+ 225              	.Ldebug_info0:
+ 226 0000 B5020000 		.4byte	0x2b5
+ 227 0004 0200     		.2byte	0x2
+ 228 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 229 000a 04       		.byte	0x4
+ 230 000b 01       		.uleb128 0x1
+ 231 000c A2010000 		.4byte	.LASF32
+ 232 0010 04       		.byte	0x4
+ 233 0011 00000000 		.4byte	.LASF33
+ 234 0015 48000000 		.4byte	.Ldebug_ranges0+0x48
+ 235 0019 00000000 		.4byte	0
+ 236 001d 00000000 		.4byte	0
+ 237 0021 00000000 		.4byte	.Ldebug_line0
+ 238 0025 02       		.uleb128 0x2
+ 239 0026 5C020000 		.4byte	.LASF4
+ 240 002a 01       		.byte	0x1
+ 241 002b 02       		.byte	0x2
+ 242 002c 18       		.byte	0x18
+ 243 002d 4A000000 		.4byte	0x4a
+ 244 0031 03       		.uleb128 0x3
+ 245 0032 6E010000 		.4byte	.LASF0
+ 246 0036 00       		.sleb128 0
+ 247 0037 03       		.uleb128 0x3
+ 248 0038 37010000 		.4byte	.LASF1
+ 249 003c 01       		.sleb128 1
+ 250 003d 03       		.uleb128 0x3
+ 251 003e 40010000 		.4byte	.LASF2
+ 252 0042 02       		.sleb128 2
+ 253 0043 03       		.uleb128 0x3
+ 254 0044 25010000 		.4byte	.LASF3
+ 255 0048 03       		.sleb128 3
+ 256 0049 00       		.byte	0
+ 257 004a 02       		.uleb128 0x2
+ 258 004b CE000000 		.4byte	.LASF5
+ 259 004f 01       		.byte	0x1
+ 260 0050 02       		.byte	0x2
+ 261 0051 24       		.byte	0x24
+ 262 0052 7B000000 		.4byte	0x7b
+ 263 0056 03       		.uleb128 0x3
+ 264 0057 79000000 		.4byte	.LASF6
+ 265 005b 00       		.sleb128 0
+ 266 005c 03       		.uleb128 0x3
+ 267 005d 4B020000 		.4byte	.LASF7
+ 268 0061 01       		.sleb128 1
+ 269 0062 03       		.uleb128 0x3
+ 270 0063 89000000 		.4byte	.LASF8
+ 271 0067 02       		.sleb128 2
+ 272 0068 03       		.uleb128 0x3
+ 273 0069 0A010000 		.4byte	.LASF9
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 6
+
+
+ 274 006d 03       		.sleb128 3
+ 275 006e 03       		.uleb128 0x3
+ 276 006f 99000000 		.4byte	.LASF10
+ 277 0073 04       		.sleb128 4
+ 278 0074 03       		.uleb128 0x3
+ 279 0075 69000000 		.4byte	.LASF11
+ 280 0079 05       		.sleb128 5
+ 281 007a 00       		.byte	0
+ 282 007b 04       		.uleb128 0x4
+ 283 007c 01       		.byte	0x1
+ 284 007d 06       		.byte	0x6
+ 285 007e 2D020000 		.4byte	.LASF12
+ 286 0082 04       		.uleb128 0x4
+ 287 0083 01       		.byte	0x1
+ 288 0084 08       		.byte	0x8
+ 289 0085 17010000 		.4byte	.LASF13
+ 290 0089 04       		.uleb128 0x4
+ 291 008a 02       		.byte	0x2
+ 292 008b 05       		.byte	0x5
+ 293 008c 98010000 		.4byte	.LASF14
+ 294 0090 04       		.uleb128 0x4
+ 295 0091 02       		.byte	0x2
+ 296 0092 07       		.byte	0x7
+ 297 0093 F7000000 		.4byte	.LASF15
+ 298 0097 05       		.uleb128 0x5
+ 299 0098 04       		.byte	0x4
+ 300 0099 05       		.byte	0x5
+ 301 009a 696E7400 		.ascii	"int\000"
+ 302 009e 04       		.uleb128 0x4
+ 303 009f 04       		.byte	0x4
+ 304 00a0 07       		.byte	0x7
+ 305 00a1 4A010000 		.4byte	.LASF16
+ 306 00a5 04       		.uleb128 0x4
+ 307 00a6 08       		.byte	0x8
+ 308 00a7 05       		.byte	0x5
+ 309 00a8 80010000 		.4byte	.LASF17
+ 310 00ac 04       		.uleb128 0x4
+ 311 00ad 08       		.byte	0x8
+ 312 00ae 07       		.byte	0x7
+ 313 00af 57010000 		.4byte	.LASF18
+ 314 00b3 04       		.uleb128 0x4
+ 315 00b4 04       		.byte	0x4
+ 316 00b5 05       		.byte	0x5
+ 317 00b6 05020000 		.4byte	.LASF19
+ 318 00ba 04       		.uleb128 0x4
+ 319 00bb 04       		.byte	0x4
+ 320 00bc 07       		.byte	0x7
+ 321 00bd 77010000 		.4byte	.LASF20
+ 322 00c1 04       		.uleb128 0x4
+ 323 00c2 04       		.byte	0x4
+ 324 00c3 07       		.byte	0x7
+ 325 00c4 E5000000 		.4byte	.LASF21
+ 326 00c8 06       		.uleb128 0x6
+ 327 00c9 04       		.byte	0x4
+ 328 00ca CE000000 		.4byte	0xce
+ 329 00ce 04       		.uleb128 0x4
+ 330 00cf 01       		.byte	0x1
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 7
+
+
+ 331 00d0 08       		.byte	0x8
+ 332 00d1 8E010000 		.4byte	.LASF22
+ 333 00d5 06       		.uleb128 0x6
+ 334 00d6 04       		.byte	0x4
+ 335 00d7 DB000000 		.4byte	0xdb
+ 336 00db 07       		.uleb128 0x7
+ 337 00dc CE000000 		.4byte	0xce
+ 338 00e0 08       		.uleb128 0x8
+ 339 00e1 01       		.byte	0x1
+ 340 00e2 39020000 		.4byte	.LASF24
+ 341 00e6 01       		.byte	0x1
+ 342 00e7 18       		.byte	0x18
+ 343 00e8 BC000000 		.4byte	.LASF26
+ 344 00ec 25000000 		.4byte	0x25
+ 345 00f0 00000000 		.4byte	.LFB0
+ 346 00f4 3C000000 		.4byte	.LFE0
+ 347 00f8 00000000 		.4byte	.LLST0
+ 348 00fc 01       		.byte	0x1
+ 349 00fd 83010000 		.4byte	0x183
+ 350 0101 09       		.uleb128 0x9
+ 351 0102 59000000 		.4byte	.LASF28
+ 352 0106 01       		.byte	0x1
+ 353 0107 18       		.byte	0x18
+ 354 0108 D5000000 		.4byte	0xd5
+ 355 010c 20000000 		.4byte	.LLST1
+ 356 0110 0A       		.uleb128 0xa
+ 357 0111 00000000 		.4byte	.Ldebug_ranges0+0
+ 358 0115 0B       		.uleb128 0xb
+ 359 0116 6900     		.ascii	"i\000"
+ 360 0118 01       		.byte	0x1
+ 361 0119 1A       		.byte	0x1a
+ 362 011a 97000000 		.4byte	0x97
+ 363 011e 3E000000 		.4byte	.LLST2
+ 364 0122 0C       		.uleb128 0xc
+ 365 0123 93010000 		.4byte	.LASF23
+ 366 0127 01       		.byte	0x1
+ 367 0128 1B       		.byte	0x1b
+ 368 0129 25000000 		.4byte	0x25
+ 369 012d 00       		.byte	0
+ 370 012e 0D       		.uleb128 0xd
+ 371 012f 0A000000 		.4byte	.LVL1
+ 372 0133 A0020000 		.4byte	0x2a0
+ 373 0137 4B010000 		.4byte	0x14b
+ 374 013b 0E       		.uleb128 0xe
+ 375 013c 01       		.byte	0x1
+ 376 013d 51       		.byte	0x51
+ 377 013e 05       		.byte	0x5
+ 378 013f 03       		.byte	0x3
+ 379 0140 00000000 		.4byte	.LC0
+ 380 0144 0E       		.uleb128 0xe
+ 381 0145 01       		.byte	0x1
+ 382 0146 50       		.byte	0x50
+ 383 0147 02       		.byte	0x2
+ 384 0148 74       		.byte	0x74
+ 385 0149 00       		.sleb128 0
+ 386 014a 00       		.byte	0
+ 387 014b 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 8
+
+
+ 388 014c 14000000 		.4byte	.LVL3
+ 389 0150 A0020000 		.4byte	0x2a0
+ 390 0154 68010000 		.4byte	0x168
+ 391 0158 0E       		.uleb128 0xe
+ 392 0159 01       		.byte	0x1
+ 393 015a 51       		.byte	0x51
+ 394 015b 05       		.byte	0x5
+ 395 015c 03       		.byte	0x3
+ 396 015d 08000000 		.4byte	.LC1
+ 397 0161 0E       		.uleb128 0xe
+ 398 0162 01       		.byte	0x1
+ 399 0163 50       		.byte	0x50
+ 400 0164 02       		.byte	0x2
+ 401 0165 74       		.byte	0x74
+ 402 0166 00       		.sleb128 0
+ 403 0167 00       		.byte	0
+ 404 0168 0F       		.uleb128 0xf
+ 405 0169 1E000000 		.4byte	.LVL5
+ 406 016d A0020000 		.4byte	0x2a0
+ 407 0171 0E       		.uleb128 0xe
+ 408 0172 01       		.byte	0x1
+ 409 0173 51       		.byte	0x51
+ 410 0174 05       		.byte	0x5
+ 411 0175 03       		.byte	0x3
+ 412 0176 0C000000 		.4byte	.LC2
+ 413 017a 0E       		.uleb128 0xe
+ 414 017b 01       		.byte	0x1
+ 415 017c 50       		.byte	0x50
+ 416 017d 02       		.byte	0x2
+ 417 017e 74       		.byte	0x74
+ 418 017f 00       		.sleb128 0
+ 419 0180 00       		.byte	0
+ 420 0181 00       		.byte	0
+ 421 0182 00       		.byte	0
+ 422 0183 08       		.uleb128 0x8
+ 423 0184 01       		.byte	0x1
+ 424 0185 ED010000 		.4byte	.LASF25
+ 425 0189 01       		.byte	0x1
+ 426 018a 24       		.byte	0x24
+ 427 018b 0E020000 		.4byte	.LASF27
+ 428 018f 4A000000 		.4byte	0x4a
+ 429 0193 00000000 		.4byte	.LFB1
+ 430 0197 64000000 		.4byte	.LFE1
+ 431 019b 8E000000 		.4byte	.LLST3
+ 432 019f 01       		.byte	0x1
+ 433 01a0 60020000 		.4byte	0x260
+ 434 01a4 10       		.uleb128 0x10
+ 435 01a5 73747200 		.ascii	"str\000"
+ 436 01a9 01       		.byte	0x1
+ 437 01aa 24       		.byte	0x24
+ 438 01ab D5000000 		.4byte	0xd5
+ 439 01af AE000000 		.4byte	.LLST4
+ 440 01b3 0A       		.uleb128 0xa
+ 441 01b4 28000000 		.4byte	.Ldebug_ranges0+0x28
+ 442 01b8 0B       		.uleb128 0xb
+ 443 01b9 6900     		.ascii	"i\000"
+ 444 01bb 01       		.byte	0x1
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 9
+
+
+ 445 01bc 26       		.byte	0x26
+ 446 01bd 97000000 		.4byte	0x97
+ 447 01c1 CC000000 		.4byte	.LLST5
+ 448 01c5 0C       		.uleb128 0xc
+ 449 01c6 60000000 		.4byte	.LASF29
+ 450 01ca 01       		.byte	0x1
+ 451 01cb 27       		.byte	0x27
+ 452 01cc 4A000000 		.4byte	0x4a
+ 453 01d0 05       		.byte	0x5
+ 454 01d1 0D       		.uleb128 0xd
+ 455 01d2 0A000000 		.4byte	.LVL11
+ 456 01d6 A0020000 		.4byte	0x2a0
+ 457 01da EE010000 		.4byte	0x1ee
+ 458 01de 0E       		.uleb128 0xe
+ 459 01df 01       		.byte	0x1
+ 460 01e0 51       		.byte	0x51
+ 461 01e1 05       		.byte	0x5
+ 462 01e2 03       		.byte	0x3
+ 463 01e3 18000000 		.4byte	.LC3
+ 464 01e7 0E       		.uleb128 0xe
+ 465 01e8 01       		.byte	0x1
+ 466 01e9 50       		.byte	0x50
+ 467 01ea 02       		.byte	0x2
+ 468 01eb 74       		.byte	0x74
+ 469 01ec 00       		.sleb128 0
+ 470 01ed 00       		.byte	0
+ 471 01ee 0D       		.uleb128 0xd
+ 472 01ef 14000000 		.4byte	.LVL13
+ 473 01f3 A0020000 		.4byte	0x2a0
+ 474 01f7 0B020000 		.4byte	0x20b
+ 475 01fb 0E       		.uleb128 0xe
+ 476 01fc 01       		.byte	0x1
+ 477 01fd 51       		.byte	0x51
+ 478 01fe 05       		.byte	0x5
+ 479 01ff 03       		.byte	0x3
+ 480 0200 20000000 		.4byte	.LC4
+ 481 0204 0E       		.uleb128 0xe
+ 482 0205 01       		.byte	0x1
+ 483 0206 50       		.byte	0x50
+ 484 0207 02       		.byte	0x2
+ 485 0208 74       		.byte	0x74
+ 486 0209 00       		.sleb128 0
+ 487 020a 00       		.byte	0
+ 488 020b 0D       		.uleb128 0xd
+ 489 020c 1E000000 		.4byte	.LVL15
+ 490 0210 A0020000 		.4byte	0x2a0
+ 491 0214 28020000 		.4byte	0x228
+ 492 0218 0E       		.uleb128 0xe
+ 493 0219 01       		.byte	0x1
+ 494 021a 51       		.byte	0x51
+ 495 021b 05       		.byte	0x5
+ 496 021c 03       		.byte	0x3
+ 497 021d 2C000000 		.4byte	.LC5
+ 498 0221 0E       		.uleb128 0xe
+ 499 0222 01       		.byte	0x1
+ 500 0223 50       		.byte	0x50
+ 501 0224 02       		.byte	0x2
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 10
+
+
+ 502 0225 74       		.byte	0x74
+ 503 0226 00       		.sleb128 0
+ 504 0227 00       		.byte	0
+ 505 0228 0D       		.uleb128 0xd
+ 506 0229 28000000 		.4byte	.LVL17
+ 507 022d A0020000 		.4byte	0x2a0
+ 508 0231 45020000 		.4byte	0x245
+ 509 0235 0E       		.uleb128 0xe
+ 510 0236 01       		.byte	0x1
+ 511 0237 51       		.byte	0x51
+ 512 0238 05       		.byte	0x5
+ 513 0239 03       		.byte	0x3
+ 514 023a 34000000 		.4byte	.LC6
+ 515 023e 0E       		.uleb128 0xe
+ 516 023f 01       		.byte	0x1
+ 517 0240 50       		.byte	0x50
+ 518 0241 02       		.byte	0x2
+ 519 0242 74       		.byte	0x74
+ 520 0243 00       		.sleb128 0
+ 521 0244 00       		.byte	0
+ 522 0245 0F       		.uleb128 0xf
+ 523 0246 32000000 		.4byte	.LVL19
+ 524 024a A0020000 		.4byte	0x2a0
+ 525 024e 0E       		.uleb128 0xe
+ 526 024f 01       		.byte	0x1
+ 527 0250 51       		.byte	0x51
+ 528 0251 05       		.byte	0x5
+ 529 0252 03       		.byte	0x3
+ 530 0253 3C000000 		.4byte	.LC7
+ 531 0257 0E       		.uleb128 0xe
+ 532 0258 01       		.byte	0x1
+ 533 0259 50       		.byte	0x50
+ 534 025a 02       		.byte	0x2
+ 535 025b 74       		.byte	0x74
+ 536 025c 00       		.sleb128 0
+ 537 025d 00       		.byte	0
+ 538 025e 00       		.byte	0
+ 539 025f 00       		.byte	0
+ 540 0260 11       		.uleb128 0x11
+ 541 0261 D5000000 		.4byte	0xd5
+ 542 0265 70020000 		.4byte	0x270
+ 543 0269 12       		.uleb128 0x12
+ 544 026a BA000000 		.4byte	0xba
+ 545 026e 02       		.byte	0x2
+ 546 026f 00       		.byte	0
+ 547 0270 13       		.uleb128 0x13
+ 548 0271 2F010000 		.4byte	.LASF30
+ 549 0275 01       		.byte	0x1
+ 550 0276 05       		.byte	0x5
+ 551 0277 7B020000 		.4byte	0x27b
+ 552 027b 07       		.uleb128 0x7
+ 553 027c 60020000 		.4byte	0x260
+ 554 0280 11       		.uleb128 0x11
+ 555 0281 D5000000 		.4byte	0xd5
+ 556 0285 90020000 		.4byte	0x290
+ 557 0289 12       		.uleb128 0x12
+ 558 028a BA000000 		.4byte	0xba
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 11
+
+
+ 559 028e 04       		.byte	0x4
+ 560 028f 00       		.byte	0
+ 561 0290 13       		.uleb128 0x13
+ 562 0291 AA000000 		.4byte	.LASF31
+ 563 0295 01       		.byte	0x1
+ 564 0296 0E       		.byte	0xe
+ 565 0297 9B020000 		.4byte	0x29b
+ 566 029b 07       		.uleb128 0x7
+ 567 029c 80020000 		.4byte	0x280
+ 568 02a0 14       		.uleb128 0x14
+ 569 02a1 01       		.byte	0x1
+ 570 02a2 44020000 		.4byte	.LASF34
+ 571 02a6 03       		.byte	0x3
+ 572 02a7 29       		.byte	0x29
+ 573 02a8 C8000000 		.4byte	0xc8
+ 574 02ac 01       		.byte	0x1
+ 575 02ad 15       		.uleb128 0x15
+ 576 02ae D5000000 		.4byte	0xd5
+ 577 02b2 15       		.uleb128 0x15
+ 578 02b3 D5000000 		.4byte	0xd5
+ 579 02b7 00       		.byte	0
+ 580 02b8 00       		.byte	0
+ 581              		.section	.debug_abbrev,"",%progbits
+ 582              	.Ldebug_abbrev0:
+ 583 0000 01       		.uleb128 0x1
+ 584 0001 11       		.uleb128 0x11
+ 585 0002 01       		.byte	0x1
+ 586 0003 25       		.uleb128 0x25
+ 587 0004 0E       		.uleb128 0xe
+ 588 0005 13       		.uleb128 0x13
+ 589 0006 0B       		.uleb128 0xb
+ 590 0007 03       		.uleb128 0x3
+ 591 0008 0E       		.uleb128 0xe
+ 592 0009 55       		.uleb128 0x55
+ 593 000a 06       		.uleb128 0x6
+ 594 000b 11       		.uleb128 0x11
+ 595 000c 01       		.uleb128 0x1
+ 596 000d 52       		.uleb128 0x52
+ 597 000e 01       		.uleb128 0x1
+ 598 000f 10       		.uleb128 0x10
+ 599 0010 06       		.uleb128 0x6
+ 600 0011 00       		.byte	0
+ 601 0012 00       		.byte	0
+ 602 0013 02       		.uleb128 0x2
+ 603 0014 04       		.uleb128 0x4
+ 604 0015 01       		.byte	0x1
+ 605 0016 03       		.uleb128 0x3
+ 606 0017 0E       		.uleb128 0xe
+ 607 0018 0B       		.uleb128 0xb
+ 608 0019 0B       		.uleb128 0xb
+ 609 001a 3A       		.uleb128 0x3a
+ 610 001b 0B       		.uleb128 0xb
+ 611 001c 3B       		.uleb128 0x3b
+ 612 001d 0B       		.uleb128 0xb
+ 613 001e 01       		.uleb128 0x1
+ 614 001f 13       		.uleb128 0x13
+ 615 0020 00       		.byte	0
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 12
+
+
+ 616 0021 00       		.byte	0
+ 617 0022 03       		.uleb128 0x3
+ 618 0023 28       		.uleb128 0x28
+ 619 0024 00       		.byte	0
+ 620 0025 03       		.uleb128 0x3
+ 621 0026 0E       		.uleb128 0xe
+ 622 0027 1C       		.uleb128 0x1c
+ 623 0028 0D       		.uleb128 0xd
+ 624 0029 00       		.byte	0
+ 625 002a 00       		.byte	0
+ 626 002b 04       		.uleb128 0x4
+ 627 002c 24       		.uleb128 0x24
+ 628 002d 00       		.byte	0
+ 629 002e 0B       		.uleb128 0xb
+ 630 002f 0B       		.uleb128 0xb
+ 631 0030 3E       		.uleb128 0x3e
+ 632 0031 0B       		.uleb128 0xb
+ 633 0032 03       		.uleb128 0x3
+ 634 0033 0E       		.uleb128 0xe
+ 635 0034 00       		.byte	0
+ 636 0035 00       		.byte	0
+ 637 0036 05       		.uleb128 0x5
+ 638 0037 24       		.uleb128 0x24
+ 639 0038 00       		.byte	0
+ 640 0039 0B       		.uleb128 0xb
+ 641 003a 0B       		.uleb128 0xb
+ 642 003b 3E       		.uleb128 0x3e
+ 643 003c 0B       		.uleb128 0xb
+ 644 003d 03       		.uleb128 0x3
+ 645 003e 08       		.uleb128 0x8
+ 646 003f 00       		.byte	0
+ 647 0040 00       		.byte	0
+ 648 0041 06       		.uleb128 0x6
+ 649 0042 0F       		.uleb128 0xf
+ 650 0043 00       		.byte	0
+ 651 0044 0B       		.uleb128 0xb
+ 652 0045 0B       		.uleb128 0xb
+ 653 0046 49       		.uleb128 0x49
+ 654 0047 13       		.uleb128 0x13
+ 655 0048 00       		.byte	0
+ 656 0049 00       		.byte	0
+ 657 004a 07       		.uleb128 0x7
+ 658 004b 26       		.uleb128 0x26
+ 659 004c 00       		.byte	0
+ 660 004d 49       		.uleb128 0x49
+ 661 004e 13       		.uleb128 0x13
+ 662 004f 00       		.byte	0
+ 663 0050 00       		.byte	0
+ 664 0051 08       		.uleb128 0x8
+ 665 0052 2E       		.uleb128 0x2e
+ 666 0053 01       		.byte	0x1
+ 667 0054 3F       		.uleb128 0x3f
+ 668 0055 0C       		.uleb128 0xc
+ 669 0056 03       		.uleb128 0x3
+ 670 0057 0E       		.uleb128 0xe
+ 671 0058 3A       		.uleb128 0x3a
+ 672 0059 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 13
+
+
+ 673 005a 3B       		.uleb128 0x3b
+ 674 005b 0B       		.uleb128 0xb
+ 675 005c 8740     		.uleb128 0x2007
+ 676 005e 0E       		.uleb128 0xe
+ 677 005f 49       		.uleb128 0x49
+ 678 0060 13       		.uleb128 0x13
+ 679 0061 11       		.uleb128 0x11
+ 680 0062 01       		.uleb128 0x1
+ 681 0063 12       		.uleb128 0x12
+ 682 0064 01       		.uleb128 0x1
+ 683 0065 40       		.uleb128 0x40
+ 684 0066 06       		.uleb128 0x6
+ 685 0067 9742     		.uleb128 0x2117
+ 686 0069 0C       		.uleb128 0xc
+ 687 006a 01       		.uleb128 0x1
+ 688 006b 13       		.uleb128 0x13
+ 689 006c 00       		.byte	0
+ 690 006d 00       		.byte	0
+ 691 006e 09       		.uleb128 0x9
+ 692 006f 05       		.uleb128 0x5
+ 693 0070 00       		.byte	0
+ 694 0071 03       		.uleb128 0x3
+ 695 0072 0E       		.uleb128 0xe
+ 696 0073 3A       		.uleb128 0x3a
+ 697 0074 0B       		.uleb128 0xb
+ 698 0075 3B       		.uleb128 0x3b
+ 699 0076 0B       		.uleb128 0xb
+ 700 0077 49       		.uleb128 0x49
+ 701 0078 13       		.uleb128 0x13
+ 702 0079 02       		.uleb128 0x2
+ 703 007a 06       		.uleb128 0x6
+ 704 007b 00       		.byte	0
+ 705 007c 00       		.byte	0
+ 706 007d 0A       		.uleb128 0xa
+ 707 007e 0B       		.uleb128 0xb
+ 708 007f 01       		.byte	0x1
+ 709 0080 55       		.uleb128 0x55
+ 710 0081 06       		.uleb128 0x6
+ 711 0082 00       		.byte	0
+ 712 0083 00       		.byte	0
+ 713 0084 0B       		.uleb128 0xb
+ 714 0085 34       		.uleb128 0x34
+ 715 0086 00       		.byte	0
+ 716 0087 03       		.uleb128 0x3
+ 717 0088 08       		.uleb128 0x8
+ 718 0089 3A       		.uleb128 0x3a
+ 719 008a 0B       		.uleb128 0xb
+ 720 008b 3B       		.uleb128 0x3b
+ 721 008c 0B       		.uleb128 0xb
+ 722 008d 49       		.uleb128 0x49
+ 723 008e 13       		.uleb128 0x13
+ 724 008f 02       		.uleb128 0x2
+ 725 0090 06       		.uleb128 0x6
+ 726 0091 00       		.byte	0
+ 727 0092 00       		.byte	0
+ 728 0093 0C       		.uleb128 0xc
+ 729 0094 34       		.uleb128 0x34
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 14
+
+
+ 730 0095 00       		.byte	0
+ 731 0096 03       		.uleb128 0x3
+ 732 0097 0E       		.uleb128 0xe
+ 733 0098 3A       		.uleb128 0x3a
+ 734 0099 0B       		.uleb128 0xb
+ 735 009a 3B       		.uleb128 0x3b
+ 736 009b 0B       		.uleb128 0xb
+ 737 009c 49       		.uleb128 0x49
+ 738 009d 13       		.uleb128 0x13
+ 739 009e 1C       		.uleb128 0x1c
+ 740 009f 0B       		.uleb128 0xb
+ 741 00a0 00       		.byte	0
+ 742 00a1 00       		.byte	0
+ 743 00a2 0D       		.uleb128 0xd
+ 744 00a3 898201   		.uleb128 0x4109
+ 745 00a6 01       		.byte	0x1
+ 746 00a7 11       		.uleb128 0x11
+ 747 00a8 01       		.uleb128 0x1
+ 748 00a9 31       		.uleb128 0x31
+ 749 00aa 13       		.uleb128 0x13
+ 750 00ab 01       		.uleb128 0x1
+ 751 00ac 13       		.uleb128 0x13
+ 752 00ad 00       		.byte	0
+ 753 00ae 00       		.byte	0
+ 754 00af 0E       		.uleb128 0xe
+ 755 00b0 8A8201   		.uleb128 0x410a
+ 756 00b3 00       		.byte	0
+ 757 00b4 02       		.uleb128 0x2
+ 758 00b5 0A       		.uleb128 0xa
+ 759 00b6 9142     		.uleb128 0x2111
+ 760 00b8 0A       		.uleb128 0xa
+ 761 00b9 00       		.byte	0
+ 762 00ba 00       		.byte	0
+ 763 00bb 0F       		.uleb128 0xf
+ 764 00bc 898201   		.uleb128 0x4109
+ 765 00bf 01       		.byte	0x1
+ 766 00c0 11       		.uleb128 0x11
+ 767 00c1 01       		.uleb128 0x1
+ 768 00c2 31       		.uleb128 0x31
+ 769 00c3 13       		.uleb128 0x13
+ 770 00c4 00       		.byte	0
+ 771 00c5 00       		.byte	0
+ 772 00c6 10       		.uleb128 0x10
+ 773 00c7 05       		.uleb128 0x5
+ 774 00c8 00       		.byte	0
+ 775 00c9 03       		.uleb128 0x3
+ 776 00ca 08       		.uleb128 0x8
+ 777 00cb 3A       		.uleb128 0x3a
+ 778 00cc 0B       		.uleb128 0xb
+ 779 00cd 3B       		.uleb128 0x3b
+ 780 00ce 0B       		.uleb128 0xb
+ 781 00cf 49       		.uleb128 0x49
+ 782 00d0 13       		.uleb128 0x13
+ 783 00d1 02       		.uleb128 0x2
+ 784 00d2 06       		.uleb128 0x6
+ 785 00d3 00       		.byte	0
+ 786 00d4 00       		.byte	0
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 15
+
+
+ 787 00d5 11       		.uleb128 0x11
+ 788 00d6 01       		.uleb128 0x1
+ 789 00d7 01       		.byte	0x1
+ 790 00d8 49       		.uleb128 0x49
+ 791 00d9 13       		.uleb128 0x13
+ 792 00da 01       		.uleb128 0x1
+ 793 00db 13       		.uleb128 0x13
+ 794 00dc 00       		.byte	0
+ 795 00dd 00       		.byte	0
+ 796 00de 12       		.uleb128 0x12
+ 797 00df 21       		.uleb128 0x21
+ 798 00e0 00       		.byte	0
+ 799 00e1 49       		.uleb128 0x49
+ 800 00e2 13       		.uleb128 0x13
+ 801 00e3 2F       		.uleb128 0x2f
+ 802 00e4 0B       		.uleb128 0xb
+ 803 00e5 00       		.byte	0
+ 804 00e6 00       		.byte	0
+ 805 00e7 13       		.uleb128 0x13
+ 806 00e8 34       		.uleb128 0x34
+ 807 00e9 00       		.byte	0
+ 808 00ea 03       		.uleb128 0x3
+ 809 00eb 0E       		.uleb128 0xe
+ 810 00ec 3A       		.uleb128 0x3a
+ 811 00ed 0B       		.uleb128 0xb
+ 812 00ee 3B       		.uleb128 0x3b
+ 813 00ef 0B       		.uleb128 0xb
+ 814 00f0 49       		.uleb128 0x49
+ 815 00f1 13       		.uleb128 0x13
+ 816 00f2 00       		.byte	0
+ 817 00f3 00       		.byte	0
+ 818 00f4 14       		.uleb128 0x14
+ 819 00f5 2E       		.uleb128 0x2e
+ 820 00f6 01       		.byte	0x1
+ 821 00f7 3F       		.uleb128 0x3f
+ 822 00f8 0C       		.uleb128 0xc
+ 823 00f9 03       		.uleb128 0x3
+ 824 00fa 0E       		.uleb128 0xe
+ 825 00fb 3A       		.uleb128 0x3a
+ 826 00fc 0B       		.uleb128 0xb
+ 827 00fd 3B       		.uleb128 0x3b
+ 828 00fe 0B       		.uleb128 0xb
+ 829 00ff 49       		.uleb128 0x49
+ 830 0100 13       		.uleb128 0x13
+ 831 0101 3C       		.uleb128 0x3c
+ 832 0102 0C       		.uleb128 0xc
+ 833 0103 00       		.byte	0
+ 834 0104 00       		.byte	0
+ 835 0105 15       		.uleb128 0x15
+ 836 0106 05       		.uleb128 0x5
+ 837 0107 00       		.byte	0
+ 838 0108 49       		.uleb128 0x49
+ 839 0109 13       		.uleb128 0x13
+ 840 010a 00       		.byte	0
+ 841 010b 00       		.byte	0
+ 842 010c 00       		.byte	0
+ 843              		.section	.debug_loc,"",%progbits
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 16
+
+
+ 844              	.Ldebug_loc0:
+ 845              	.LLST0:
+ 846 0000 00000000 		.4byte	.LFB0
+ 847 0004 02000000 		.4byte	.LCFI0
+ 848 0008 0200     		.2byte	0x2
+ 849 000a 7D       		.byte	0x7d
+ 850 000b 00       		.sleb128 0
+ 851 000c 02000000 		.4byte	.LCFI0
+ 852 0010 3C000000 		.4byte	.LFE0
+ 853 0014 0200     		.2byte	0x2
+ 854 0016 7D       		.byte	0x7d
+ 855 0017 08       		.sleb128 8
+ 856 0018 00000000 		.4byte	0
+ 857 001c 00000000 		.4byte	0
+ 858              	.LLST1:
+ 859 0020 00000000 		.4byte	.LVL0
+ 860 0024 09000000 		.4byte	.LVL1-1
+ 861 0028 0100     		.2byte	0x1
+ 862 002a 50       		.byte	0x50
+ 863 002b 09000000 		.4byte	.LVL1-1
+ 864 002f 3C000000 		.4byte	.LFE0
+ 865 0033 0100     		.2byte	0x1
+ 866 0035 54       		.byte	0x54
+ 867 0036 00000000 		.4byte	0
+ 868 003a 00000000 		.4byte	0
+ 869              	.LLST2:
+ 870 003e 00000000 		.4byte	.LVL0
+ 871 0042 0C000000 		.4byte	.LVL2
+ 872 0046 0200     		.2byte	0x2
+ 873 0048 30       		.byte	0x30
+ 874 0049 9F       		.byte	0x9f
+ 875 004a 0C000000 		.4byte	.LVL2
+ 876 004e 16000000 		.4byte	.LVL4
+ 877 0052 0200     		.2byte	0x2
+ 878 0054 31       		.byte	0x31
+ 879 0055 9F       		.byte	0x9f
+ 880 0056 16000000 		.4byte	.LVL4
+ 881 005a 22000000 		.4byte	.LVL6
+ 882 005e 0200     		.2byte	0x2
+ 883 0060 32       		.byte	0x32
+ 884 0061 9F       		.byte	0x9f
+ 885 0062 22000000 		.4byte	.LVL6
+ 886 0066 24000000 		.4byte	.LVL7
+ 887 006a 0200     		.2byte	0x2
+ 888 006c 30       		.byte	0x30
+ 889 006d 9F       		.byte	0x9f
+ 890 006e 28000000 		.4byte	.LVL8
+ 891 0072 2C000000 		.4byte	.LVL9
+ 892 0076 0200     		.2byte	0x2
+ 893 0078 31       		.byte	0x31
+ 894 0079 9F       		.byte	0x9f
+ 895 007a 2C000000 		.4byte	.LVL9
+ 896 007e 3C000000 		.4byte	.LFE0
+ 897 0082 0200     		.2byte	0x2
+ 898 0084 32       		.byte	0x32
+ 899 0085 9F       		.byte	0x9f
+ 900 0086 00000000 		.4byte	0
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 17
+
+
+ 901 008a 00000000 		.4byte	0
+ 902              	.LLST3:
+ 903 008e 00000000 		.4byte	.LFB1
+ 904 0092 02000000 		.4byte	.LCFI1
+ 905 0096 0200     		.2byte	0x2
+ 906 0098 7D       		.byte	0x7d
+ 907 0099 00       		.sleb128 0
+ 908 009a 02000000 		.4byte	.LCFI1
+ 909 009e 64000000 		.4byte	.LFE1
+ 910 00a2 0200     		.2byte	0x2
+ 911 00a4 7D       		.byte	0x7d
+ 912 00a5 08       		.sleb128 8
+ 913 00a6 00000000 		.4byte	0
+ 914 00aa 00000000 		.4byte	0
+ 915              	.LLST4:
+ 916 00ae 00000000 		.4byte	.LVL10
+ 917 00b2 09000000 		.4byte	.LVL11-1
+ 918 00b6 0100     		.2byte	0x1
+ 919 00b8 50       		.byte	0x50
+ 920 00b9 09000000 		.4byte	.LVL11-1
+ 921 00bd 64000000 		.4byte	.LFE1
+ 922 00c1 0100     		.2byte	0x1
+ 923 00c3 54       		.byte	0x54
+ 924 00c4 00000000 		.4byte	0
+ 925 00c8 00000000 		.4byte	0
+ 926              	.LLST5:
+ 927 00cc 00000000 		.4byte	.LVL10
+ 928 00d0 0C000000 		.4byte	.LVL12
+ 929 00d4 0200     		.2byte	0x2
+ 930 00d6 30       		.byte	0x30
+ 931 00d7 9F       		.byte	0x9f
+ 932 00d8 0C000000 		.4byte	.LVL12
+ 933 00dc 16000000 		.4byte	.LVL14
+ 934 00e0 0200     		.2byte	0x2
+ 935 00e2 31       		.byte	0x31
+ 936 00e3 9F       		.byte	0x9f
+ 937 00e4 16000000 		.4byte	.LVL14
+ 938 00e8 20000000 		.4byte	.LVL16
+ 939 00ec 0200     		.2byte	0x2
+ 940 00ee 32       		.byte	0x32
+ 941 00ef 9F       		.byte	0x9f
+ 942 00f0 20000000 		.4byte	.LVL16
+ 943 00f4 2A000000 		.4byte	.LVL18
+ 944 00f8 0200     		.2byte	0x2
+ 945 00fa 33       		.byte	0x33
+ 946 00fb 9F       		.byte	0x9f
+ 947 00fc 2A000000 		.4byte	.LVL18
+ 948 0100 38000000 		.4byte	.LVL20
+ 949 0104 0200     		.2byte	0x2
+ 950 0106 34       		.byte	0x34
+ 951 0107 9F       		.byte	0x9f
+ 952 0108 38000000 		.4byte	.LVL20
+ 953 010c 3A000000 		.4byte	.LVL21
+ 954 0110 0200     		.2byte	0x2
+ 955 0112 30       		.byte	0x30
+ 956 0113 9F       		.byte	0x9f
+ 957 0114 3E000000 		.4byte	.LVL22
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 18
+
+
+ 958 0118 42000000 		.4byte	.LVL23
+ 959 011c 0200     		.2byte	0x2
+ 960 011e 31       		.byte	0x31
+ 961 011f 9F       		.byte	0x9f
+ 962 0120 42000000 		.4byte	.LVL23
+ 963 0124 46000000 		.4byte	.LVL24
+ 964 0128 0200     		.2byte	0x2
+ 965 012a 32       		.byte	0x32
+ 966 012b 9F       		.byte	0x9f
+ 967 012c 46000000 		.4byte	.LVL24
+ 968 0130 4A000000 		.4byte	.LVL25
+ 969 0134 0200     		.2byte	0x2
+ 970 0136 33       		.byte	0x33
+ 971 0137 9F       		.byte	0x9f
+ 972 0138 4A000000 		.4byte	.LVL25
+ 973 013c 64000000 		.4byte	.LFE1
+ 974 0140 0200     		.2byte	0x2
+ 975 0142 34       		.byte	0x34
+ 976 0143 9F       		.byte	0x9f
+ 977 0144 00000000 		.4byte	0
+ 978 0148 00000000 		.4byte	0
+ 979              		.section	.debug_aranges,"",%progbits
+ 980 0000 24000000 		.4byte	0x24
+ 981 0004 0200     		.2byte	0x2
+ 982 0006 00000000 		.4byte	.Ldebug_info0
+ 983 000a 04       		.byte	0x4
+ 984 000b 00       		.byte	0
+ 985 000c 0000     		.2byte	0
+ 986 000e 0000     		.2byte	0
+ 987 0010 00000000 		.4byte	.LFB0
+ 988 0014 3C000000 		.4byte	.LFE0-.LFB0
+ 989 0018 00000000 		.4byte	.LFB1
+ 990 001c 64000000 		.4byte	.LFE1-.LFB1
+ 991 0020 00000000 		.4byte	0
+ 992 0024 00000000 		.4byte	0
+ 993              		.section	.debug_ranges,"",%progbits
+ 994              	.Ldebug_ranges0:
+ 995 0000 02000000 		.4byte	.LBB2
+ 996 0004 04000000 		.4byte	.LBE2
+ 997 0008 06000000 		.4byte	.LBB3
+ 998 000c 20000000 		.4byte	.LBE3
+ 999 0010 22000000 		.4byte	.LBB4
+ 1000 0014 26000000 		.4byte	.LBE4
+ 1001 0018 28000000 		.4byte	.LBB5
+ 1002 001c 3C000000 		.4byte	.LBE5
+ 1003 0020 00000000 		.4byte	0
+ 1004 0024 00000000 		.4byte	0
+ 1005 0028 02000000 		.4byte	.LBB6
+ 1006 002c 04000000 		.4byte	.LBE6
+ 1007 0030 06000000 		.4byte	.LBB7
+ 1008 0034 36000000 		.4byte	.LBE7
+ 1009 0038 38000000 		.4byte	.LBB8
+ 1010 003c 64000000 		.4byte	.LBE8
+ 1011 0040 00000000 		.4byte	0
+ 1012 0044 00000000 		.4byte	0
+ 1013 0048 00000000 		.4byte	.LFB0
+ 1014 004c 3C000000 		.4byte	.LFE0
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 19
+
+
+ 1015 0050 00000000 		.4byte	.LFB1
+ 1016 0054 64000000 		.4byte	.LFE1
+ 1017 0058 00000000 		.4byte	0
+ 1018 005c 00000000 		.4byte	0
+ 1019              		.section	.debug_line,"",%progbits
+ 1020              	.Ldebug_line0:
+ 1021 0000 49010000 		.section	.debug_str,"MS",%progbits,1
+ 1021      02000601 
+ 1021      00000201 
+ 1021      FB0E0D00 
+ 1021      01010101 
+ 1022              	.LASF33:
+ 1023 0000 433A2F43 		.ascii	"C:/ChibiStudio/chibios/demos/ARMCM4-STM32F401RE-NUC"
+ 1023      68696269 
+ 1023      53747564 
+ 1023      696F2F63 
+ 1023      68696269 
+ 1024 0033 4C454F2D 		.ascii	"LEO-CC3K/openweathermap/httptypes.cpp\000"
+ 1024      4343334B 
+ 1024      2F6F7065 
+ 1024      6E776561 
+ 1024      74686572 
+ 1025              	.LASF28:
+ 1026 0059 73636865 		.ascii	"scheme\000"
+ 1026      6D6500
+ 1027              	.LASF29:
+ 1028 0060 656E636F 		.ascii	"encoding\000"
+ 1028      64696E67 
+ 1028      00
+ 1029              	.LASF11:
+ 1030 0069 48545450 		.ascii	"HTTP_TE_UNKNOWN\000"
+ 1030      5F54455F 
+ 1030      554E4B4E 
+ 1030      4F574E00 
+ 1031              	.LASF6:
+ 1032 0079 48545450 		.ascii	"HTTP_TE_CHUNKED\000"
+ 1032      5F54455F 
+ 1032      4348554E 
+ 1032      4B454400 
+ 1033              	.LASF8:
+ 1034 0089 48545450 		.ascii	"HTTP_TE_DEFLATE\000"
+ 1034      5F54455F 
+ 1034      4445464C 
+ 1034      41544500 
+ 1035              	.LASF10:
+ 1036 0099 48545450 		.ascii	"HTTP_TE_IDENTITY\000"
+ 1036      5F54455F 
+ 1036      4944454E 
+ 1036      54495459 
+ 1036      00
+ 1037              	.LASF31:
+ 1038 00aa 7472616E 		.ascii	"transferEncodings\000"
+ 1038      73666572 
+ 1038      456E636F 
+ 1038      64696E67 
+ 1038      7300
+ 1039              	.LASF26:
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 20
+
+
+ 1040 00bc 5F5A3130 		.ascii	"_Z10getConTypePKc\000"
+ 1040      67657443 
+ 1040      6F6E5479 
+ 1040      7065504B 
+ 1040      6300
+ 1041              	.LASF5:
+ 1042 00ce 48545450 		.ascii	"HTTP_TRANSFER_ENCODING\000"
+ 1042      5F545241 
+ 1042      4E534645 
+ 1042      525F454E 
+ 1042      434F4449 
+ 1043              	.LASF21:
+ 1044 00e5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1044      20756E73 
+ 1044      69676E65 
+ 1044      6420696E 
+ 1044      7400
+ 1045              	.LASF15:
+ 1046 00f7 73686F72 		.ascii	"short unsigned int\000"
+ 1046      7420756E 
+ 1046      7369676E 
+ 1046      65642069 
+ 1046      6E7400
+ 1047              	.LASF9:
+ 1048 010a 48545450 		.ascii	"HTTP_TE_GZIP\000"
+ 1048      5F54455F 
+ 1048      475A4950 
+ 1048      00
+ 1049              	.LASF13:
+ 1050 0117 756E7369 		.ascii	"unsigned char\000"
+ 1050      676E6564 
+ 1050      20636861 
+ 1050      7200
+ 1051              	.LASF3:
+ 1052 0125 48545450 		.ascii	"HTTP_STCP\000"
+ 1052      5F535443 
+ 1052      5000
+ 1053              	.LASF30:
+ 1054 012f 73636865 		.ascii	"schemes\000"
+ 1054      6D657300 
+ 1055              	.LASF1:
+ 1056 0137 48545450 		.ascii	"HTTP_UDP\000"
+ 1056      5F554450 
+ 1056      00
+ 1057              	.LASF2:
+ 1058 0140 48545450 		.ascii	"HTTP_FILE\000"
+ 1058      5F46494C 
+ 1058      4500
+ 1059              	.LASF16:
+ 1060 014a 756E7369 		.ascii	"unsigned int\000"
+ 1060      676E6564 
+ 1060      20696E74 
+ 1060      00
+ 1061              	.LASF18:
+ 1062 0157 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1062      206C6F6E 
+ 1062      6720756E 
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 21
+
+
+ 1062      7369676E 
+ 1062      65642069 
+ 1063              	.LASF0:
+ 1064 016e 48545450 		.ascii	"HTTP_TCP\000"
+ 1064      5F544350 
+ 1064      00
+ 1065              	.LASF20:
+ 1066 0177 73697A65 		.ascii	"sizetype\000"
+ 1066      74797065 
+ 1066      00
+ 1067              	.LASF17:
+ 1068 0180 6C6F6E67 		.ascii	"long long int\000"
+ 1068      206C6F6E 
+ 1068      6720696E 
+ 1068      7400
+ 1069              	.LASF22:
+ 1070 018e 63686172 		.ascii	"char\000"
+ 1070      00
+ 1071              	.LASF23:
+ 1072 0193 74797065 		.ascii	"type\000"
+ 1072      00
+ 1073              	.LASF14:
+ 1074 0198 73686F72 		.ascii	"short int\000"
+ 1074      7420696E 
+ 1074      7400
+ 1075              	.LASF32:
+ 1076 01a2 474E5520 		.ascii	"GNU C++ 4.7.4 20140401 (release) [ARM/embedded-4_7-"
+ 1076      432B2B20 
+ 1076      342E372E 
+ 1076      34203230 
+ 1076      31343034 
+ 1077 01d5 6272616E 		.ascii	"branch revision 209195]\000"
+ 1077      63682072 
+ 1077      65766973 
+ 1077      696F6E20 
+ 1077      32303931 
+ 1078              	.LASF25:
+ 1079 01ed 67657454 		.ascii	"getTransferEncodingType\000"
+ 1079      72616E73 
+ 1079      66657245 
+ 1079      6E636F64 
+ 1079      696E6754 
+ 1080              	.LASF19:
+ 1081 0205 6C6F6E67 		.ascii	"long int\000"
+ 1081      20696E74 
+ 1081      00
+ 1082              	.LASF27:
+ 1083 020e 5F5A3233 		.ascii	"_Z23getTransferEncodingTypePKc\000"
+ 1083      67657454 
+ 1083      72616E73 
+ 1083      66657245 
+ 1083      6E636F64 
+ 1084              	.LASF12:
+ 1085 022d 7369676E 		.ascii	"signed char\000"
+ 1085      65642063 
+ 1085      68617200 
+ 1086              	.LASF24:
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 22
+
+
+ 1087 0239 67657443 		.ascii	"getConType\000"
+ 1087      6F6E5479 
+ 1087      706500
+ 1088              	.LASF34:
+ 1089 0244 73747273 		.ascii	"strstr\000"
+ 1089      747200
+ 1090              	.LASF7:
+ 1091 024b 48545450 		.ascii	"HTTP_TE_COMPRESS\000"
+ 1091      5F54455F 
+ 1091      434F4D50 
+ 1091      52455353 
+ 1091      00
+ 1092              	.LASF4:
+ 1093 025c 48545450 		.ascii	"HTTP_CONTYPE\000"
+ 1093      5F434F4E 
+ 1093      54595045 
+ 1093      00
+ 1094              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s 			page 23
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 httptypes.cpp
+C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s:21     .text._Z10getConTypePKc:00000000 $t
+C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s:27     .text._Z10getConTypePKc:00000000 _Z10getConTypePKc
+C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s:92     .text._Z10getConTypePKc:00000030 $d
+C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s:100    .text._Z23getTransferEncodingTypePKc:00000000 $t
+C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s:106    .text._Z23getTransferEncodingTypePKc:00000000 _Z23getTransferEncodingTypePKc
+C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s:189    .text._Z23getTransferEncodingTypePKc:00000050 $d
+C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s:199    .rodata.str1.4:00000000 $d
+                     .debug_frame:00000010 $d
+C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s:99     .text._Z10getConTypePKc:0000003c $t
+C:\Users\Vergil\AppData\Local\Temp\cckr4Mvm.s:198    .text._Z23getTransferEncodingTypePKc:00000064 $t
+
+UNDEFINED SYMBOLS
+strstr
