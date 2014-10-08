@@ -99,7 +99,6 @@ HTTP_RESULT HttpTcpConnection::chunkedRecv(char * buffer, size_t bufsiz)
     // 0\r\n
     // \r\n
     int totalrecv = 0, n;
-    char tmpbuf[10];
 
     do {
 
