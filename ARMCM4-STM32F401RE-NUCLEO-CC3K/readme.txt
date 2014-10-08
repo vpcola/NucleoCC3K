@@ -8,9 +8,9 @@ The demo runs on an ST_NUCLEO_F401RE board.
 
 ** The Demo **
 
-The demo flashes the board LED using a thread, by pressing the button located
-on the board the test procedure is activated with output on the serial port
-SD2 (USART2, mapped on USB virtual COM port).
+The demo uses the SparkFun's CC3000 wifi sheild to connect to a web server
+where the Nucleo board pushes data via a POST http request. Data is archived
+at the server side using mysql.
 
 ** Build Procedure **
 
