@@ -7,7 +7,7 @@
 HttpTcpConnection::HttpTcpConnection()
     : _sockfd(0), _port(0)
 {
-   memset(_hostname, 0, sizeof(_hostname)); 
+   memset(_hostname, 0, sizeof(_hostname));
 }
 
 HttpTcpConnection::~HttpTcpConnection()
@@ -47,7 +47,7 @@ HTTP_RESULT HttpTcpConnection::open( HttpConnectionParams & param)
         return HTTP_CONNECT_ERROR;
     }
 
-    // Successfully open and connected 
+    // Successfully open and connected
     _isOpen = TRUE;
     _isConnected = FALSE;
 
@@ -72,7 +72,7 @@ HTTP_RESULT HttpTcpConnection::send( const char * buffer, size_t bufsiz)
         bytesleft -= n;
     }
 
-    if (n < 0) 
+    if (n < 0)
         return HTTP_SEND_ERROR;
     else
         return HTTP_OK;
@@ -80,7 +80,7 @@ HTTP_RESULT HttpTcpConnection::send( const char * buffer, size_t bufsiz)
 
 HTTP_RESULT HttpTcpConnection::recv(char * buffer, size_t bufsiz, bool chunked)
 {
-    // If the transfer encoding is chunked, we do a chunked 
+    // If the transfer encoding is chunked, we do a chunked
     // read
     if (chunked)
         return chunkedRecv(buffer, bufsiz);
@@ -104,17 +104,17 @@ HTTP_RESULT HttpTcpConnection::chunkedRecv(char * buffer, size_t bufsiz)
     do {
 
         n = readChunkHeader();
-        if (n < 0) 
+        if (n < 0)
             return HTTP_RECV_ERROR;
 
         if (n == 0) // terminate chunk
         {
             // Read the training \r\n
-            consumeLine(); 
+            consumeLine();
             return res;
         }
 
-        // terminate if we don't have enough 
+        // terminate if we don't have enough
         // buffer to hold the data
         if ((totalrecv + n) > bufsiz)
             return HTTP_RECV_BUFF_ERROR;
@@ -127,9 +127,10 @@ HTTP_RESULT HttpTcpConnection::chunkedRecv(char * buffer, size_t bufsiz)
 
     }while(totalrecv < bufsiz);
 
+    return res;
 }
 
-// Reads untill the end of the line, returns a 
+// Reads untill the end of the line, returns a
 // chunk header size if it sees it.
 int HttpTcpConnection::readChunkHeader()
 {
