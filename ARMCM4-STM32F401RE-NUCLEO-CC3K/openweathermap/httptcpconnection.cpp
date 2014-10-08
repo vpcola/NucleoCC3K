@@ -98,7 +98,8 @@ HTTP_RESULT HttpTcpConnection::chunkedRecv(char * buffer, size_t bufsiz)
     //<data... upto size>\r\n
     // 0\r\n
     // \r\n
-    int totalrecv = 0, n;
+    unsigned int totalrecv = 0;
+    int n;
 
     do {
 
@@ -181,7 +182,8 @@ int HttpTcpConnection::readLine(char * buffer, size_t bufsiz)
 
 HTTP_RESULT HttpTcpConnection::rawRecv(char * buffer, size_t bufsiz)
 {
-    int totalrecv = 0, bytesleft = bufsiz, n;
+    unsigned int totalrecv = 0, bytesleft = bufsiz;
+    int n;
 
     if (!buffer || (bufsiz == 0)) return HTTP_RECV_ERROR;
 
@@ -202,7 +204,8 @@ HTTP_RESULT HttpTcpConnection::rawRecv(char * buffer, size_t bufsiz)
 int HttpTcpConnection::recvUntil(char * buffer, size_t bufsiz, const char term)
 {
     // Read one char at a time an evaluate
-    int n, numread = 0;
+    int n;
+    unsigned int numread = 0;
     char c;
 
     while (( n = ::recv(_sockfd, &c, 1, 0)) > 0)
