@@ -65,8 +65,8 @@ endif
 #
 CHIBIOS = C:\ChibiStudio\chibios
 CC3000_CHIBIOS_DIR=C:\Users\Vergil\ChibiOS_CC3000_SPI
-SENSOR_LIB=$(CURDIR)/sensors
-OPENWEATHER_LIB=$(CURDIR)/openweathermap
+SENSOR_LIB=./sensors
+OPENWEATHER_LIB=./openweathermap
 
 # Define project name here
 PROJECT = ch
