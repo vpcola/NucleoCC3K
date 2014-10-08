@@ -135,7 +135,6 @@ HTTP_RESULT HttpTcpConnection::chunkedRecv(char * buffer, size_t bufsiz)
 int HttpTcpConnection::readChunkHeader()
 {
     char line[100];
-    size_t numchars = sizeof(line);
     char * start = line;
     char * end = NULL;
 
