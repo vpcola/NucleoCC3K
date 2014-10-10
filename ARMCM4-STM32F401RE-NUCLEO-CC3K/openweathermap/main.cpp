@@ -8,9 +8,9 @@ int main(int argc, char * argv[])
         return 0;
 
     HttpClient test;
-    HttpJsonData jsondatafile;
+    HttpJsonData jsondatahandler;
 
-    test.connect(argv[1], HTTP_GET, &jsondatafile, 1000);
+    test.connect((const char *) argv[1], HTTP_GET, &jsondatahandler);
 
     return 0;
 }

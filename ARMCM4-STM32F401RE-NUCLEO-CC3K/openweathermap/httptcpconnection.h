@@ -16,17 +16,12 @@ class HttpTcpConnection : public HttpConnection
 
         virtual HTTP_RESULT open( HttpConnectionParams & param);
         virtual HTTP_RESULT send( const char * buffer, size_t bufsiz);
-        virtual HTTP_RESULT recv(char * buffer, size_t bufsiz, bool chunked = false);
-        virtual int readLine(char * buffer, size_t bufsiz);
+        virtual HTTP_RESULT recv(char * buffer, size_t & bufsiz);
+        virtual int recvUntil(char * buffer, size_t bufsiz, const char term);
+        virtual void consumeLine();
         virtual HTTP_RESULT close();
         virtual HTTP_CONTYPE getConType() { return HTTP_TCP; }
     private:
-        int recvUntil(char * buffer, size_t bufsiz, const char term);
-        HTTP_RESULT rawRecv(char * buffer, size_t bufsiz);
-        HTTP_RESULT chunkedRecv(char * buffer, size_t bufsiz);
-        void consumeLine();
-        int readChunkHeader();
-
 
         int _sockfd;
         int _port;

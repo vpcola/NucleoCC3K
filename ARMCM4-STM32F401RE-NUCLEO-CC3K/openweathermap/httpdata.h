@@ -13,9 +13,25 @@ struct HttpResponseInfo
 {
   unsigned int responseCode;
   char httpversion[20];
-  HTTP_TRANSFER_ENCODING transferEncoding;
+  char responseString[20];
+  HDR_TRANSFER_ENCODING transferEncoding;
+  HDR_TERM_TYPE termType;
+  char contentType[100];
+  int contentLength;
 
-    //CONTENT_TYPE contentType;
+  void debug()
+  {
+    DBG("Response Header = [%s] [%d] [%s]\n",
+        httpversion,
+        responseCode,
+        responseString);
+    DBG("Server headers:\n");
+    DBG("Content-Type: [%s]\n", contentType);
+    DBG("Content Termination: [%d]\n", termType);
+    DBG("Content Length: [%d]\n", contentLength);
+    DBG("Transfer Encoding: [%d]\n", transferEncoding);
+
+  }
 };
 
 class HttpData {

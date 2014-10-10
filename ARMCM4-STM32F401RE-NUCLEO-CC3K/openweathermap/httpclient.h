@@ -33,7 +33,7 @@ class HttpClient {
 
     static HttpConnection * createConnection(const char * scheme);
 
-    bool_t parseHttpHeaders(const char * line, HttpResponseInfo & info);
+    bool_t parseHttpHeaders(char * line, HttpResponseInfo & info);
     HTTP_RESULT parseURL(const char * url, char * scheme, size_t maxschemelen, 
             char * host, size_t maxhostlen, 
             uint16_t * port, 

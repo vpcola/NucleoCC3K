@@ -8,9 +8,12 @@
  **/
 #include "httptypes.h"
 #include <string.h>
-#include "cc3000_chibios_api.h"
-#include "socket.h"
-#include "utility.h"
+
+#ifdef __linux__
+#define bool_t bool
+#define TRUE   true
+#define FALSE  false
+#endif
 
 struct HttpConnectionParams
 {
@@ -32,17 +35,28 @@ class HttpConnection
 
     virtual HTTP_RESULT open( HttpConnectionParams & param) = 0;
     virtual HTTP_RESULT send( const char * buffer, size_t bufsiz) = 0;
-    virtual HTTP_RESULT recv(char * buffer, size_t bufsiz, bool chunked = false) = 0;
-    // Reads a line from the stream, not including the terminating \r\n
-    virtual int readLine(char * buffer, size_t bufsiz) = 0;
+    virtual HTTP_RESULT recv(char * buffer, size_t & bufsiz) = 0;
+    virtual int recvUntil(char * buffer, size_t bufsiz, const char term) = 0;
+    virtual void consumeLine() = 0; // just reads untill '\n' char is reached
     virtual HTTP_RESULT close() = 0;
     virtual HTTP_CONTYPE getConType() = 0;
+
 
     HTTP_RESULT send( const char * str )
     {
         size_t len = strlen(str);
         return send(str, len);
     }
+
+    // Common functions for dealing with chunked
+    // data read.
+
+    // Read depending on content format
+    virtual HTTP_RESULT chunkedRecv(char * buffer, size_t & bufsiz);
+    // Reads a line from the stream, not including the terminating \r\n
+    virtual int readLine(char * buffer, size_t bufsiz);
+    // Reads the chunked header
+    int readChunkHeader();
 
     protected:
 

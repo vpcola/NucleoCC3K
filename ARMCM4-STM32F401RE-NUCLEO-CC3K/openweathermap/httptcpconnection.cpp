@@ -2,6 +2,18 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#ifdef __linux__
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#else
+#include "cc3000_chibios_api.h"
+#include "socket.h"
+#include "utility.h"
+#endif
+
 
 
 HttpTcpConnection::HttpTcpConnection()
@@ -16,8 +28,13 @@ HttpTcpConnection::~HttpTcpConnection()
 
 HTTP_RESULT HttpTcpConnection::open( HttpConnectionParams & param)
 {
-    uint32_t remoteHostIp;
     sockaddr_in dest;
+#ifdef __linux__
+    struct hostent * he;
+    struct in_addr **addr_list, *p;
+#else
+    uint32_t remoteHostIp;
+#endif
 
     _port = param.port;
 
@@ -29,16 +46,31 @@ HTTP_RESULT HttpTcpConnection::open( HttpConnectionParams & param)
     }
 
     memset(&dest, 0, sizeof(dest));
+#ifdef __linux__
+    if ((he = gethostbyname(param.host)) == NULL)
+    {
+        WARN("Error resolving host [%s]\n", param.host);
+        return HTTP_CONNECT_ERROR;
+    }
+
+    addr_list = (struct in_addr **) he->h_addr_list;
+#else
     if (gethostbyname(param.host, strlen(param.host), &remoteHostIp) < 0)
     {
-        ccprint("Failed resolving address [%s] ...\r\n",
+        WARN("Failed resolving address [%s] ...\r\n",
              param.host);
         chThdSleepMilliseconds(1000);
     }
+#endif
 
     dest.sin_family = AF_INET;
     dest.sin_port = htons(_port);
+#ifdef __linux__
+    // Only get the first match
+    dest.sin_addr.s_addr = addr_list[0]->s_addr;
+#else
     dest.sin_addr.s_addr = htonl(remoteHostIp);
+#endif
 
     // Make the actual connection
     if (::connect(_sockfd, (sockaddr *) &dest, sizeof(dest)) != 0)
@@ -78,109 +110,8 @@ HTTP_RESULT HttpTcpConnection::send( const char * buffer, size_t bufsiz)
         return HTTP_OK;
 }
 
-HTTP_RESULT HttpTcpConnection::recv(char * buffer, size_t bufsiz, bool chunked)
-{
-    // If the transfer encoding is chunked, we do a chunked
-    // read
-    if (chunked)
-        return chunkedRecv(buffer, bufsiz);
-    else
-        return rawRecv(buffer, bufsiz);
 
-
-}
-
-HTTP_RESULT HttpTcpConnection::chunkedRecv(char * buffer, size_t bufsiz)
-{
-    HTTP_RESULT res = HTTP_OK;
-    // Read the chunked header
-    // <size in hex> <chunk ext>\r\n
-    //<data... upto size>\r\n
-    // 0\r\n
-    // \r\n
-    unsigned int totalrecv = 0;
-    int n;
-
-    do {
-
-        n = readChunkHeader();
-        if (n < 0)
-            return HTTP_RECV_ERROR;
-
-        if (n == 0) // terminate chunk
-        {
-            // Read the training \r\n
-            consumeLine();
-            return res;
-        }
-
-        // terminate if we don't have enough
-        // buffer to hold the data
-        if ((totalrecv + n) > bufsiz)
-            return HTTP_RECV_BUFF_ERROR;
-
-        res = rawRecv(buffer + totalrecv, (size_t) n);
-        if (res != HTTP_OK)
-            return res;
-
-        totalrecv += n;
-
-    }while(totalrecv < bufsiz);
-
-    return res;
-}
-
-// Reads untill the end of the line, returns a
-// chunk header size if it sees it.
-int HttpTcpConnection::readChunkHeader()
-{
-    char line[100];
-    char * start = line;
-    char * end = NULL;
-
-    // Reads untill the end of the line,
-    // resulting line buffer will be null
-    // terminated without including new lines
-    // \r\n
-    if (readLine(line, sizeof(line)) > 0)
-    {
-        // Trim string, cut at first space
-        end = strchr(line, ' ');
-        if (end != NULL)
-            line[end - start] = '\0'; // make null
-
-        // convert the resulting hex string
-        // to a number
-        return strtol(line, 0, 16);
-    }
-
-    return HTTP_RECV_CHNK_ERROR;
-}
-
-int HttpTcpConnection::readLine(char * buffer, size_t bufsiz)
-{
-    int numread = recvUntil(buffer, bufsiz, '\n');
-
-    // Just remove the \r
-    if (numread > 0)
-    {
-        numread --;
-        if (buffer[numread] == '\r')
-        {
-            // make it into a zero string
-            buffer[numread] = '\0';
-
-            return numread;
-        }
-    }
-
-    return numread;
-
-}
-
-
-
-HTTP_RESULT HttpTcpConnection::rawRecv(char * buffer, size_t bufsiz)
+HTTP_RESULT HttpTcpConnection::recv(char * buffer, size_t & bufsiz)
 {
     unsigned int totalrecv = 0, bytesleft = bufsiz;
     int n;
@@ -194,6 +125,8 @@ HTTP_RESULT HttpTcpConnection::rawRecv(char * buffer, size_t bufsiz)
         totalrecv += n;
         bytesleft -= n;
     }
+
+    bufsiz = totalrecv;
 
     if (n < 0)
         return HTTP_RECV_ERROR;

@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 #include "httpclient.h"
 #include "httptcpconnection.h"
+#include "httpfileconnection.h"
 
 
 const char * HttpClient::_thishost = "127.0.0.1";
@@ -25,11 +27,14 @@ HTTP_RESULT get(const char * url, char * result, size_t result_len, int timeout)
 
 HttpConnection * HttpClient::createConnection(const char * scheme)
 {
-   switch(getConType(scheme))
+   HTTP_CONTYPE conType = getConnectionType(scheme);
+   DBG("Connection type [%d]\n", conType);
+
+   switch(conType)
    {
        case HTTP_TCP : return new HttpTcpConnection();
+       case HTTP_FILE : return new HttpFileConnection();
        case HTTP_UDP :
-       case HTTP_FILE :
        case HTTP_STCP:
             return NULL;
    }
@@ -82,6 +87,9 @@ HTTP_RESULT HttpClient::connect(const char * url, HTTP_METHOD method, HttpData *
         res = _connection->send("\r\n");
         if (res != HTTP_OK)
             return res;
+
+        DBG("Sending header ends ...\n");
+        DBG("Waiting for server response ...\n");
 
         // Now read the response header
         res = receiveHeaders(_connection, handler);
@@ -146,7 +154,13 @@ HTTP_RESULT HttpClient::receiveHeaders(HttpConnection * con, HttpData  * handler
           info.responseCode = atol(token);
         // third token is string representation
         // of the response code, we ignore this now
+        token = strtok(NULL, " ");
+        if (token)
+            snprintf(info.responseString, sizeof(info.responseString),
+                "%s", token);
+
     }
+
 
     // We only determine the following
     // when parsing headers:
@@ -159,12 +173,15 @@ HTTP_RESULT HttpClient::receiveHeaders(HttpConnection * con, HttpData  * handler
       parseHttpHeaders(line, info);
     }
 
+    info.debug();
+
     return HTTP_OK;
 }
 
-bool_t HttpClient::parseHttpHeaders(const char * line, HttpResponseInfo & info)
+bool_t HttpClient::parseHttpHeaders(char * line, HttpResponseInfo & info)
 {
   char * sep_at;
+  char * value;
 
   // Tokenize according to ':' char
   sep_at = strchr(line, ':');
@@ -172,25 +189,31 @@ bool_t HttpClient::parseHttpHeaders(const char * line, HttpResponseInfo & info)
   if (sep_at != NULL)
   {
     *sep_at = '\0';
-    if (stricmp(sep_at, "Transfer-Encoding") == 0)
+    value = strtrim(sep_at + 1);
+
+    // DBG("Key [%s] Value [%s]\n", line, value);
+
+    if (strcmp(line, "Transfer-Encoding") == 0)
+    {
       // Compare second string if "chunked"
-      getTransferEncodingType(sep_at + 1);
-
-    else if (stricmp(sep_at, "Connection") == 0)
-    {
-
+      info.transferEncoding = getTEType(value);
     }
-    else if (stricmp(sep_at, "Content-Type") == 0)
+    else if (strcmp(line, "Connection") == 0)
     {
-
+      info.termType = getTRMType(value);
     }
-    else if (stricmp(sep_at, "Content-Length") == 0)
+    else if (strcmp(line, "Content-Type") == 0)
     {
-
+      strcpy(info.contentType, value);
+    }
+    else if (strcmp(line, "Content-Length") == 0)
+    {
+      info.contentLength = atoi(value);
     }
     else
     {
       // Not matched
+      WARN("Header fields skipped!\n");
     }
   }
 
