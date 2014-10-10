@@ -80,8 +80,8 @@ HTTP_RESULT HttpTcpConnection::open( HttpConnectionParams & param)
     }
 
     // Successfully open and connected
-    _isOpen = TRUE;
-    _isConnected = FALSE;
+    _isOpen = true;
+    _isConnected = true;
 
     return HTTP_OK;
 

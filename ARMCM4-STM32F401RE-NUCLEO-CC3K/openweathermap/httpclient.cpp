@@ -178,7 +178,7 @@ HTTP_RESULT HttpClient::receiveHeaders(HttpConnection * con, HttpData  * handler
     return HTTP_OK;
 }
 
-bool_t HttpClient::parseHttpHeaders(char * line, HttpResponseInfo & info)
+bool HttpClient::parseHttpHeaders(char * line, HttpResponseInfo & info)
 {
   char * sep_at;
   char * value;
@@ -217,7 +217,7 @@ bool_t HttpClient::parseHttpHeaders(char * line, HttpResponseInfo & info)
     }
   }
 
-  return FALSE;
+  return false;
 }
 
 HTTP_RESULT HttpClient::parseURL(const char * url, char * scheme, size_t maxschemelen, 

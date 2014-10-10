@@ -31,8 +31,8 @@ HTTP_RESULT HttpFileConnection::open( HttpConnectionParams & param)
         return HTTP_CONNECT_ERROR;
     }
 
-    _isOpen = TRUE;
-    _isConnected = TRUE;
+    _isOpen = true;
+    _isConnected = true;
 
     DBG("File now open!\n");
 
