@@ -20,16 +20,18 @@ struct HttpConnectionParams
 class HttpConnection
 {
     public:
-    HttpConnection() : _isOpen(false), _isConnected(false)
+    HttpConnection() : _isOpen(false), _isConnected(false), _isChunked(false)
     {}
     virtual ~HttpConnection() {}
 
     bool isOpen() { return _isOpen; }
     bool isConnected() { return _isConnected; }
+    bool isChunked() { return _isChunked; }
+    void setChunked(bool val) { _isChunked = true; }
 
     virtual HTTP_RESULT open( HttpConnectionParams & param) = 0;
     virtual HTTP_RESULT send( const char * buffer, size_t bufsiz) = 0;
-    virtual HTTP_RESULT recv(char * buffer, size_t & bufsiz) = 0;
+    HTTP_RESULT receive(char * buffer, size_t & buffer);
     virtual int recvUntil(char * buffer, size_t bufsiz, const char term) = 0;
     virtual void consumeLine() = 0; // just reads until '\n' char is reached
     virtual HTTP_RESULT close() = 0;
@@ -42,20 +44,21 @@ class HttpConnection
         return send(str, len);
     }
 
-    // Common functions for dealing with chunked
-    // data read.
 
-    // Read depending on content format
-    virtual HTTP_RESULT chunkedRecv(char * buffer, size_t & bufsiz);
     // Reads a line from the stream, not including the terminating \r\n
     virtual int readLine(char * buffer, size_t bufsiz);
+
+    protected:
+    // Raw recv from socket or file
+    virtual HTTP_RESULT recv(char * buffer, size_t & bufsiz) = 0;
+    // Read depending on content format
+    virtual HTTP_RESULT chunkedRecv(char * buffer, size_t & bufsiz);
     // Reads the chunked header
     int readChunkHeader();
 
-    protected:
-
     bool _isOpen;
     bool _isConnected;
+    bool _isChunked;
 };
 
 #endif

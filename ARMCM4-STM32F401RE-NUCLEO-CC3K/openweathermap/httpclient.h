@@ -40,7 +40,7 @@ class HttpClient {
             char * path, size_t maxpathlen);
 
     HTTP_RESULT sendHeaders(HttpConnection * con, const char * path, HTTP_METHOD method); 
-    HTTP_RESULT receiveHeaders(HttpConnection * con, HttpData  * handler);
+    HTTP_RESULT receiveHeaders(HttpConnection * con, HttpResponseInfo & info);
 
 };
 

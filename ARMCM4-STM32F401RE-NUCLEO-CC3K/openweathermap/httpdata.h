@@ -37,6 +37,7 @@ struct HttpResponseInfo
 class HttpData {
     public:
 
+    virtual bool handleServerResponse(HttpResponseInfo & info) { return false; }
     /* Initial request to send data to server */
     virtual HTTP_RESULT sendHeader(HttpConnection * connection) { return HTTP_OK; }
     /* Process/Send or consume data after the header is read */

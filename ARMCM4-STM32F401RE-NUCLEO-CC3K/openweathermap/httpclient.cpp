@@ -46,7 +46,7 @@ HTTP_RESULT HttpClient::connect(const char * url, HTTP_METHOD method, HttpData *
 {
     char scheme[8];
     HttpConnectionParams params;
-
+    HttpResponseInfo info;
 
     HTTP_RESULT res = parseURL(url, scheme, sizeof(scheme), params.host, sizeof(params.host), &(params.port), params.path, sizeof(params.path));
     if (res != HTTP_OK) 
@@ -65,12 +65,12 @@ HTTP_RESULT HttpClient::connect(const char * url, HTTP_METHOD method, HttpData *
         // Open the connection
         res = _connection->open(params);
         if ( res != HTTP_OK)
-            return res;
+            goto res_exit;
 
         // Send default headers to http server
         res = sendHeaders(_connection, params.path, method);
         if (res != HTTP_OK)
-            return res;
+            goto res_exit;
 
         // Send any specific headers that the data
         // handler might have
@@ -79,33 +79,31 @@ HTTP_RESULT HttpClient::connect(const char * url, HTTP_METHOD method, HttpData *
             // Send specific headers used by the data handlers
             res = handler->sendHeader(_connection);
             if (res != HTTP_OK)
-                return res;
-
+                goto res_exit;
         }
 
         // Send \r\n to terminate header sending
         res = _connection->send("\r\n");
         if (res != HTTP_OK)
-            return res;
+            goto res_exit;
 
         DBG("Sending header ends ...\n");
         DBG("Waiting for server response ...\n");
 
         // Now read the response header
-        res = receiveHeaders(_connection, handler);
+        res = receiveHeaders(_connection, info);
         if (res != HTTP_OK)
-            return res;
+            goto res_exit;
 
 
         // Finally handle the response data
-        if (handler)
+        if (handler && handler->handleServerResponse(info))
+        {
             // Handle server response
             res = handler->handleData(_connection);
-        else
-        {
-            // Just consume the data from the server
         }
 
+res_exit:
         // Finally close the socket
         _connection->close();
 
@@ -133,10 +131,9 @@ HTTP_RESULT HttpClient::sendHeaders(HttpConnection * conn, const char * path, HT
     
 }
 
-HTTP_RESULT HttpClient::receiveHeaders(HttpConnection * con, HttpData  * handler)
+HTTP_RESULT HttpClient::receiveHeaders(HttpConnection * con, HttpResponseInfo & info)
 {
     char line[100];
-    HttpResponseInfo info;
     char * token;
 
     int numread;

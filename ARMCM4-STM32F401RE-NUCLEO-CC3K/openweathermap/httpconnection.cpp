@@ -1,6 +1,13 @@
 #include "httpconnection.h"
 #include <stdlib.h>
 #include <string.h>
+HTTP_RESULT HttpConnection::receive(char * buffer, size_t & buffsiz)
+{
+  if (isChunked())
+    return chunkedRecv(buffer, bufsiz);
+  else
+    return recv(buffer, bufsiz);
+}
 
 HTTP_RESULT HttpConnection::chunkedRecv(char * buffer, size_t & bufsiz)
 {
