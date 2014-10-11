@@ -1,11 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-
-
 #include "httpclient.h"
-#include "httptcpconnection.h"
-#include "httpfileconnection.h"
+#include "ch.h"
+#include "chprintf.h"
+#include "utility.h"
 
 
 const char * HttpClient::_thishost = "127.0.0.1";
@@ -25,25 +22,10 @@ HTTP_RESULT get(const char * url, char * result, size_t result_len, int timeout)
     return HTTP_OK;
 }
 
-HttpConnection * HttpClient::createConnection(const char * scheme)
-{
-   HTTP_CONTYPE conType = getConnectionType(scheme);
-   DBG("Connection type [%d]\n", conType);
-
-   switch(conType)
-   {
-       case HTTP_TCP : return new HttpTcpConnection();
-       case HTTP_FILE : return new HttpFileConnection();
-       case HTTP_UDP :
-       case HTTP_STCP:
-            return NULL;
-   }
-
-   return NULL;
-}
 
 HTTP_RESULT HttpClient::connect(const char * url, HTTP_METHOD method, HttpData * handler)
 {
+
     char scheme[8];
     HttpConnectionParams params;
     HttpResponseInfo info;
@@ -58,17 +40,13 @@ HTTP_RESULT HttpClient::connect(const char * url, HTTP_METHOD method, HttpData *
     DBG("port [%d]\n", params.port);
     DBG("path [%s]\n", params.path);
 
-    // Instantiate a connection based on the scheme
-    HttpConnection * _connection = createConnection(scheme);
-    if (_connection)
-    {
         // Open the connection
-        res = _connection->open(params);
+        res = _connection.open(params);
         if ( res != HTTP_OK)
             goto res_exit;
 
         // Send default headers to http server
-        res = sendHeaders(_connection, params.path, method);
+        res = sendHeaders(&_connection, params.path, method);
         if (res != HTTP_OK)
             goto res_exit;
 
@@ -77,13 +55,13 @@ HTTP_RESULT HttpClient::connect(const char * url, HTTP_METHOD method, HttpData *
         if (handler)
         {
             // Send specific headers used by the data handlers
-            res = handler->sendHeader(_connection);
+            res = handler->sendHeader(&_connection);
             if (res != HTTP_OK)
                 goto res_exit;
         }
 
         // Send \r\n to terminate header sending
-        res = _connection->send("\r\n");
+        res = _connection.send_str((const char *) "\r\n");
         if (res != HTTP_OK)
             goto res_exit;
 
@@ -91,7 +69,7 @@ HTTP_RESULT HttpClient::connect(const char * url, HTTP_METHOD method, HttpData *
         DBG("Waiting for server response ...\n");
 
         // Now read the response header
-        res = receiveHeaders(_connection, info);
+        res = receiveHeaders(&_connection, info);
         if (res != HTTP_OK)
             goto res_exit;
 
@@ -100,39 +78,34 @@ HTTP_RESULT HttpClient::connect(const char * url, HTTP_METHOD method, HttpData *
         if (handler && handler->handleServerResponse(info))
         {
             // Handle server response
-            res = handler->handleData(_connection);
+            res = handler->handleData(&_connection, info);
         }
 
 res_exit:
         // Finally close the socket
-        _connection->close();
-
-        // And free up memory
-        delete _connection;
-    }
-
+    _connection.close();
 
     return res;
 }
 
-HTTP_RESULT HttpClient::sendHeaders(HttpConnection * conn, const char * path, HTTP_METHOD method) 
+HTTP_RESULT HttpClient::sendHeaders(HttpTcpConnection * conn, const char * path, HTTP_METHOD method)
 {
     int numbytes;
     char buf[CHUNK_SIZE];
 
     if (!conn) return HTTP_CONNECT_ERROR;
 
-    numbytes = sprintf(buf, "%s %s HTTP/1.1\r\nHost: %s\r\n", 
+    numbytes = chsnprintf(buf, sizeof(buf), "%s %s HTTP/1.1\r\nHost: %s\r\n",
         methods[method],
         path, HttpClient::_thishost);
 
 
-    return  conn->send(buf, numbytes);
-    
+    return  conn->send_data(buf, numbytes);
 }
 
-HTTP_RESULT HttpClient::receiveHeaders(HttpConnection * con, HttpResponseInfo & info)
+HTTP_RESULT HttpClient::receiveHeaders(HttpTcpConnection * con, HttpResponseInfo & info)
 {
+
     char line[100];
     char * token;
 
@@ -142,8 +115,7 @@ HTTP_RESULT HttpClient::receiveHeaders(HttpConnection * con, HttpResponseInfo & 
         // first token is version
         token = strtok(line, " ");
         if (token)
-          snprintf(info.httpversion, sizeof(info.httpversion),
-                   "%s", token);
+          strcpy(info.httpversion, token);
         // second token is number representing
         // response code
         token = strtok(NULL, " ");
@@ -153,8 +125,7 @@ HTTP_RESULT HttpClient::receiveHeaders(HttpConnection * con, HttpResponseInfo & 
         // of the response code, we ignore this now
         token = strtok(NULL, " ");
         if (token)
-            snprintf(info.responseString, sizeof(info.responseString),
-                "%s", token);
+            strcpy(info.responseString, token);
 
     }
 
@@ -177,6 +148,7 @@ HTTP_RESULT HttpClient::receiveHeaders(HttpConnection * con, HttpResponseInfo & 
 
 bool HttpClient::parseHttpHeaders(char * line, HttpResponseInfo & info)
 {
+
   char * sep_at;
   char * value;
 
@@ -214,7 +186,7 @@ bool HttpClient::parseHttpHeaders(char * line, HttpResponseInfo & info)
     }
   }
 
-  return false;
+  return true;
 }
 
 HTTP_RESULT HttpClient::parseURL(const char * url, char * scheme, size_t maxschemelen, 
@@ -246,11 +218,7 @@ HTTP_RESULT HttpClient::parseURL(const char * url, char * scheme, size_t maxsche
     {
         hostLen = portPtr - hostPtr;
         portPtr++;
-        if (sscanf(portPtr, "%hu", port) != 1)
-        {
-            WARN("Could not convert/find port numbers!\r\n");
-            return HTTP_PARSE_ERROR;
-        }
+        *port = (uint16_t) atoi(portPtr);
     }
     else
     {

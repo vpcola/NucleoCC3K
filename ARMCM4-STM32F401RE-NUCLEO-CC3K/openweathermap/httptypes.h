@@ -10,8 +10,6 @@
 #define MAX_HOST_LEN 100
 #define MAX_PATH_LEN  200
 
-#include <stdio.h>
-
 enum HTTP_RESULT {
     HTTP_RECV_CHNK_ERROR = -7,
     HTTP_RECV_BUFF_ERROR = -6,
@@ -51,14 +49,8 @@ enum HDR_TRANSFER_ENCODING{
 };
 
 
-#define DEBUG
 
-#ifdef DEBUG
-#define DBG(M, ...) fprintf(stdout, "DEBUG %s:%d: " M "\n", __FILE__, __LINE__, ##__VA_ARGS__)
-#define WARN(M, ...) fprintf(stderr, "DEBUG %s:%d: " M "\n", __FILE__, __LINE__, ##__VA_ARGS__)
-#else
-#define WARN(M, ...)
-#endif
+
 
 HTTP_CONTYPE getConnectionType(const char * scheme);
 HDR_TRANSFER_ENCODING getTEType(const char * str);

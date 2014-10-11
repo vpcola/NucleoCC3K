@@ -66,6 +66,21 @@ void show_cc3_version(BaseSequentialStream *chp)
     chprintf(chp, "CC3000 Patch Version : %d.%d\r\n", patchVer[0], patchVer[1]);
 }
 
+int hex2decimal(const char * hex)   /* Function to convert hexadecimal to decimal. */
+{
+    int i, length, sum=0;
+    for(length=0; hex[length]!='\0'; ++length);
+    for(i=0; hex[i]!='\0'; ++i, --length)
+    {
+        if(hex[i]>='0' && hex[i]<='9')
+            sum+=(hex[i]-'0')*pow(16,length-1);
+        if(hex[i]>='A' && hex[i]<='F')
+            sum+=(hex[i]-55)*pow(16,length-1);
+        if(hex[i]>='a' && hex[i]<='f')
+            sum+=(hex[i]-87)*pow(16,length-1);
+    }
+    return sum;
+}
 void show_cc3_dhcp_info(BaseSequentialStream *chp)
 {
     tNetappIpconfigRetArgs ipConfig;
@@ -79,4 +94,5 @@ void show_cc3_dhcp_info(BaseSequentialStream *chp)
     chprintf(chp,"DNS Server : "); print_ip(chp, (const char *)ipConfig.aucDNSServer);
     chprintf(chp,"--------------------------------\r\n");
 }
+
 

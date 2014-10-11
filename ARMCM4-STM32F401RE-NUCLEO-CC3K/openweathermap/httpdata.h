@@ -6,8 +6,10 @@
  * Email  : vpcola@gmail.com 
  * Date : Tue Oct 07 2014
  **/
-#include "httptypes.h"
-#include "httpconnection.h"
+
+#include "ch.h"
+#include "utility.h"
+#include "httptcpconnection.h"
 
 struct HttpResponseInfo
 {
@@ -37,11 +39,18 @@ struct HttpResponseInfo
 class HttpData {
     public:
 
-    virtual bool handleServerResponse(HttpResponseInfo & info) { return false; }
+    virtual bool handleServerResponse(HttpResponseInfo & info)
+    {
+      if (info.responseCode == 200)
+        return true;
+
+      return false;
+    }
     /* Initial request to send data to server */
-    virtual HTTP_RESULT sendHeader(HttpConnection * connection) { return HTTP_OK; }
+    virtual HTTP_RESULT sendHeader(HttpTcpConnection * connection) { return HTTP_OK; }
     /* Process/Send or consume data after the header is read */
-    virtual HTTP_RESULT handleData(HttpConnection * connection) { return HTTP_OK; }
+    virtual HTTP_RESULT handleData(HttpTcpConnection * connection, HttpResponseInfo & info) { return HTTP_OK; }
+
 };
 
 

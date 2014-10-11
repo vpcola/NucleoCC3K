@@ -8,7 +8,7 @@
  **/
 
 #include "httpdata.h"
-#include "httpconnection.h"
+#include "jsmn.h"
 
 class HttpJsonData : public HttpData
 {
@@ -18,8 +18,17 @@ class HttpJsonData : public HttpData
     ~HttpJsonData();
 
     // Virtual functions provided by HttpData
-    virtual HTTP_RESULT sendHeader(HttpConnection * connection);
-    virtual HTTP_RESULT handleData(HttpConnection * connection);
+    virtual HTTP_RESULT sendHeader(HttpTcpConnection * connection);
+    virtual HTTP_RESULT handleData(HttpTcpConnection * connection, HttpResponseInfo & info);
+
+    private:
+
+    int jsonGetVal(jsmntok_t * tokens,
+                   const char * js,
+                   const char * section,
+                   const char * varname,
+                   char * value, size_t len );
+
 };
 
 

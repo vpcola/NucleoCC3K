@@ -67,6 +67,7 @@ CHIBIOS = C:\ChibiStudio\chibios
 CC3000_CHIBIOS_DIR=C:\Users\Vergil\ChibiOS_CC3000_SPI
 SENSOR_LIB=./sensors
 OPENWEATHER_LIB=./openweathermap
+JSMN_LIB=./json
 
 # Define project name here
 PROJECT = ch
@@ -83,6 +84,7 @@ include $(CC3000_CHIBIOS_DIR)/cc3000.mk
 include $(CHIBIOS)/test/test.mk
 include $(SENSOR_LIB)/sensors.mk
 include $(OPENWEATHER_LIB)/openweathermap.mk
+include $(JSMN_LIB)/jsmn.mk
 
 
 # Define linker script file here
@@ -101,6 +103,7 @@ CSRC = $(PORTSRC) \
        $(CHIBIOS)/os/various/chprintf.c \
        $(CHIBIOS)/os/various/memstreams.c \
 	   $(CC3000SRC) \
+	   $(JSMNSRC) \
        utility.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
@@ -139,6 +142,7 @@ INCDIR = $(PORTINC) $(KERNINC) $(TESTINC) \
 		 $(CC3000INC) \
          $(SENSORSINC) \
 		 $(OPENWEATHERINC) \
+		 $(JSMNINC) \
          $(CHIBIOS)/os/various
 
 #

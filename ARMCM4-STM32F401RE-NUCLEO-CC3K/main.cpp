@@ -30,6 +30,8 @@
 #include "BMP180.h"
 #include "DS1307.h"
 #include "utility.h"
+#include "httpclient.h"
+#include "httpjsondata.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -546,6 +548,16 @@ static void cmd_settime(BaseSequentialStream *chp, int argc, char *argv[])
       chprintf(chp, "Failed setting up RTC time\r\n", NULL);
 }
 
+static void cmd_getweather(BaseSequentialStream *chp, int argc, char *argv[])
+{
+    (void)argv;
+    if (argc > 0) return;
+
+    HttpClient test;
+    HttpJsonData jsondatahandler;
+    test.connect((const char *) "http://api.openweathermap.org/data/2.5/weather?q=Singapore,sg", HTTP_GET, &jsondatahandler);
+}
+
 static const ShellCommand commands[] = {
   {"mem", cmd_mem},
   {"threads", cmd_threads},
@@ -558,6 +570,7 @@ static const ShellCommand commands[] = {
   {"ls", cmd_listfiles},
   {"gettime", cmd_gettime},
   {"settime", cmd_settime},
+  {"getweather", cmd_getweather},
   {NULL, NULL}
 };
 

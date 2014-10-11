@@ -12,7 +12,7 @@
 
 #include "httpdata.h"
 #include "httptypes.h"
-#include "httpconnection.h"
+#include "httptcpconnection.h"
 
 #define HTTP_TIMEOUT 1000
 #define CHUNK_SIZE   128
@@ -31,7 +31,7 @@ class HttpClient {
     int _sockfd;
     static const char * _thishost;
 
-    static HttpConnection * createConnection(const char * scheme);
+    HttpTcpConnection _connection;
 
     bool parseHttpHeaders(char * line, HttpResponseInfo & info);
     HTTP_RESULT parseURL(const char * url, char * scheme, size_t maxschemelen, 
@@ -39,8 +39,8 @@ class HttpClient {
             uint16_t * port, 
             char * path, size_t maxpathlen);
 
-    HTTP_RESULT sendHeaders(HttpConnection * con, const char * path, HTTP_METHOD method); 
-    HTTP_RESULT receiveHeaders(HttpConnection * con, HttpResponseInfo & info);
+    HTTP_RESULT sendHeaders(HttpTcpConnection * con, const char * path, HTTP_METHOD method);
+    HTTP_RESULT receiveHeaders(HttpTcpConnection * con, HttpResponseInfo & info);
 
 };
 
